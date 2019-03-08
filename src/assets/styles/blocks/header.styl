@@ -1,0 +1,239 @@
+.the-header
+  background $white
+
+  &__wrapper
+    display flex
+    align-items center
+    width 100%
+    max-width 1650px
+    padding 0 40px
+    margin 0 auto
+    box-sizing border-box
+    position relative
+
+    @media (max-width 520px)
+      padding 0 15px
+
+  &__logo
+    padding 16px 0
+
+    &:after
+      content ''
+      display block
+      sprite($s-logo)
+
+    @media (max-width 520px)
+      height 40px
+      padding 3px 0 0
+      margin-left -30px
+      transform scale(.65)
+
+  &__phone
+    display flex
+    align-items center
+    padding 10px 24px
+    background $blue-pale
+    align-self stretch
+    margin-left 24px
+    text-decoration none
+
+    @media (max-width 520px)
+      padding 3px 0
+      background-color transparent
+      margin-left -20px
+
+  &__phone-icon
+    width 24px
+    height 24px
+
+    @media (max-width 520px)
+      width 18px
+      height 18px
+
+  &__phone-text
+    margin-left 10px
+    line-height 17px
+
+    @media (max-width 520px)
+      margin-left 6px
+
+  &__phone-number
+    color $blue-deep
+    font-size 14px
+    font-weight 600
+    display block
+
+    @media (max-width 520px)
+      font-size 13px
+
+  &__phone-description
+    color $blue
+    font-size 13px
+    display block
+
+    @media (max-width 520px)
+      font-size 12px
+
+  &__menu
+    display flex
+    align-self stretch
+    align-items stretch
+    margin-left 28px
+
+  &__menu-item
+    display flex
+    align-items center
+    font-size 14px
+    font-weight 500
+    transition all .15s ease-in-out
+    color $blue-deep
+    padding 0 20px
+    text-decoration none
+
+    &:hover
+      background $blue-pale
+
+  &__right
+    margin-left auto
+    display flex
+    align-items center
+    align-self stretch
+
+  &__lang
+    margin-left 35px
+    position relative
+    padding 10px
+    margin-right -10px
+
+    &:hover
+      .the-header__lang-list
+        top auto
+        transform translate(0, 3px)
+
+  &__lang-selected
+    display flex
+    align-items center
+    transition opacity $transition
+    cursor pointer
+
+  &__lang-list
+    width 100%
+    top -9999px
+    padding-top 5px
+    margin-top -3px
+    position absolute
+    transition transform .15s ease-in-out
+
+    &.-open
+      top 0
+      position relative
+
+  &__lang-selected-arrow
+    position relative
+    margin-left 10px
+
+  &__mobile-menu
+    display none
+    width: 60px;
+    height 100%
+    align-self: stretch;
+    align-items center
+    justify-content center
+    position absolute
+    right 0
+
+
+@media (max-width 1300px)
+  .the-header__mobile-menu
+    display flex
+
+  .the-header
+    .the-header__menu,
+    .the-header__lang,
+    .the-socials
+      display none
+
+
+.the-socials
+  display flex
+  align-items center
+
+.the-socials__item
+  width 38px
+  height 38px
+  display flex
+  align-items center
+  justify-content center
+  background $blue
+  transition background .15s ease-in-out
+  border-radius 50%
+  margin 0 5px
+
+  &:hover
+    background $blue-deep
+
+  &:active
+    transform translate(0, 1px)
+
+.mobile-menu
+  position fixed
+  z-index 4
+  top 0
+  left 0
+  display: flex;
+  flex-direction column
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width 100vw
+  height calc(100vh + 1px)
+  background rgba(#1639bb, .92)
+  will-change transform
+  transform translate3d(0, 0, 0)
+  transition transform 0.4s cubic-bezier(0.37, 0.31, 0.2, 0.85)
+
+  &.-hide
+    display flex
+    transform translate3d(100%, 0, 0)
+
+    // .mobile-menu-links
+    //   a
+    //     transform translate(0,60px)
+
+  .close-button
+    position absolute
+    top 28px
+    right 30px
+    width 50px
+    height 50px
+    background #fff
+    border-radius 50%
+    display flex
+    align-items center
+    justify-content center
+
+    svg
+      fill #1639bb
+
+  &__lang
+    margin-top 30px
+    svg
+      width 30px
+      height 20px
+      margin 0 5px
+
+  .the-header__menu
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-self center
+    margin 0 0 30px
+
+  .the-header__menu-item
+    color #fff
+    font-size 18px
+    font-weight 500
+    padding 4px 0
+
+    &:hover
+      background none

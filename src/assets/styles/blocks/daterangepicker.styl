@@ -1,0 +1,103 @@
+.daterangepicker
+  font-family 'Roboto' !important
+  margin-top 1px !important
+  border-radius 0 0 5px 5px !important
+  border none !important
+  box-shadow 0 6px 12px 0 rgba(24,34,85,0.20)
+  min-width 388px
+
+  &:before,
+  &:after
+    display none !important
+
+  .table-condensed
+    border-spacing 10px !important
+    border-collapse separate !important
+
+    thead
+      tr:nth-child(2) th
+        color #acb8db
+        font-size 11px
+
+    tbody
+      td
+        min-width 40px
+        height 40px
+        border-radius 5px
+        border 1px solid transparent
+        font-size 13px
+        font-weight 400
+        transition all $transition
+
+        &.available
+          border 1px solid #fb8e51
+          color $blue-deep
+
+          &:hover
+            background #fb8e51
+            color $white
+
+        &.disabled
+          background #f0f5fb
+          text-decoration none
+          color #a7b3d8
+
+        &.today,
+        &.active
+          background #556ffb
+          color $white
+          border-color transparent
+
+          &:hover
+            background #556ffb
+            color $white
+            border-color transparent
+
+  th.month
+    font-size 14px !important
+    color #1f2d6d
+    font-weight 500 !important
+
+  .calendar-table .prev
+    border-right 1px solid #a7b3d8
+    &:hover
+      border-right-color #a7b3d8 !important
+
+  .calendar-table .next
+    border-left 1px solid #a7b3d8
+    &:hover
+      border-left-color #a7b3d8 !important
+
+  .calendar-table .prev,
+  .calendar-table .next
+    display flex
+    justify-content center
+    align-items center
+    border-radius 0
+    width 40px !important
+    height 20px !important
+
+    &:hover
+      background transparent
+
+  .calendar-table .prev span
+    display block !important
+    border none !important
+    transform rotate(0) !important
+    padding 0 !important
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent !important;
+    border-right: 8px solid #556ffb !important;
+    border-bottom: 6px solid transparent !important;
+
+  .calendar-table .next span
+    display block !important
+    border none !important
+    transform rotate(0) !important
+    padding 0 !important
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent !important;
+    border-left: 8px solid #556ffb !important;
+    border-bottom: 6px solid transparent !important;

@@ -1,0 +1,181 @@
+.the-footer
+  background #132273
+  padding 80px 0
+
+  @media (max-width 992px)
+    padding 50px 0
+
+  &__wrapper
+    display flex
+    justify-content space-between
+
+    @media (max-width 992px)
+      flex-direction: column;
+      align-items: center;
+
+  &__socials.-mobile
+    display none
+    flex-direction column
+    align-items center
+
+    > p
+      font-size: 13px;
+      color: rgba(255,255,255,0.30);
+      text-align: center;
+      line-height: 30px;
+
+    @media (max-width 992px)
+      display flex
+      margin 24px 0 0
+
+  &__left
+    @media (max-width 992px)
+      .the-footer__text,
+      .the-socials.-footer
+        display none
+
+  &__center
+    @media (max-width 992px)
+      text-align center
+      width 100%
+      margin-top 24px
+
+  &__right
+    @media (max-width 992px)
+      width 100%
+      text-align center
+      margin-top 24px
+
+  &__logo
+    display block
+    sprite($s-logo_white)
+    margin-bottom 15px
+
+  &__text
+    font-size: 15px;
+    color: rgba(255,255,255,0.30);
+    line-height: 30px;
+
+
+  .the-socials
+    margin-top 5px
+
+    .the-socials__item
+      background rgba(#536AFF, .5)
+
+      &:hover
+        background #536AFF
+
+  &__header-small
+    font-size 14px
+    font-weight 500
+    text-transform uppercase
+    color #fff
+
+  &__menu
+    display flex
+    margin-top 26px
+
+    @media (max-width 992px)
+      margin-top 12px
+      width 100%
+
+  &__menu-col
+    min-width 110px
+    margin-right 20px
+
+    @media (max-width 992px)
+      min-width 0
+      flex 0 0 33.33%
+      margin 0
+
+    &:last-child
+      margin-right 0
+
+  &__menu-link
+    display inline-block
+    color #fff
+    text-decoration none
+    padding 3px 0
+    opacity .35
+    transition opacity $transition
+
+    &:hover
+      opacity 1
+
+  &__contacts
+    padding-top 26px
+
+    @media (max-width 992px)
+      padding-top 16px
+
+  &__contacts-address
+    color #fff
+    display flex
+    align-items center
+    padding 3px 0
+
+    > span
+      display flex
+      align-items center
+
+    @media (max-width 992px)
+      justify-content center
+      flex-direction column
+      padding 0 0 20px
+
+    a
+      color #FFF
+      text-decoration none
+
+  &__contacts-label
+    color rgba(#fff, .3)
+    display inline-block
+    padding-right 10px
+
+  &__contacts-icon
+    display inline-block
+    width 28px
+
+  &__phone
+    width 300px
+    height 70px
+    background #536AFF
+    box-sizing border-box
+    padding 0 30px
+    display flex
+    align-items center
+    text-decoration none
+    color #fff
+    margin-top 20px
+
+    @media (max-width 992px)
+      margin 8px auto 0
+      border-radius 5px
+      height 60px
+
+  &__phone-icon
+    margin-right 18px
+
+  &__phone-text
+    line-height 20px
+
+  &__phone-description
+    display block
+    color #fff
+    opacity .5
+    font-size 13px
+
+  &__phone-number
+    font-weight 500
+
+  &__copyright
+    color #5A649D
+    font-size 15px
+    margin-top -19px
+
+    @media (max-width 992px)
+      margin 0
+      text-align center
+      margin-top 24px
+      font-size 13px

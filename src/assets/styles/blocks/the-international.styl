@@ -1,0 +1,115 @@
+.the-international
+  padding 55px 0 0
+
+  h2.headline
+    position relative
+    text-align center
+    padding 0 10px
+    box-sizing border-box
+
+    @media (max-width 767px)
+      line-height 32px
+
+  &__wrapper
+    display flex
+    flex-wrap wrap
+    margin 50px 0 0
+
+    @media (max-width 767px)
+      min-width 800px
+      margin-top 18px
+
+  &__item
+    position relative
+    overflow hidden
+    height 272px
+    background-size cover
+    background-position center center
+    cursor pointer
+
+    &:hover
+      .the-international__item-data
+        transform translate(0, 0)
+
+        .button
+          opacity 1
+
+    @media (max-width 767px)
+      height 140px
+
+    &.-w19
+      flex 0 0 19%
+
+    &.-w23
+      flex 0 0 23%
+
+    &.-w30
+      flex 0 0 30%
+
+    &.-w35
+      flex 0 0 35%
+
+  &__item-data
+    width 100%
+    position absolute
+    bottom 0
+    display flex
+    flex-direction column
+    align-items center
+    padding-bottom 36px
+    transform translate(0, 80px)
+    transition transform $transition
+
+    .button
+      opacity 0
+      transition opacity $transition
+
+  &__item-country
+    display flex
+    align-items center
+    font-size 24px
+    color #fff
+    font-weight 500
+    padding-bottom 10px
+
+    @media (max-width 767px)
+      font-size 14px
+
+  &__item-country-logo
+    display block
+    position relative
+    margin-right 10px
+    transform scale(1.1)
+
+    &.mda
+      sprite($s-mda)
+
+    &.ger
+      sprite($s-ger)
+
+    &.cze
+      sprite($s-cze)
+
+    &.net
+      sprite($s-net)
+
+    &.aus
+      sprite($s-aus)
+
+    &.bel
+      sprite($s-bel)
+
+    &.slo
+      sprite($s-slo)
+
+    &.fra
+      sprite($s-fra)
+
+    &.lux
+      sprite($s-lux)
+
+    &.uk
+      sprite($s-uk)
+
+    &.rom
+      sprite($s-rom)

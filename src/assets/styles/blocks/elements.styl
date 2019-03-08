@@ -1,0 +1,52 @@
+.button
+  padding 0 20px
+  display inline-flex
+  align-items center
+  justify-content center
+  height 50px
+  border-radius 5px
+  font-size 14px
+  font-weight 500
+  border none
+  cursor pointer
+  transition all $transition
+
+  @media (max-width 767px)
+    font-size 11px
+    padding 0 10px
+    height 40px
+
+  &:active
+    transform translate(0, 1px)
+
+  &.orange
+    color #fff
+    background #FD8E49
+    box-shadow: 0 1px 3px 0 rgba(128,65,25,0.30);
+
+    &:hover
+      background #F67E33
+
+    &[disabled]
+      background rgba(255,255,255,.5)
+      color #536AFF
+
+  &.white
+    color #1E2B6F
+    background #FFF
+    box-shadow: 0 3px 12px 0 rgba(24,34,85,0.20);
+
+    &:hover
+      color #fff
+      background $blue
+
+
+.badge
+  border-radius 10px
+  padding 1px 6px
+  font-size 12px
+  font-weight 500
+
+  &.-blue
+    background #4A79FE
+    color #fff

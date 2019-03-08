@@ -1,0 +1,473 @@
+.the-services
+  background #1639BB
+  padding 60px 0 15px
+  position relative
+  width 100%
+  overflow-x hidden
+
+  &:after
+    content ''
+    position absolute
+    bottom 0
+    z-index 0
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 2%, rgba(0,0,0,0.34) 100%);
+    width 100%
+    height 470px
+
+  .base_col
+    position relative
+    z-index 1
+
+  h2.headline
+    text-align center
+    color #fff
+
+  &__statistics
+    margin 20px 0 0
+    display flex
+    align-items flex-start
+    justify-content center
+
+  &__statistics-item
+    width 200px
+    position relative
+    text-align center
+
+    &:before
+      content ''
+      position absolute
+      left 0
+      top 50%
+      transform translate(0, -50%)
+      background #fff
+      opacity .2
+      width 1px
+      height 24px
+
+    &:first-child::before
+      display none
+
+    @media (max-width 767px)
+      padding 0 10px
+
+  &__statistics-num
+    color #FD8E49
+    font-size 32px
+    line-height 40px
+
+    @media (max-width 767px)
+      font-size 25px
+      line-height 30px
+
+  &__statistics-label
+    font-size 13px
+    color #fff
+    font-weight 400
+
+    @media (max-width 767px)
+      font-size 11px
+      line-height 14px
+
+  &__headline
+    font-weight 900
+    font-size 50px
+    color #FFFFFF
+    letter-spacing 0
+    line-height 56px
+    max-width 400px
+    margin-bottom 24px
+
+    @media (max-width 767px)
+      font-size 30px
+      line-height 35px
+      margin-bottom 12px
+
+      br
+        display none
+
+  &__description
+    font-size 15px
+    color #89B3FF
+    letter-spacing 0
+    line-height 22px
+    max-width 380px
+
+    @media (max-width 767px)
+      width 100%
+      max-width 500px
+      font-size 13px
+
+  &__list
+    display flex
+    flex-wrap wrap
+    max-width 450px
+    margin 30px 0
+
+    @media (max-width 767px)
+      margin 15px 0 20px
+
+  &__list-item
+    flex 0 0 50%
+    font-size 12px
+    font-weight 500
+    color #fff
+    text-transform uppercase
+    position relative
+    padding 4px 0 4px 18px
+    box-sizing border-box
+
+    &::before
+      content ''
+      display block
+      width 8px
+      height 8px
+      border-radius 50%
+      background #FD8E49
+      position absolute
+      left 0
+      top 9px
+
+    @media (max-width 767px)
+      font-size 11px
+      font-weight 400
+
+  &__list-sticker
+    color #fff
+    font-size 9px
+    text-transform uppercase
+    font-weight 700
+    background #4A79FE
+    border-radius 20px
+    display inline-block
+    height 18px
+    padding 1px 8px 2px
+    margin-left 10px
+    position relative
+    top -1px
+    box-sizing border-box
+    box-shadow 0 2px 4px 0 rgba(48,55,91,0.20)
+
+  &__button-rezervation
+    min-width 210px
+
+    svg
+      margin-left 12px
+      position relative
+      top 1px
+
+    @media (max-width 767px)
+      width 100%
+      max-width 500px
+
+  &__personal
+    display flex
+    justify-content space-between
+    align-items center
+    padding 70px 0
+
+    @media (max-width 767px)
+      flex-direction column-reverse
+      padding 30px 0
+
+  &__personal-left
+    @media (max-width 767px)
+      width 100%
+      margin-top 30px
+
+  &__personal-right
+    margin-left 40px
+    img
+      max-width 100%
+
+    @media (max-width 767px)
+      margin-left 0
+      width 100%
+      max-width 400px
+
+  &__parcel
+    display flex
+    justify-content space-between
+    align-items center
+    padding 70px 0
+
+    @media (max-width 767px)
+      flex-direction column
+      padding 30px 0
+
+  &__parcel-right
+    @media (max-width 767px)
+      width 100%
+      margin-top 30px
+
+  &__parcel-left
+    margin-right 40px
+
+    img
+      max-width 100%
+
+    @media (max-width 767px)
+      margin-right 0
+      width 100%
+      max-width 400px
+
+  &__list-countries
+    display flex
+    flex-wrap wrap
+    max-width 440px
+    margin 24px 0 30px
+
+  &__list-countries-item
+    flex 0 0 33.33%
+    font-size 12px
+    font-weight 500
+    text-transform uppercase
+    color #fff
+    display flex
+    align-items center
+    padding 4px 0
+
+    svg
+      position relative
+      top -2px
+      margin-right 11px
+
+    @media (max-width 767px)
+      font-size 10px
+      font-weight 400
+
+  &__list-countries-logo
+    display block
+    position relative
+    margin-right 10px
+
+    &.mda
+      sprite($s-mda)
+
+    &.ger
+      sprite($s-ger)
+
+    &.cze
+      sprite($s-cze)
+
+    &.net
+      sprite($s-net)
+
+    &.aus
+      sprite($s-aus)
+
+    &.bel
+      sprite($s-bel)
+
+    &.slo
+      sprite($s-slo)
+
+    &.fra
+      sprite($s-fra)
+
+    &.lux
+      sprite($s-lux)
+
+    &.uk
+      sprite($s-uk)
+
+  &__headline-destination
+    text-align center
+    position relative
+
+    span
+      padding 0 16px
+      background #1639bb
+      position relative
+      z-index 1
+
+    &:before
+      content ''
+      display block
+      width 100%
+      height 1px
+      background-image: linear-gradient(90deg, rgba(252,240,233,0.05) 0%, rgba(253,149,84,0.95) 29%, #FD8E49 70%, rgba(252,240,233,0.05) 100%);
+      position absolute
+      top 50%
+
+    @media (max-width 767px)
+      font-size 21px !important
+
+      &:before
+        display none
+
+      span
+        background none
+
+  &__destination
+    padding 75px 0
+
+    @media (max-width 767px)
+      padding 20px 0 60px
+
+  &__destination-item-headline
+    font-size 20px
+    font-weight 500
+    color #fff
+    padding 0 0 18px 28px
+
+    svg
+      margin-right 10px
+
+    @media (max-width 767px)
+      font-size 16px
+
+      svg
+        position relative
+        top 5px
+
+  &__destination-list-item
+    background #536AFF
+    border-radius 5px
+    margin 2px 0
+    font-size 15px
+    color #fff
+    height 46px
+    display flex
+    align-items center
+    padding 0 20px 0 40px
+    position relative
+
+    &:before
+      content ''
+      display block
+      width 8px
+      height 8px
+      border-radius 50%
+      background #FD8E49
+      position absolute
+      left 20px
+      top 19px
+
+    @media (max-width 1180px)
+      font-size 12px
+      padding 0 10px 0 24px
+
+      &:before
+        left 11px
+        width 7px
+        height 7px
+
+    @media (max-width 767px)
+      font-size 12px
+      padding 0 10px 0 20px
+
+      &:before
+        left 8px
+        width 6px
+        height 6px
+        top 20px
+
+  &__destination-list-pale
+    opacity .4
+    padding-right 5px
+
+  &__destination-list-price
+    margin-left auto
+    color #1E2B6F
+    font-size 16px
+    font-weight 500
+
+    sup
+      font-size 9px
+      position relative
+      top -5px
+
+    @media (max-width 767px)
+      font-size 14px
+
+  &__destination-wrapper
+    margin 60px -10px 20px
+    display flex
+
+    &.-mobile
+      display none
+
+    @media (max-width 992px)
+      display none
+
+      &.-mobile
+        margin-top 20px
+        width 185%
+        display block
+        transform translate(5px, 0)
+
+        &.slick-dotted.slick-slider
+          margin-bottom 60px
+
+        &.simple-slider.simple-slider-2-col .slick-dots
+          transform: translate(-36vw, 0);
+
+  &__destination-item
+    flex 0 0 calc(33.33% - 20px)
+    margin 0 10px
+
+    @media (max-width 767px)
+      flex 0 0 calc(33.33% - 10px)
+      margin 0 5px
+
+  &__destination-info
+    display flex
+    padding-top 28px
+    padding-left 100px
+    box-sizing border-box
+
+    @media (max-width 1150px)
+      padding-left 0
+
+    @media (max-width 1000px)
+      flex-direction column
+      align-items center
+      padding-top 5px
+
+  &__destination-info-text
+    flex 0 0 350px
+    font-size 15px
+    line-height 22px
+    color #89B3FF
+    margin-right 50px
+
+    @media (max-width 1000px)
+      font-size 12px
+      line-height 19px
+      flex-basis 0
+      margin 0 0 20px
+      text-align center
+
+  &__destination-info-phone
+    font-size 20px
+    font-weight 500
+    color #fff
+    display flex
+    align-items center
+    text-decoration none
+    transition opacity $transition
+
+    &:hover
+      opacity .85
+
+    svg
+      margin-right 10px
+
+    @media (max-width 1000px)
+      font-size 18px
+
+  .the-socials.-destination
+    flex 0 0 33.33%
+    margin-left auto
+    display flex
+    justify-content center
+
+    .the-socials__item
+      background rgba(#536AFF, .5)
+
+      &:hover
+        background rgba(#536AFF, .8)
+
+    @media (max-width 1000px)
+      flex-basis 0
+      margin 50px 0 0

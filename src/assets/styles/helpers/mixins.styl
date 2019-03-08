@@ -1,0 +1,71 @@
+clearfix()
+    &:after
+        content ""
+        display table
+        clear both
+
+.clearfix
+  clearfix()
+
+ibreset()
+    border 0
+    padding 0
+    margin 0
+    outline none
+    background none
+
+user-select()
+    -webkit-user-select arguments
+    -moz-user-select arguments
+    user-select arguments
+
+// placeholder mixin
+// to use:
+// +placeholder()
+//     color #000
+//     opacity 1
+placeholder()
+    if selector() == "&"
+        error( "placeholder() must be called from a ruleset!" )
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
+
+
+spriteWidth($sprite)
+    width ($sprite[4]/2)px
+
+spriteHeight($sprite)
+    height ($sprite[5]/2)px
+
+spritePosition($sprite)
+    background-position ($sprite[2]/2)px ($sprite[3]/2)px
+
+spriteImage($sprite)
+    background-image url(../images/design/$sprite[8])
+    background-size ($sprite[6]/2)px ($sprite[7]/2)px
+
+sprite($sprite)
+    if !match('hover', selector()) && !match('active', selector())
+        spriteImage($sprite)
+    spritePosition($sprite)
+    spriteWidth($sprite)
+    spriteHeight($sprite)
+
+size($size)
+  background-size $size[0] $size[1]
+  width $size[0]
+  height $size[1]
+
+scaleIcon()
+  &:before
+    -moz-transform scale(arguments)
+    -ms-transform scale(arguments)
+    -webkit-transform scale(arguments)
+    -o-transform scale(arguments)
+    transform scale(arguments)

@@ -1,0 +1,68 @@
+.simple-slider
+  width 150%
+  transform translate(-23vw, 0)
+
+  .slick-slide
+    opacity .4
+    height auto
+    transition opacity .15s ease-in-out
+
+  .slick-prev, .slick-next
+    display none !important
+
+  &.simple-slider-2-col
+    .slick-active
+      opacity 1
+
+    .slick-active + .slick-active
+      opacity .4
+
+    .slick-dots
+      transform translate(-32vw, 0)
+
+  &.simple-slider-3-col
+    .slick-active
+      opacity .4
+
+    .slick-active + .slick-active
+      opacity 1
+
+    .slick-active + .slick-active + .slick-active
+      opacity .4
+
+    .slick-dots
+      transform translate(8px, 0)
+
+  .slick-dots
+    bottom -35px
+
+    li
+      margin 0
+      width 15px
+      height 15px
+      position relative
+
+      &:first-child
+        &:before
+          content ''
+          display block
+          position absolute
+          top 6px
+          left -16px
+          width 14px
+          height 6px
+          border-radius 10px
+          background #A6B2D9
+          opacity .8
+
+      button::before
+        font-size 9px
+        color #A6B2D9
+        opacity 0.8
+
+    .slick-active
+      opacity 1 !important
+
+      button::before
+        color #7184C2
+        opacity 1

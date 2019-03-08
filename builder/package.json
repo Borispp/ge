@@ -1,0 +1,45 @@
+{
+  "name": "markup",
+  "version": "0.0.1",
+  "description": "front-end boilerplate for fast project start",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglifyjs": "^0.6.2"
+  },
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-core": "^6.10.4",
+    "babel-preset-es2015": "^6.9.0",
+    "bower": "^1.3.12",
+    "gulp": "3.9.0",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-babel": "^6.1.1",
+    "gulp-bower": "0.0.7",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-iconfont": "^8.0.1",
+    "gulp-iconfont-css": "^2.1.0",
+    "gulp-imagemin": "*",
+    "gulp-jade": "*",
+    "gulp-load-plugins": "^0.7.0",
+    "gulp-minify-css": "^0.3.10",
+    "gulp-plumber": "*",
+    "gulp-stylus": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp.spritesmith": "*",
+    "imagemin-pngcrush": "^1.0.0",
+    "js-yaml": "^3.2.2"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "front-end",
+    "gulp",
+    "boilerplate"
+  ]
+}

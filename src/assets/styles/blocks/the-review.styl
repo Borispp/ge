@@ -1,0 +1,223 @@
+.the-review
+  background #1639BB
+  padding 60px 0
+
+  h2.headline
+    color #fff
+    padding-left 200px
+    padding-bottom 4px
+
+    @media (max-width 992px)
+      padding 0 0 4px
+      text-align center
+
+
+  &__description
+    padding-left 200px
+    max-width 350px
+    font-size 15px
+    line-height 22px
+    color #89B3FF
+    margin-bottom 20px
+
+    @media (max-width 992px)
+      margin 0 auto 20px
+      padding 0
+      text-align center
+      font-size 13px
+
+  &__item
+    background #536AFF
+    border-radius 5px
+    padding 30px
+    box-sizing border-box
+    min-height 250px
+    position relative
+    margin 0 8px
+
+    @media (max-width 767px)
+      min-height 0
+      padding 20px
+      margin 0 5px
+
+    &:after
+      content ''
+      display block
+      position absolute
+      right 0
+      bottom 0
+      sprite($s-facebook_large)
+
+  &__client-stars
+    display flex
+    margin-bottom 5px
+
+    svg
+      fill #FFD525
+      margin-right 5px
+
+  &__client-name
+    font-size 16px
+    font-weight 500
+    color #1E2B6F
+
+    @media (max-width 767px)
+      font-size 14px
+
+  &__client-description
+    font-size 14px
+    line-height 20px
+    color #fff
+    padding-top 30px
+
+    @media (max-width 767px)
+      font-size 13px
+      padding-top 18px
+
+  &__slider
+    padding-top 10px
+    position relative
+    margin 0 90px
+
+    @media (max-width 767px)
+      width 185%
+      margin 0 0 0 -5px
+
+    .slick-slide
+      height auto
+
+  	.slick-active + .slick-active .team-content
+  		background $yellow
+
+  	.slick-active + .slick-active + .slick-active .team-content
+  		background #bfbfbf
+
+  	.slick-prev,
+    .slick-next
+      top 50%
+      transform translate(0, -50%)
+      background #fff
+      width 50px
+      height 50px
+      border-radius 50%
+      box-shadow 0 6px 12px 0 rgba(24,34,85,.2)
+      z-index 2
+      transition background $transition
+
+      &:hover
+        background $blue
+
+      &:before
+        content ''
+        display inline-block
+        sprite($s-arrow)
+        opacity 1
+
+  	.slick-next:before
+  		transform rotate(180deg)
+
+  	.slick-prev
+  		left -100px
+
+  	.slick-next
+  		right -100px
+
+  &__info
+    padding 60px 100px 0
+    display flex
+    align-items center
+    justify-content space-between
+
+    @media (max-width 992px)
+      padding 60px 0 0
+      flex-direction column
+      align-items center
+
+  &__info-description
+    padding-left 100px
+    color #fff
+    font-size 12px
+    line-height 16px
+    max-width 370px
+    display flex
+    justify-content space-between
+    align-items flex-start
+    text-transform uppercase
+
+    p .badge
+      display none
+
+    @media (max-width 992px)
+      padding 0 20px
+      text-align center
+      font-size 11px
+      max-width 300px
+
+      .badge
+        display none
+
+      p .badge
+        display inline-block
+
+    p
+      margin-right 10px
+
+  &__info-socials
+    display flex
+    align-items center
+
+    @media (max-width 992px)
+      flex-direction column
+
+    > p
+      font-size 15px
+      color #89B3FF
+      margin-right 12px
+
+      @media (max-width 992px)
+        font-size 13px
+        margin 15px 0 8px
+
+  .the-socials.-review
+    .the-socials__item
+      background #1E2B6F
+
+      &:hover
+        background rgba(#1E2B6F, 0.6)
+
+
+.the-review
+  .slick-dots
+    bottom -35px
+    transform translate(-39vw, 0)
+
+    li
+      margin 0
+      width 15px
+      height 15px
+      position relative
+
+      &:first-child
+        &:before
+          content ''
+          display block
+          position absolute
+          top 6px
+          left -16px
+          width 14px
+          height 6px
+          border-radius 10px
+          background #A6B2D9
+          opacity .8
+
+    button::before
+      font-size 9px
+      color #A6B2D9
+      opacity 0.8
+
+  .slick-active
+    opacity 1 !important
+
+    button::before
+      color #A6B2D9 !important
+      opacity 1

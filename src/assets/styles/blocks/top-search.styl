@@ -1,0 +1,98 @@
+.top-search
+  position relative
+
+  &__tabs
+    display flex
+
+  &__tabs-item
+    width 169px
+    display inline-flex
+    align-items center
+    height 49px
+    box-sizing border-box
+    padding 0 20px
+    font-size 18px
+    font-weight 500
+    color $white
+    background rgba(83,106,255,0.50)
+    box-shadow 0 8px 10px 0 rgba(30,43,111,0.20), inset 0 1px 0 0 rgba(140,226,255,0.30)
+    margin 0 1px 0 0
+    cursor pointer
+    transition background $transition
+
+    &:first-child
+      border-radius 5px 0 0 0
+
+    &:last-child
+      border-radius 0 5px 0 0
+
+    &:hover
+      background rgba(83,106,255,1)
+
+    svg
+      margin-right 18px
+      path
+        fill $white
+        transition color $transition
+
+    &.-active
+      background #F0F5FB
+      color #1E2B6F
+
+      svg
+        path
+          fill $blue
+
+  &__content
+    position relative
+    padding 20px
+    background #F0F5FB
+    border-radius 0 0 5px 5px
+    box-shadow 0 8px 10px 0 rgba(7,31,115,.2)
+
+  &__directions
+    display flex
+    align-items center
+
+  &__directions-item
+    display flex
+    align-items center
+    font-size 12px
+    font-weight 500
+    color #182255
+    box-shadow: 0 1px 3px 0 rgba(73,79,106,0.14);
+    background $white
+    margin-right 10px
+    padding 2px 12px 1px
+    border-radius 20px
+    cursor pointer
+    transition all $transition
+
+    &:last-child
+      margin-right 0
+
+    svg
+      margin-right 6px
+
+      path
+        fill #A6B2D9
+        transition fill $transition
+
+    &:hover,
+    &:active,
+    &.-active
+      background #536AFF
+      color #fff
+
+      svg path
+          fill #fff
+
+    &:active
+      box-shadow inset 0 1px 2px 0 rgba(73,79,106,0.2);
+      transform translate(0, 1px)
+
+    &.-active
+      cursor default
+
+      &:active
+        transform translate(0, 0)

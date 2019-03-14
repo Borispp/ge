@@ -1,0 +1,43 @@
+.the-rezervation
+  position relative
+  max-width 580px
+  margin 0 auto
+
+  &__headline,
+  &__description
+    width 100%
+    text-align center
+
+  &__headline
+    @media (max-width: 767px)
+      padding-bottom 12px
+
+  &__description
+    opacity: 0.5;
+    font-size: 15px;
+    color: #1E2B6F;
+    letter-spacing: 0;
+    line-height: 22px;
+    padding 10px 0 12px
+
+    @media (max-width: 767px)
+      font-size 13px
+      line-height 18px
+      padding 8px 0
+
+  &__form
+    width 100%
+    margin-top 16px
+
+  &__form-row
+    display flex
+    margin 0 -10px 20px
+
+  &__input-wrapper
+    flex 1 1 50%
+    margin 0 10px
+    display flex
+    align-items center
+
+    .button
+      width 100%

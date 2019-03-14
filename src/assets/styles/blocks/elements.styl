@@ -12,9 +12,9 @@
   transition all $transition
 
   @media (max-width 767px)
-    font-size 11px
+    font-size 13px
     padding 0 10px
-    height 40px
+    height 45px
 
   &:active
     transform translate(0, 1px)
@@ -40,6 +40,11 @@
       color #fff
       background $blue
 
+  &.with-arrow-icon
+    svg
+      margin-left 12px
+      margin-top 1px
+
 
 .badge
   border-radius 10px
@@ -50,3 +55,67 @@
   &.-blue
     background #4A79FE
     color #fff
+
+
+.e-input,
+.e-textarea
+  width 100%
+  background: #FFFFFF;
+  color rgba(#1E2B6F, .5)
+  box-shadow: 0 1px 3px 0 rgba(73,79,106,0.14);
+  box-sizing border-box
+  padding 0 20px
+  border 1px solid transparent
+  border-radius 5px
+  transition border-color $transition
+  font-size 14px
+
+  @media (max-width: 767px)
+    font-size 13px
+
+  +placeholder()
+    color #A6B2D9
+
+  &:focus
+    border-color $blue
+
+.e-input
+  height 50px
+  line-height 50px
+
+.e-textarea
+  padding 10px 20px
+
+.e-checkbox
+  cursor pointer
+  padding-left 30px
+  font-size 14px
+  color #A6B2D9
+
+  &__input
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:checked
+      + .e-checkbox__box
+        &::before
+          display block
+
+  &__box
+    position: absolute;
+    margin-left: -30px;
+    width 22px
+    height 22px
+    background $white
+    box-shadow: 0 1px 3px 0 rgba(73,79,106,0.14);
+    border-radius 5px
+    display flex
+    align-items center
+    justify-content center
+
+    &::before
+      display none
+      content ''
+      sprite($s-checkbox)

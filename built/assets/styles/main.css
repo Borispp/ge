@@ -308,6 +308,7 @@ a:hover {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  left: -9999px;
 }
 .e-checkbox__input:checked + .e-checkbox__box::before {
   display: block;
@@ -808,8 +809,8 @@ a:hover {
   padding: 0 0;
   box-sizing: border-box;
   text-align: center;
-  font-family: Roboto-Light;
   font-size: 32px;
+  font-weight: 300;
   color: #fff;
   text-align: center;
   line-height: 46px;

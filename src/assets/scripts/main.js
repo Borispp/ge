@@ -1,5 +1,16 @@
 $(document).ready(function() {
-  console.log('init');
+  $('.js-select2-location').select2({
+    dropdownCssClass: 'select2-container-location'
+  })
+  .on('select2:open', function () {
+    setTimeout(function () {
+      $('.select2-search__field').focus();
+    }, 100);
+  });
+
+  $('.js-select2-icon, .js-select2-label').on('click', function () {
+    $(this).siblings('select').select2('open');
+  });
 
   // scrollToPage
   var $page = $('html,body');
@@ -17,8 +28,55 @@ $(document).ready(function() {
     scrollToPage($(this).attr('href'));
   });
 
+  // Main form switch
+  $('.js-top-search-tabs-item').on('click', function () {
+    var $this = $(this);
+    var search = $this.data('search');
+
+    $this.parent().find('.js-top-search-tabs-item').removeClass('-active');
+    $(this).addClass('-active');
+
+    if (search === 'passanger') {
+      $('.js-form-parcel').addClass('-hide');
+      $('.js-form-passanger').removeClass('-hide');
+    } else if (search === 'parcel') {
+      $('.js-form-passanger').addClass('-hide');
+      $('.js-form-parcel').removeClass('-hide');
+    }
+  });
+
+  // Main form passanger
+  $('.js-direction-button').on('click', function () {
+    var $this = $(this);
+    var direction = $this.data('direction');
+
+    $this.parent().find('.js-direction-button').removeClass('-active');
+    $(this).addClass('-active');
+
+    if (direction === 'return') {
+      $('.js-return-date').removeClass('hide');
+    } else if (direction === 'oneWay') {
+      $('.js-return-date').addClass('hide');
+    }
+  });
+
 // Datepicker
   var currentYear = new Date().getYear() + 1900;
+
+  var monthNames = [
+    "Ianuarie",
+    "Februarie",
+    "Martie",
+    "Aprilie",
+    "Mai",
+    "Iunie",
+    "Iulie",
+    "August",
+    "Septembrie",
+    "Octombrie",
+    "Noiembrie",
+    "Decembrie"
+  ];
 
   $('.the-date__input').daterangepicker({
     singleDatePicker: true,
@@ -26,7 +84,7 @@ $(document).ready(function() {
     minYear: currentYear,
     maxYear: currentYear + 1,
     locale: {
-      format: 'DD MMM, YYYY',
+      format: 'DD MMMM, YYYY',
       "daysOfWeek": [
         "DU",
         "LU",
@@ -36,20 +94,7 @@ $(document).ready(function() {
         "VI",
         "SI"
       ],
-      "monthNames": [
-         "Ianuarie",
-         "Februarie",
-         "Martie",
-         "Aprilie",
-         "Mai",
-         "Iunie",
-         "Iulie",
-         "August",
-         "Septembrie",
-         "Octombrie",
-         "Noiembrie",
-         "Decembrie"
-       ],
+      "monthNames": monthNames,
     },
     isInvalidDate: function(date) {
       return !$(this.element[0]).data('available').some(function (dateItem) {
@@ -58,7 +103,7 @@ $(document).ready(function() {
     }
   }, function(chosen_date) {
     var $el = $(this.element[0]);
-    $el.val(chosen_date.format('DD/MM/YYYY'));
+    $el.val(`${chosen_date.get('date')} ${monthNames[chosen_date.get('month')]}, ${chosen_date.get('year')}`);
     $el.parent().next().removeAttr('disabled');
   });
 

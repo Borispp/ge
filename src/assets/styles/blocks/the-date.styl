@@ -10,10 +10,22 @@
     &.-open
       border-color $blue
 
+      .the-date__input
+        +placeholder()
+          color #536AFF
+
+    &.icon-left
+      .the-date__input-icon
+        right auto
+        left 20px
+
+      .the-date__input
+        padding-left 50px
+
   &__input
     width 100%
-    height 50px
-    line-height 50px
+    height 100%
+    line-height 100%
     border-radius 5px
     background transparent
     border none

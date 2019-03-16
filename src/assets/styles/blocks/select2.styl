@@ -1,0 +1,168 @@
+
+.select2-wrapper
+  display block
+  width 100%
+  position relative
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(73,79,106,0.14);
+  height 60px
+  border-radius: 5px
+
+  &__icon
+    display block
+    width 32px
+    height 32px
+    border-radius: 50%
+    font-size 16px
+    font-weight 700
+    position absolute
+    display flex
+    align-items center
+    justify-content center
+    color #fff
+    z-index 1
+    top 50%
+    left 10px
+    transform translate(0, -50%)
+    cursor pointer
+
+    &.blue
+      background #536AFF
+
+    &.red
+      background #EE6A6A
+
+    &.red-pale
+      background #FB929F
+
+  &__label
+    font-weight 500
+    font-size: 12px;
+    position absolute
+    z-index 1
+    top 11px
+    left 53px
+    color #1E2B6F
+    cursor pointer
+
+    &.orange
+      color: #FD8E49;
+
+    &.blue
+      color #536AFF
+
+  select
+    width 100% !important
+    opacity 0
+
+  .select2.select2-container.select2-container--default
+    width 100% !important
+
+  .select2-container--default .select2-selection--single
+    display flex
+    align-items center
+    width 100%
+    height 60px
+    border 0
+    border 1px solid transparent
+    border-radius: 5px
+
+    .select2-selection__rendered
+      color #1E2B6F
+      font-size 15px
+      padding-top 19px
+
+  .select2-container--open.select2-container--default .select2-selection--single
+      border-color #536AFF
+
+  .select2-selection__arrow
+    display none
+
+  .select2-container .select2-selection--single .select2-selection__rendered
+    padding-left 52px
+
+.select2-search--dropdown
+  padding 1px 4px 0
+
+.select2-dropdown
+  border 0
+  background: #FFFFFF;
+  box-shadow: 0 6px 23px -1px rgba(7,31,115,0.15);
+
+.select2-results__option:not([role="group"])
+  padding 0 20px
+  margin 1px 5px
+  border-radius 3px
+  height 30px
+  line-height 30px
+  box-sizing border-box
+
+.select2-container--default .select2-search--dropdown .select2-search__field
+  color #1E2B6F
+  font-size 15px
+  background #F0F5FB
+  border-radius 3px
+  border 0
+  padding 0 49px
+  height 32px
+  margin-top 3px
+
+.select2-search--dropdown
+  position relative
+
+  &::before
+    content ''
+    display block
+    position absolute
+    left 15px
+    top 8px
+    transform scale(0.7)
+    sprite($s-search)
+
+.select2-results__option:not([role="group"])
+  color #1E2B6F
+  font-size 15px
+
+  &:first-letter
+    color #FD8E49
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option[aria-selected=true]
+  background #536AFF
+  color #A6B2D9
+
+  &:first-letter
+    color #fff
+
+.select2-results
+  margin 3px 0
+
+.select2-results__message
+  color #1E2B6F
+  font-size 15px
+
+.select2-container-location
+  .select2-results__option:not([role="group"])
+    position relative
+    padding 0 20px 0 49px
+
+    &::before
+      content ''
+      display block
+      position absolute
+      left 26px
+      top 50%
+      transform translate(0, calc(-50% - 1px))
+      sprite($s-location)
+
+  .select2-results__group
+    background: #F0F5FB;
+    border-radius: 3px
+    font-weight 400
+    font-size: 12px;
+    color: #A6B2D9;
+    margin 5px 5px
+    padding 0 20px 0 24px
+    height 34px
+    line-height 36px
+    text-transform uppercase

@@ -5,6 +5,7 @@
   <title>Global express</title>
   <link href="assets/libs/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css">
   <link href="assets/libs/slick-carousel/slick/slick-theme.css" rel="stylesheet" type="text/css">
+  <link href="assets/libs/select2/dist/css/select2.min.css" rel="stylesheet" />
   <link href="assets/styles/main.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="assets/images/content/fav.png" type="image/x-icon" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
@@ -122,28 +123,147 @@
       <div class="base_col">
         <div class="top-search">
           <div class="top-search__tabs">
-            <div class="top-search__tabs-item -active">
+            <div class="top-search__tabs-item -active js-top-search-tabs-item" data-search="passanger">
               <svg viewBox="0 0 18 18" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M5.594 1.94a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zm.425 2.176c.74.266 1.289 1.181 1.289 2.29v4.64H5.194v6.072h-3.08v-6.071H0V6.406c0-1.109.55-2.024 1.29-2.29a3.204 3.204 0 0 0 2.364 1.05c.937 0 1.775-.409 2.365-1.05zm9.46-2.176a1.94 1.94 0 1 1-3.879 0 1.94 1.94 0 0 1 3.88 0zm.425 2.176c.74.266 1.29 1.181 1.29 2.29v7.908h-2.115v2.804H12v-2.804H9.885V6.406c0-1.109.55-2.024 1.29-2.29a3.204 3.204 0 0 0 2.364 1.05c.938 0 1.775-.409 2.365-1.05z" fill="#536AFF" fill-rule="evenodd"/></svg>
               Pasageri
             </div>
-            <div class="top-search__tabs-item">
+            <div class="top-search__tabs-item js-top-search-tabs-item" data-search="parcel">
               <svg viewBox="0 0 17 17" width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M5.21 3.94A3.052 3.052 0 0 1 8.258.892a3.051 3.051 0 0 1 3.047 3.048v1.635H5.21V3.94zm11.234 9.404l-1.942-7.77h-2.305V3.94A3.944 3.944 0 0 0 8.258 0a3.944 3.944 0 0 0-3.94 3.94v1.635H2.014l-1.942 7.77a2.362 2.362 0 0 0 2.291 2.934h11.79a2.362 2.362 0 0 0 2.291-2.935z" fill="#FFF" fill-rule="evenodd"/></svg>
               Colete
             </div>
           </div>
 
-          <div class="top-search__content">
+          <div class="top-search__content js-form-passanger">
             <div class="top-search__directions">
-              <span class="top-search__directions-item -active">
+              <span class="top-search__directions-item -active js-direction-button" data-direction="oneWay">
                 <svg viewBox="0 0 13 10" width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M0 5.79V3.473c0-.218.169-.387.386-.387H6.88V.383c0-.157.084-.29.23-.35a.412.412 0 0 1 .421.06l4.635 4.224c.072.073.12.17.12.278a.421.421 0 0 1-.12.29L7.53 9.157a.387.387 0 1 1-.652-.278V6.177H.387A.381.381 0 0 1 0 5.79z" fill="#FFF" fill-rule="nonzero"/></svg>
                 O direcție
               </span>
-              <span class="top-search__directions-item">
+              <span class="top-search__directions-item js-direction-button" data-direction="return">
                 <svg viewBox="0 0 13 14" width="13" height="14" xmlns="http://www.w3.org/2000/svg"><g fill="#A6B2D9" fill-rule="nonzero"><path d="M2.364 4.334V2.6c0-.163.126-.29.289-.29h5.609V.287c0-.118.063-.217.171-.262A.309.309 0 0 1 8.75.07l3.469 3.162c.054.054.09.127.09.208a.315.315 0 0 1-.09.217l-3.47 3.198a.29.29 0 1 1-.488-.208V4.623H2.654a.285.285 0 0 1-.29-.289zM9.946 9.153v1.735c0 .162-.127.289-.29.289H4.049V13.2a.275.275 0 0 1-.172.262.309.309 0 0 1-.316-.046L.09 10.255a.294.294 0 0 1-.09-.208c0-.081.036-.162.09-.216l3.47-3.199a.29.29 0 1 1 .488.208v2.024h5.609c.162 0 .289.126.289.289z"/></g></svg>
                 Tur-retur
               </span>
             </div>
-            content
+
+            <form class="top-search__content-wrapper">
+              <div class="top-search__item">
+                <label class="select2-wrapper -location" for="selectFrom">
+                  <span class="select2-wrapper__label js-select2-label">Plecare din:</span>
+                  <span class="select2-wrapper__icon blue js-select2-icon">A</span>
+                  <select class="js-select2-location" name="from" id="selectFrom">
+                    <optgroup label="Germania">
+                      <option value="Berlin">Berlin</option>
+                      <option value="Hamburg">Hamburg</option>
+                      <option value="Munich">Munich</option>
+                    </optgroup>
+                    <optgroup label="France">
+                      <option value="Paris">Paris</option>
+                    </optgroup>
+                    <optgroup label="Olanda">
+                      <option value="Amsterdam">Amsterdam</option>
+                      <option value="Almelo">Almelo</option>
+                    </optgroup>
+                  </select>
+                </label>
+              </div>
+              <div class="top-search__item">
+                <label class="select2-wrapper -location" for="selectFrom">
+                <span class="select2-wrapper__label js-select2-label">Sosire la:</span>
+                <span class="select2-wrapper__icon red js-select2-icon">B</span>
+                <select class="js-select2-location" name="from" id="selectFrom">
+                  <optgroup label="Germania">
+                    <option value="Berlin">Berlin</option>
+                    <option value="Hamburg">Hamburg</option>
+                    <option value="Munich">Munich</option>
+                  </optgroup>
+                  <optgroup label="France">
+                    <option value="Paris">Paris</option>
+                  </optgroup>
+                  <optgroup label="Olanda">
+                    <option value="Amsterdam">Amsterdam</option>
+                    <option value="Almelo">Almelo</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="top-search__item">
+                <div class="the-date__input-wrapper icon-left">
+                  <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
+                  <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Data plecarii:" />
+                </div>
+              </div>
+              <div class="top-search__item js-return-date hide">
+                <div class="the-date__input-wrapper icon-left">
+                  <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
+                  <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Data sosirei:" />
+                </div>
+              </div>
+
+              <button class="button orange">
+                <svg width="14" height="14" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M9.692 5.923a3.774 3.774 0 0 0-3.769-3.77 3.774 3.774 0 0 0-3.77 3.77 3.774 3.774 0 0 0 3.77 3.77 3.774 3.774 0 0 0 3.77-3.77zm4.308 7c0 .589-.488 1.077-1.077 1.077-.286 0-.564-.118-.757-.32L9.28 10.803A5.921 5.921 0 0 1 0 5.923 5.921 5.921 0 0 1 5.923 0a5.921 5.921 0 0 1 4.88 9.28l2.886 2.886c.193.193.311.471.311.757z" fill="#FFF" fill-rule="nonzero"/></svg>
+                Caută
+              </button>
+            </form>
+          </div>
+
+
+          <div class="top-search__content -hide js-form-parcel">
+            <div class="top-search__content-info">
+              <svg width="24" height="25" width="24" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="9" cy="9" r="9"/><filter x="-27.8%" y="-22.2%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.603600543 0 0 0 0 0.263220091 0 0 0 0 0.0518259156 0 0 0 0.299032998 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><circle cx="12" cy="12" r="12" fill="#FD8E49"/><g transform="translate(3 3)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FFF" xlink:href="#b"/></g><g transform="translate(11 7)" fill="#FD8E49"><rect width="2" height="6.667" rx="1"/><ellipse cx="1" cy="8.889" rx="1" ry="1.111"/></g></g></svg>
+              Coletele se expedetiaza doar din Chisinau
+            </div>
+            <form class="top-search__content-wrapper">
+              <div class="top-search__item">
+                <label class="select2-wrapper -location" for="selectFrom">
+                  <span class="select2-wrapper__label js-select2-label">Destinatia:</span>
+                  <span class="select2-wrapper__icon red-pale js-select2-icon">
+                    <svg width="13" height="19" xmlns="http://www.w3.org/2000/svg"><path d="M5.587.055c-2.7.3-5 2.5-5.5 5.2-.3 1.8.2 3.4 1.1 4.7 1.3 1.8 2.6 3.6 3.6 5.6l1.6 3 1.6-3.1c1-1.9 2.1-3.7 3.4-5.3.8-1.1 1.3-2.4 1.3-3.9 0-3.7-3.3-6.7-7.1-6.2zm.7 8.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.8 2-2 2z" fill="#FFF" fill-rule="nonzero"/></svg>
+                  </span>
+                  <select class="js-select2-location" name="from" id="selectFrom">
+                    <optgroup label="Germania">
+                      <option value="Berlin">Berlin</option>
+                      <option value="Hamburg">Hamburg</option>
+                      <option value="Munich">Munich</option>
+                    </optgroup>
+                    <optgroup label="France">
+                      <option value="Paris">Paris</option>
+                    </optgroup>
+                    <optgroup label="Olanda">
+                      <option value="Amsterdam">Amsterdam</option>
+                      <option value="Almelo">Almelo</option>
+                    </optgroup>
+                  </select>
+                </label>
+              </div>
+
+              <div class="top-search__item">
+                <label class="input-wrapper icon">
+                  <svg viewBox="0 0 20 16" width="20" height="16" class="input-wrapper__icon" xmlns="http://www.w3.org/2000/svg"><path d="M20 5.067v8.862c0 .982-.804 1.785-1.786 1.785H1.786A1.791 1.791 0 0 1 0 13.93V5.067c.335.368.714.692 1.127.971C2.98 7.299 4.855 8.56 6.674 9.888c.938.692 2.098 1.54 3.315 1.54h.022c1.217 0 2.377-.848 3.315-1.54 1.82-1.317 3.694-2.589 5.558-3.85A6.574 6.574 0 0 0 20 5.067zm0-3.281c0 1.25-.926 2.377-1.908 3.058-1.742 1.205-3.494 2.41-5.224 3.627-.725.502-1.953 1.529-2.857 1.529H9.99c-.904 0-2.132-1.027-2.857-1.529C5.402 7.254 3.65 6.049 1.92 4.844 1.127 4.308 0 3.047 0 2.03 0 .938.592 0 1.786 0h16.428C19.185 0 20 .804 20 1.786z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                  <input type="text" class="e-input" placeholder="1003 JY">
+                  <span class="input-wrapper__label">Codul postal:</span>
+                </label>
+              </div>
+
+              <div class="top-search__item">
+                <label class="input-wrapper icon">
+                  <svg viewBox="0 0 15 18" width="15" height="18" class="input-wrapper__icon" xmlns="http://www.w3.org/2000/svg"><path d="M14.286 14.185c0 1.63-1.072 2.958-2.378 2.958h-9.53C1.07 17.143 0 15.815 0 14.185c0-2.935.725-6.328 3.65-6.328a4.983 4.983 0 0 0 6.986 0c2.924 0 3.65 3.393 3.65 6.328zm-2.857-9.9a4.287 4.287 0 0 1-8.572 0 4.287 4.287 0 0 1 8.572 0z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                  <input type="text" class="e-input" placeholder="Ion Ionescu">
+                  <span class="input-wrapper__label">Nume/Prenume Dvs:</span>
+                </label>
+              </div>
+
+              <div class="top-search__item">
+                <label class="input-wrapper icon">
+                  <svg viewBox="0 0 18 18" width="18" height="18" class="input-wrapper__icon" xmlns="http://www.w3.org/2000/svg"><path d="M14.286 11.886c0-.056 0-.123-.023-.178-.067-.201-1.696-1.027-2.009-1.206-.212-.123-.468-.368-.725-.368-.491 0-1.216 1.462-1.652 1.462-.223 0-.502-.2-.703-.313-1.473-.825-2.489-1.841-3.315-3.314-.111-.201-.312-.48-.312-.703 0-.436 1.462-1.161 1.462-1.652 0-.257-.246-.514-.368-.726-.179-.312-1.005-1.942-1.206-2.009-.056-.022-.122-.022-.178-.022-.29 0-.86.134-1.128.246-.736.335-1.272 1.74-1.272 2.51 0 .749.301 1.43.558 2.121.893 2.445 3.55 5.1 5.993 5.994.692.256 1.373.558 2.121.558.77 0 2.176-.536 2.511-1.273.112-.267.246-.837.246-1.127zm2.857-8.672V13.93a3.215 3.215 0 0 1-3.214 3.214H3.214A3.215 3.215 0 0 1 0 13.929V3.214A3.215 3.215 0 0 1 3.214 0H13.93a3.215 3.215 0 0 1 3.214 3.214z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                  <input type="text" class="e-input" placeholder="+373">
+                  <span class="input-wrapper__label">Numărul de telefon:</span>
+                </label>
+              </div>
+
+              <button class="button orange">
+                <svg viewBox="0 0 18 14" width="18" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M4.056 2.897c0-.642-.516-1.159-1.159-1.159-.642 0-1.159.517-1.159 1.16 0 .642.517 1.158 1.16 1.158.642 0 1.158-.516 1.158-1.159zm9.661 5.216c0 .308-.126.606-.335.815l-4.445 4.454a1.166 1.166 0 0 1-1.639 0L.824 6.9C.362 6.447 0 5.57 0 4.926V1.159C0 .525.525 0 1.159 0h3.767c.642 0 1.52.362 1.982.824l6.474 6.465c.209.217.335.516.335.824zm3.477 0c0 .308-.127.606-.335.815l-4.445 4.454a1.204 1.204 0 0 1-.824.335c-.471 0-.707-.217-1.015-.534l4.256-4.255a1.166 1.166 0 0 0 0-1.64L8.357.825C7.895.362 7.017 0 6.374 0h2.028c.643 0 1.522.362 1.983.824l6.474 6.465c.208.217.335.516.335.824z" fill="#FFF" fill-rule="nonzero"/></svg>
+                Expediază
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -156,7 +276,7 @@
           <div>
             <div class="the-advantages__item">
               <div class="the-advantages__item-icon">
-                <svg viewBox="0 0 44 49" width="44" height="49" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="49.684%" y1="-1.344%" x2="49.684%" y2="98.118%" id="a"><stop stop-color="#CD6582" offset="0%"/><stop stop-color="#FB929F" stop-opacity="0" offset="100%"/></linearGradient><linearGradient x1="49.48%" y1="97.506%" x2="49.48%" y2="-.909%" id="b"><stop stop-color="#CD6582" offset="0%"/><stop stop-color="#FB929F" stop-opacity="0" offset="100%"/></linearGradient><linearGradient x1="50.683%" y1="97.98%" x2="50.683%" y2="-3.255%" id="c"><stop stop-color="#FAB7C0" offset="0%"/><stop stop-color="#FB929F" stop-opacity="0" offset="100%"/></linearGradient></defs><g transform="translate(-1)" fill-rule="nonzero" fill="none"><path fill="#FB929F" d="M22.72 44.78H8.89l2.195-12.073h9.44z"/><path fill="url(#a)" d="M10.646 34.573L8.89 44.78h13.83l-1.866-10.207z"/><ellipse fill="#FB929F" cx="15.805" cy="19.207" rx="12.732" ry="16.683"/><g fill="#FB929F"><path d="M4.72 23.598H2.854c-.55 0-1.098-.44-1.208-.988l-.658-4.171c-.11-.768.439-1.427 1.207-1.427H4.83v6.586h-.11zM26.78 23.598h1.866c.55 0 1.098-.44 1.208-.988l.658-4.171c.11-.768-.439-1.427-1.207-1.427H26.67v6.586h.11z"/></g><path d="M28.756 4.5c2.744 2.963 2.085 11.963.659 12.512-1.427.549-23.159-2.195-23.159-2.195L4.72 21.622l-2.635-4.61C1.098 7.902 7.463 5.927 7.463 5.927S18.988-5.927 28.756 4.5z" fill="#0B40C0"/><path d="M26.78 21.732l-1.207-7.354 3.183-1.207s1.537 2.853-1.976 8.56z" fill="#0B40C0"/><circle fill="#0B40C0" cx="10.756" cy="20.305" r="1.098"/><circle fill="#0B40C0" cx="20.744" cy="20.305" r="1.098"/><path d="M11.415 24.805l2.305 2.085c1.207 1.098 2.963 1.098 4.17 0l2.305-2.085h-8.78z" fill="url(#b)"/><path d="M13.939 26.012c.878 1.208 2.744 1.208 3.622 0 .33-.439.439-.988.22-1.427l-1.866-5.817-2.305 5.708c-.11.439 0 .987.329 1.536z" fill="url(#c)"/><g fill="#0B40C0"><path d="M7.573 17.67c.878-.329 1.756-.548 2.634-.658.44-.11.878-.22 1.317-.22.44.11.878.22 1.317.55v.11c-.439.219-.878.328-1.317.438-.439.11-.878 0-1.317 0l-2.634-.22zM23.927 17.78l-2.634.11c-.44 0-.878.11-1.317 0-.44-.11-.878-.22-1.317-.439v-.11c.439-.329.878-.439 1.317-.548.439-.11.878.11 1.317.22.987.109 1.866.438 2.634.767z"/></g><path d="M10.756 28.646l3.732 1.098a4.51 4.51 0 0 0 2.414 0l3.732-1.098-1.756 1.866a4.505 4.505 0 0 1-6.366 0l-1.756-1.866z" fill="#FFF"/><path fill="#29AAFF" d="M10.207 37.207l5.598 3.952v3.621L5.598 48.073z"/><path fill="#29AAFF" d="M21.183 37.207l-5.488 3.952v3.621l10.098 3.293z"/><g fill="#FB929F"><path d="M33.037 34.573l-4.39 8.67 3.292-1.097 1.098 3.403 5.048-10.976z"/><path d="M40.5 34.573l4.39 8.67-3.292-1.097L40.5 45.55l-5.049-10.976z"/></g><circle fill="#0B40C0" cx="36.768" cy="34.573" r="5.159"/><circle fill="#29AAFF" cx="36.768" cy="34.573" r="2.305"/></g></svg>
+                <img src="./assets/images/content/client.svg" alt="">
               </div>
               <div class="the-advantages__item-content">
                 <div class="the-advantages__item-headline">Atitudine excelenta fata de client</div>
@@ -167,7 +287,7 @@
           <div>
             <div class="the-advantages__item">
               <div class="the-advantages__item-icon">
-                <svg viewBox="0 0 47 45" width="47" height="45" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="201.979%" y1="-22.239%" x2="23.65%" y2="98.109%" id="a"><stop stop-color="#0B40C0" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="49.76%" y1="3.252%" x2="49.76%" y2="99.737%" id="b"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="51.491%" y1="-90.255%" x2="51.491%" y2="165.126%" id="c"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="51.846%" y1="-90.255%" x2="51.846%" y2="165.126%" id="d"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="50.651%" y1="5.353%" x2="50.651%" y2="99.573%" id="e"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path fill="#29AAFF" d="M32.6 12.5H15.1v25.4L12 44.1h20.6zM21.9 5.3l-6.8 7.2H39.4V5.3z"/><path fill="#0B40C0" d="M39.4 5.3l-6.8 7.2v31.6h13.6V12.5z"/><path d="M38.4.2H22.9c-.6 0-1 .4-1 1v4.1h17.5V1.2c0-.6-.4-1-1-1z" fill="#29AAFF"/><path fill="url(#a)" d="M27 29l-9.5 15.1h10.7z"/><path fill="url(#b)" d="M40.1 44.1H27.5l-1-15.8h14.7z"/><path d="M31.6 39.4h-.3c-.9 0-1.6.7-1.6 1.6v3.1h3.4V41c.1-.9-.6-1.6-1.5-1.6z" fill="url(#c)"/><path d="M36.2 39.4h-.3c-.9 0-1.6.7-1.6 1.6v3.1h3.4V41c.1-.9-.6-1.6-1.5-1.6z" fill="url(#d)"/><path d="M20.7 31.4c.2-1.4-2.6-3.3-.9-4.3 1.7-1.1 2.7-.8 1.8-2.9-.8-2-6.1-1.6-7.4-2.9-1.3-1.3.3-2.4 2-3.6 1.7-1.2-2.2-5.1-5.2-4.1-1.9.7-9.6 1.9-9.6 3 .1 1.1 2.2 1.9 3.8 3.3 1.6 1.3.5 1.9-.8 3.3-1.3 1.3-4.9 2.7-3.9 5.1.7 1.7 4.3 1.1 4.5 2.5.2 1.3-2.8 2.4-2.8 2.4h20.3c.1-.1-2.2.6-1.8-1.8z" fill="url(#e)" opacity=".3"/><path d="M12 44.1C5.6 44.1.5 38.9.5 32.6h23.1c0 6.3-5.2 11.5-11.6 11.5z" fill="#FB929F"/><circle fill="#EFF4FA" cx="25.9" cy="8.2" r="2.3"/></g></svg>
+                <img src="./assets/images/content/dinner.svg" alt="">
               </div>
               <div class="the-advantages__item-content">
                 <div class="the-advantages__item-headline">Micul dejun și prânz</div>
@@ -178,7 +298,7 @@
           <div>
             <div class="the-advantages__item">
               <div class="the-advantages__item-icon">
-                <svg viewBox="0 0 59 50" width="59" height="50" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="-51.948%" y1="12.62%" x2="105.552%" y2="126.257%" id="a"><stop stop-color="#0B40C0" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="49.917%" y1="114.43%" x2="49.917%" y2="-24.632%" id="b"><stop stop-color="#6FD6B9" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path d="M17.1 17.6v20.7H54c2.6 0 4.7-2.1 4.7-4.7v-16H17.1z" fill="#29AAFF"/><path d="M53.8 29V8.3h.3c2.6 0 4.7 2.1 4.7 4.7v21c-.1-2.8-2.3-5-5-5z" fill="#0B40C0"/><g transform="translate(28 24)" fill="#FFF"><circle cx="10.5" cy="4" r="3.5"/><g transform="translate(0 2)"><circle cx="1.6" cy="1.8" r="1.2"/><circle cx="19.3" cy="1.8" r="1.2"/></g></g><path fill="url(#a)" d="M24.8 28.3l10 9.9h-10z"/><g transform="translate(0 33)"><path d="M19.6 7.9c0 2.1-4.2 3.8-9.5 3.8S.6 10 .6 7.9V4.1h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.1" rx="9.5" ry="3.8"/></g><g transform="translate(7 38)"><path d="M19.6 7.9c0 2.1-4.2 3.8-9.5 3.8S.6 10 .6 7.9V4.1h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.1" rx="9.5" ry="3.8"/></g><g transform="translate(7 32)"><path d="M19.6 8.1c0 2.1-4.2 3.8-9.5 3.8S.6 10.2.6 8.1V4.3h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.3" rx="9.5" ry="3.8"/></g><g transform="translate(7 26)"><path d="M19.6 8.3c0 2.1-4.2 3.8-9.5 3.8S.6 10.4.6 8.3V4.5h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.5" rx="9.5" ry="3.8"/></g><path fill="url(#b)" d="M21.5 9.6V.8h-8.8v8.8H7.5l9.6 8 9.7-8z"/></g></svg>
+                <img src="./assets/images/content/prices.svg" alt="">
               </div>
               <div class="the-advantages__item-content">
                 <div class="the-advantages__item-headline">Prețuri competitive</div>
@@ -189,7 +309,7 @@
           <div>
             <div class="the-advantages__item">
               <div class="the-advantages__item-icon">
-                <svg viewBox="0 0 51 64" width="51" height="64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1=".152%" y1="50%" x2="100.153%" y2="50%" id="a"><stop stop-color="#FB929F" offset="0%"/><stop stop-color="#0B40C0" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><g><path fill="#0B40C0" d="M.7 22.7h27.9v7.5H.7z"/><path d="M21.2 30.2l-6.6-7.5L8 30.2H.7v17.6h10.5v-2.7c0-1.9 1.5-3.4 3.4-3.4s3.4 1.5 3.4 3.4v2.7h10.5V30.2h-7.3z" fill="#29AAFF"/><path fill="url(#a)" d="M14.6 59.5h29v1h-29z"/><circle fill="#FB929F" cx="14.6" cy="60" r="3.1"/><circle fill="#0B40C0" cx="43.6" cy="60" r="3.1"/><path d="M13.9.1c-2.7.3-5 2.5-5.5 5.2-.3 1.8.2 3.4 1.1 4.7 1.3 1.8 2.6 3.6 3.6 5.6l1.6 3 1.6-3.1c1-1.9 2.1-3.7 3.4-5.3.8-1.1 1.3-2.4 1.3-3.9 0-3.7-3.3-6.7-7.1-6.2zm.7 8.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.8 2-2 2zM42.9.1c-2.7.3-5 2.5-5.5 5.2-.3 1.8.2 3.4 1.1 4.7 1.3 1.8 2.6 3.6 3.6 5.6l1.6 3 1.6-3.1c1-1.9 2.1-3.7 3.4-5.3.8-1.1 1.3-2.4 1.3-3.9 0-3.7-3.3-6.7-7.1-6.2zm.7 8.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.8 2-2 2z" fill="#FB929F"/></g><path d="M43.6 28.1l-7.2 5.2v14.5h5.9v-3.6c0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4v3.6H51V33.3l-7.4-5.2z" fill="#0B40C0"/></g></svg>
+                <img src="./assets/images/content/transport.svg" alt="">
               </div>
               <div class="the-advantages__item-content">
                 <div class="the-advantages__item-headline">Transportare de la adresă la adresă</div>
@@ -200,7 +320,7 @@
           <div>
             <div class="the-advantages__item">
               <div class="the-advantages__item-icon">
-                <svg viewBox="0 0 45 64" width="45" height="64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="50.099%" y1="96.774%" x2="50.099%" y2="-.11%" id="a"><stop stop-color="#6FD6B9" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="131.796%" y1="11.28%" x2="43%" y2="106.409%" id="b"><stop stop-color="#0B40C0" offset="0%"/><stop stop-color="#54C8D1" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path fill="url(#a)" d="M.3 7h15.1v43.4H.3z"/><path d="M37.1 28.8H24.9v-6.1c0-3.4 2.7-6.1 6.1-6.1 3.4 0 6.1 2.7 6.1 6.1v6.1zm-11.3-1H36v-5.1c0-2.8-2.3-5.1-5.1-5.1s-5.1 2.3-5.1 5.1v5.1z" fill="#0B40C0"/><path fill="#0B40C0" d="M30.8 26h13.6v24.4H30.8z"/><path fill="url(#b)" opacity=".5" d="M12.9 26L.3 50.4h13.8z"/><path fill="#29AAFF" d="M12.4 26h18.7v24.4H12.4z"/><g fill="#FB929F"><path d="M38.3 51s-12.7 3.8-15.6 4.3c-2.9.5-14.4-.6-14.4-.6l3-5.3 17 .7s9.6-2.3 10 .9z"/><path d="M10.8 45.8s10.9-.5 13.1.2c2.3.7-1.1 2.4-3.5 2.7-1.7.2-8.3 1.9-9.6 3.9-1.3 2-2.6 9.7-2.6 9.7L.3 60.4s3.1-12 10.5-14.6z"/></g><path d="M29.8 28.8H17.6v-6.1c0-3.4 2.7-6.1 6.1-6.1 3.4 0 6.1 2.7 6.1 6.1v6.1zm-11.2-1h10.2v-5.1c0-2.8-2.3-5.1-5.1-5.1s-5.1 2.3-5.1 5.1v5.1zM14 13.1H1.8V7C1.8 3.6 4.5.9 7.9.9 11.3.9 14 3.6 14 7v6.1zm-11.3-1h10.2V7c0-2.8-2.3-5.1-5.1-5.1S2.7 4.2 2.7 7v5.1z" fill="#29AAFF"/><path fill="#0B40C0" d="M9.2 57.9l-.4 1.6-7.7-1.6-.8 2.5 10.4 2.8 3.1-3.4z"/></g></svg>
+                <img src="./assets/images/content/parcels.svg" alt="">
               </div>
               <div class="the-advantages__item-content">
                 <div class="the-advantages__item-headline">Grija sporită față de starea coletelor</div>
@@ -211,7 +331,7 @@
           <div>
             <div class="the-advantages__item">
               <div class="the-advantages__item-icon">
-                <svg viewBox="0 0 60 73" width="60" height="73" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="-.183%" y1="50.289%" x2="99.796%" y2="50.289%" id="a"><stop stop-color="#6FD6B9" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="-10.318%" y1="90.103%" x2="92.461%" y2="31.056%" id="b"><stop stop-color="#F36F84" offset="0%"/><stop stop-color="#FB929F" offset="99.83%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path d="M29.3 4.7v3c-1.3-.6-2.4-1.6-3.2-2.8L23 0l-3.1 4.9c-.8 1.2-1.9 2.2-3.2 2.8v-3H15v39.5h16V4.7h-1.7z" fill="#29AAFF"/><path fill="#0B40C0" d="M.1 18h24.1v27H.1z"/><path fill="#0B40C0" d="M0 14h15.1v31H0z"/><circle fill="#0B40C0" cx="49.6" cy="45" r="3.2"/><path d="M58.3 36.3l-6.6-8.1c-.2-.4-.5-.6-.9-.6h-33c-.6 0-1 .4-1 1l1 15.3c0 .6.4 1 1 1h40.1c.6 0 1-.4 1-1v-5c-.1-1.1-.7-2.1-1.6-2.6z" fill="#0B40C0"/><path d="M46.5 36.3l-6.6-8.1c-.2-.4-.5-.6-.9-.6H6c-.6 0-1 .4-1 1l1 15.3c0 .6.4 1 1 1h40.1c.6 0 1-.4 1-1v-5c-.1-1.1-.7-2.1-1.6-2.6z" fill="url(#a)"/><circle fill="#0B40C0" cx="13.5" cy="45" r="3.2"/><circle fill="#0B40C0" cx="21" cy="45" r="3.2"/><circle fill="#0B40C0" cx="42" cy="45" r="3.2"/><path fill="#0B40C0" d="M44 35.3H5.4l-.3-4.7h35.1z"/><path fill="#29AAFF" d="M48 39.9h11.8v1.8H48z"/><path d="M7.389 8.09S5.34 2.97 5.713.456c.093-.466.745-.652 1.024-.186l2.42 3.817 3.911 4.655 4.655 3.072 5.4 2.514v5.866H3.944L2.454 8.37l4.935-.28z" fill="url(#b)" transform="translate(31.864 51.91)"/><path d="M40.463 61.025c-1.117-1.676-3.259-.745-4.562-.745-1.024-.093-.931-.093-1.583-.093-.652 0-1.303.28-1.676.745-.279.372-.744.651-.744.838 0 1.117.93.93.744 1.49-.186.558-.558.837-.744 1.489-.187.652.465.838.372 1.676-.093.93.093 1.117.559 2.048.465.931 1.862 1.397 1.396 2.235-.465.838 1.583 1.582 1.583 1.582l2.327-.651 1.676-.652 1.77-3.072c-.094-.094 1.117-3.632-1.118-6.89z" fill="#FD919E"/><path fill="#0B40C0" d="M49.68 63.725h8.752v8.38h-6.238V65.12z"/></g></svg>
+                <img src="./assets/images/content/transport_modern.svg" alt="">
               </div>
               <div class="the-advantages__item-content">
                 <div class="the-advantages__item-headline">Transport modern</div>
@@ -224,7 +344,7 @@
         <div class="the-advantages__wrapper">
           <div class="the-advantages__item">
             <div class="the-advantages__item-icon">
-              <svg viewBox="0 0 44 49" width="44" height="49" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="49.684%" y1="-1.344%" x2="49.684%" y2="98.118%" id="a"><stop stop-color="#CD6582" offset="0%"/><stop stop-color="#FB929F" stop-opacity="0" offset="100%"/></linearGradient><linearGradient x1="49.48%" y1="97.506%" x2="49.48%" y2="-.909%" id="b"><stop stop-color="#CD6582" offset="0%"/><stop stop-color="#FB929F" stop-opacity="0" offset="100%"/></linearGradient><linearGradient x1="50.683%" y1="97.98%" x2="50.683%" y2="-3.255%" id="c"><stop stop-color="#FAB7C0" offset="0%"/><stop stop-color="#FB929F" stop-opacity="0" offset="100%"/></linearGradient></defs><g transform="translate(-1)" fill-rule="nonzero" fill="none"><path fill="#FB929F" d="M22.72 44.78H8.89l2.195-12.073h9.44z"/><path fill="url(#a)" d="M10.646 34.573L8.89 44.78h13.83l-1.866-10.207z"/><ellipse fill="#FB929F" cx="15.805" cy="19.207" rx="12.732" ry="16.683"/><g fill="#FB929F"><path d="M4.72 23.598H2.854c-.55 0-1.098-.44-1.208-.988l-.658-4.171c-.11-.768.439-1.427 1.207-1.427H4.83v6.586h-.11zM26.78 23.598h1.866c.55 0 1.098-.44 1.208-.988l.658-4.171c.11-.768-.439-1.427-1.207-1.427H26.67v6.586h.11z"/></g><path d="M28.756 4.5c2.744 2.963 2.085 11.963.659 12.512-1.427.549-23.159-2.195-23.159-2.195L4.72 21.622l-2.635-4.61C1.098 7.902 7.463 5.927 7.463 5.927S18.988-5.927 28.756 4.5z" fill="#0B40C0"/><path d="M26.78 21.732l-1.207-7.354 3.183-1.207s1.537 2.853-1.976 8.56z" fill="#0B40C0"/><circle fill="#0B40C0" cx="10.756" cy="20.305" r="1.098"/><circle fill="#0B40C0" cx="20.744" cy="20.305" r="1.098"/><path d="M11.415 24.805l2.305 2.085c1.207 1.098 2.963 1.098 4.17 0l2.305-2.085h-8.78z" fill="url(#b)"/><path d="M13.939 26.012c.878 1.208 2.744 1.208 3.622 0 .33-.439.439-.988.22-1.427l-1.866-5.817-2.305 5.708c-.11.439 0 .987.329 1.536z" fill="url(#c)"/><g fill="#0B40C0"><path d="M7.573 17.67c.878-.329 1.756-.548 2.634-.658.44-.11.878-.22 1.317-.22.44.11.878.22 1.317.55v.11c-.439.219-.878.328-1.317.438-.439.11-.878 0-1.317 0l-2.634-.22zM23.927 17.78l-2.634.11c-.44 0-.878.11-1.317 0-.44-.11-.878-.22-1.317-.439v-.11c.439-.329.878-.439 1.317-.548.439-.11.878.11 1.317.22.987.109 1.866.438 2.634.767z"/></g><path d="M10.756 28.646l3.732 1.098a4.51 4.51 0 0 0 2.414 0l3.732-1.098-1.756 1.866a4.505 4.505 0 0 1-6.366 0l-1.756-1.866z" fill="#FFF"/><path fill="#29AAFF" d="M10.207 37.207l5.598 3.952v3.621L5.598 48.073z"/><path fill="#29AAFF" d="M21.183 37.207l-5.488 3.952v3.621l10.098 3.293z"/><g fill="#FB929F"><path d="M33.037 34.573l-4.39 8.67 3.292-1.097 1.098 3.403 5.048-10.976z"/><path d="M40.5 34.573l4.39 8.67-3.292-1.097L40.5 45.55l-5.049-10.976z"/></g><circle fill="#0B40C0" cx="36.768" cy="34.573" r="5.159"/><circle fill="#29AAFF" cx="36.768" cy="34.573" r="2.305"/></g></svg>
+              <img src="./assets/images/content/client.svg" alt="">
             </div>
             <div class="the-advantages__item-content">
               <div class="the-advantages__item-headline">Atitudine excelenta fata de client</div>
@@ -233,7 +353,7 @@
           </div>
           <div class="the-advantages__item">
             <div class="the-advantages__item-icon">
-              <svg viewBox="0 0 47 45" width="47" height="45" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="201.979%" y1="-22.239%" x2="23.65%" y2="98.109%" id="a"><stop stop-color="#0B40C0" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="49.76%" y1="3.252%" x2="49.76%" y2="99.737%" id="b"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="51.491%" y1="-90.255%" x2="51.491%" y2="165.126%" id="c"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="51.846%" y1="-90.255%" x2="51.846%" y2="165.126%" id="d"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="50.651%" y1="5.353%" x2="50.651%" y2="99.573%" id="e"><stop stop-color="#EFF4FA" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path fill="#29AAFF" d="M32.6 12.5H15.1v25.4L12 44.1h20.6zM21.9 5.3l-6.8 7.2H39.4V5.3z"/><path fill="#0B40C0" d="M39.4 5.3l-6.8 7.2v31.6h13.6V12.5z"/><path d="M38.4.2H22.9c-.6 0-1 .4-1 1v4.1h17.5V1.2c0-.6-.4-1-1-1z" fill="#29AAFF"/><path fill="url(#a)" d="M27 29l-9.5 15.1h10.7z"/><path fill="url(#b)" d="M40.1 44.1H27.5l-1-15.8h14.7z"/><path d="M31.6 39.4h-.3c-.9 0-1.6.7-1.6 1.6v3.1h3.4V41c.1-.9-.6-1.6-1.5-1.6z" fill="url(#c)"/><path d="M36.2 39.4h-.3c-.9 0-1.6.7-1.6 1.6v3.1h3.4V41c.1-.9-.6-1.6-1.5-1.6z" fill="url(#d)"/><path d="M20.7 31.4c.2-1.4-2.6-3.3-.9-4.3 1.7-1.1 2.7-.8 1.8-2.9-.8-2-6.1-1.6-7.4-2.9-1.3-1.3.3-2.4 2-3.6 1.7-1.2-2.2-5.1-5.2-4.1-1.9.7-9.6 1.9-9.6 3 .1 1.1 2.2 1.9 3.8 3.3 1.6 1.3.5 1.9-.8 3.3-1.3 1.3-4.9 2.7-3.9 5.1.7 1.7 4.3 1.1 4.5 2.5.2 1.3-2.8 2.4-2.8 2.4h20.3c.1-.1-2.2.6-1.8-1.8z" fill="url(#e)" opacity=".3"/><path d="M12 44.1C5.6 44.1.5 38.9.5 32.6h23.1c0 6.3-5.2 11.5-11.6 11.5z" fill="#FB929F"/><circle fill="#EFF4FA" cx="25.9" cy="8.2" r="2.3"/></g></svg>
+              <img src="./assets/images/content/dinner.svg" alt="">
             </div>
             <div class="the-advantages__item-content">
               <div class="the-advantages__item-headline">Micul dejun și prânz</div>
@@ -242,7 +362,7 @@
           </div>
           <div class="the-advantages__item">
             <div class="the-advantages__item-icon">
-              <svg viewBox="0 0 59 50" width="59" height="50" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="-51.948%" y1="12.62%" x2="105.552%" y2="126.257%" id="a"><stop stop-color="#0B40C0" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="49.917%" y1="114.43%" x2="49.917%" y2="-24.632%" id="b"><stop stop-color="#6FD6B9" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path d="M17.1 17.6v20.7H54c2.6 0 4.7-2.1 4.7-4.7v-16H17.1z" fill="#29AAFF"/><path d="M53.8 29V8.3h.3c2.6 0 4.7 2.1 4.7 4.7v21c-.1-2.8-2.3-5-5-5z" fill="#0B40C0"/><g transform="translate(28 24)" fill="#FFF"><circle cx="10.5" cy="4" r="3.5"/><g transform="translate(0 2)"><circle cx="1.6" cy="1.8" r="1.2"/><circle cx="19.3" cy="1.8" r="1.2"/></g></g><path fill="url(#a)" d="M24.8 28.3l10 9.9h-10z"/><g transform="translate(0 33)"><path d="M19.6 7.9c0 2.1-4.2 3.8-9.5 3.8S.6 10 .6 7.9V4.1h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.1" rx="9.5" ry="3.8"/></g><g transform="translate(7 38)"><path d="M19.6 7.9c0 2.1-4.2 3.8-9.5 3.8S.6 10 .6 7.9V4.1h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.1" rx="9.5" ry="3.8"/></g><g transform="translate(7 32)"><path d="M19.6 8.1c0 2.1-4.2 3.8-9.5 3.8S.6 10.2.6 8.1V4.3h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.3" rx="9.5" ry="3.8"/></g><g transform="translate(7 26)"><path d="M19.6 8.3c0 2.1-4.2 3.8-9.5 3.8S.6 10.4.6 8.3V4.5h18.9v3.8h.1z" fill="#0B40C0"/><ellipse fill="#29AAFF" cx="10.1" cy="4.5" rx="9.5" ry="3.8"/></g><path fill="url(#b)" d="M21.5 9.6V.8h-8.8v8.8H7.5l9.6 8 9.7-8z"/></g></svg>
+              <img src="./assets/images/content/prices.svg" alt="">
             </div>
             <div class="the-advantages__item-content">
               <div class="the-advantages__item-headline">Prețuri competitive</div>
@@ -251,7 +371,7 @@
           </div>
           <div class="the-advantages__item">
             <div class="the-advantages__item-icon">
-              <svg viewBox="0 0 51 64" width="51" height="64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1=".152%" y1="50%" x2="100.153%" y2="50%" id="a"><stop stop-color="#FB929F" offset="0%"/><stop stop-color="#0B40C0" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><g><path fill="#0B40C0" d="M.7 22.7h27.9v7.5H.7z"/><path d="M21.2 30.2l-6.6-7.5L8 30.2H.7v17.6h10.5v-2.7c0-1.9 1.5-3.4 3.4-3.4s3.4 1.5 3.4 3.4v2.7h10.5V30.2h-7.3z" fill="#29AAFF"/><path fill="url(#a)" d="M14.6 59.5h29v1h-29z"/><circle fill="#FB929F" cx="14.6" cy="60" r="3.1"/><circle fill="#0B40C0" cx="43.6" cy="60" r="3.1"/><path d="M13.9.1c-2.7.3-5 2.5-5.5 5.2-.3 1.8.2 3.4 1.1 4.7 1.3 1.8 2.6 3.6 3.6 5.6l1.6 3 1.6-3.1c1-1.9 2.1-3.7 3.4-5.3.8-1.1 1.3-2.4 1.3-3.9 0-3.7-3.3-6.7-7.1-6.2zm.7 8.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.8 2-2 2zM42.9.1c-2.7.3-5 2.5-5.5 5.2-.3 1.8.2 3.4 1.1 4.7 1.3 1.8 2.6 3.6 3.6 5.6l1.6 3 1.6-3.1c1-1.9 2.1-3.7 3.4-5.3.8-1.1 1.3-2.4 1.3-3.9 0-3.7-3.3-6.7-7.1-6.2zm.7 8.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2c.1 1.1-.8 2-2 2z" fill="#FB929F"/></g><path d="M43.6 28.1l-7.2 5.2v14.5h5.9v-3.6c0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4v3.6H51V33.3l-7.4-5.2z" fill="#0B40C0"/></g></svg>
+              <img src="./assets/images/content/transport.svg" alt="">
             </div>
             <div class="the-advantages__item-content">
               <div class="the-advantages__item-headline">Transportare de la adresă la adresă</div>
@@ -260,7 +380,7 @@
           </div>
           <div class="the-advantages__item">
             <div class="the-advantages__item-icon">
-              <svg viewBox="0 0 45 64" width="45" height="64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="50.099%" y1="96.774%" x2="50.099%" y2="-.11%" id="a"><stop stop-color="#6FD6B9" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="131.796%" y1="11.28%" x2="43%" y2="106.409%" id="b"><stop stop-color="#0B40C0" offset="0%"/><stop stop-color="#54C8D1" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path fill="url(#a)" d="M.3 7h15.1v43.4H.3z"/><path d="M37.1 28.8H24.9v-6.1c0-3.4 2.7-6.1 6.1-6.1 3.4 0 6.1 2.7 6.1 6.1v6.1zm-11.3-1H36v-5.1c0-2.8-2.3-5.1-5.1-5.1s-5.1 2.3-5.1 5.1v5.1z" fill="#0B40C0"/><path fill="#0B40C0" d="M30.8 26h13.6v24.4H30.8z"/><path fill="url(#b)" opacity=".5" d="M12.9 26L.3 50.4h13.8z"/><path fill="#29AAFF" d="M12.4 26h18.7v24.4H12.4z"/><g fill="#FB929F"><path d="M38.3 51s-12.7 3.8-15.6 4.3c-2.9.5-14.4-.6-14.4-.6l3-5.3 17 .7s9.6-2.3 10 .9z"/><path d="M10.8 45.8s10.9-.5 13.1.2c2.3.7-1.1 2.4-3.5 2.7-1.7.2-8.3 1.9-9.6 3.9-1.3 2-2.6 9.7-2.6 9.7L.3 60.4s3.1-12 10.5-14.6z"/></g><path d="M29.8 28.8H17.6v-6.1c0-3.4 2.7-6.1 6.1-6.1 3.4 0 6.1 2.7 6.1 6.1v6.1zm-11.2-1h10.2v-5.1c0-2.8-2.3-5.1-5.1-5.1s-5.1 2.3-5.1 5.1v5.1zM14 13.1H1.8V7C1.8 3.6 4.5.9 7.9.9 11.3.9 14 3.6 14 7v6.1zm-11.3-1h10.2V7c0-2.8-2.3-5.1-5.1-5.1S2.7 4.2 2.7 7v5.1z" fill="#29AAFF"/><path fill="#0B40C0" d="M9.2 57.9l-.4 1.6-7.7-1.6-.8 2.5 10.4 2.8 3.1-3.4z"/></g></svg>
+              <img src="./assets/images/content/parcels.svg" alt="">
             </div>
             <div class="the-advantages__item-content">
               <div class="the-advantages__item-headline">Grija sporită față de starea coletelor</div>
@@ -269,7 +389,7 @@
           </div>
           <div class="the-advantages__item">
             <div class="the-advantages__item-icon">
-              <svg viewBox="0 0 60 73" width="60" height="73" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="-.183%" y1="50.289%" x2="99.796%" y2="50.289%" id="a"><stop stop-color="#6FD6B9" offset="0%"/><stop stop-color="#29AAFF" offset="100%"/></linearGradient><linearGradient x1="-10.318%" y1="90.103%" x2="92.461%" y2="31.056%" id="b"><stop stop-color="#F36F84" offset="0%"/><stop stop-color="#FB929F" offset="99.83%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path d="M29.3 4.7v3c-1.3-.6-2.4-1.6-3.2-2.8L23 0l-3.1 4.9c-.8 1.2-1.9 2.2-3.2 2.8v-3H15v39.5h16V4.7h-1.7z" fill="#29AAFF"/><path fill="#0B40C0" d="M.1 18h24.1v27H.1z"/><path fill="#0B40C0" d="M0 14h15.1v31H0z"/><circle fill="#0B40C0" cx="49.6" cy="45" r="3.2"/><path d="M58.3 36.3l-6.6-8.1c-.2-.4-.5-.6-.9-.6h-33c-.6 0-1 .4-1 1l1 15.3c0 .6.4 1 1 1h40.1c.6 0 1-.4 1-1v-5c-.1-1.1-.7-2.1-1.6-2.6z" fill="#0B40C0"/><path d="M46.5 36.3l-6.6-8.1c-.2-.4-.5-.6-.9-.6H6c-.6 0-1 .4-1 1l1 15.3c0 .6.4 1 1 1h40.1c.6 0 1-.4 1-1v-5c-.1-1.1-.7-2.1-1.6-2.6z" fill="url(#a)"/><circle fill="#0B40C0" cx="13.5" cy="45" r="3.2"/><circle fill="#0B40C0" cx="21" cy="45" r="3.2"/><circle fill="#0B40C0" cx="42" cy="45" r="3.2"/><path fill="#0B40C0" d="M44 35.3H5.4l-.3-4.7h35.1z"/><path fill="#29AAFF" d="M48 39.9h11.8v1.8H48z"/><path d="M7.389 8.09S5.34 2.97 5.713.456c.093-.466.745-.652 1.024-.186l2.42 3.817 3.911 4.655 4.655 3.072 5.4 2.514v5.866H3.944L2.454 8.37l4.935-.28z" fill="url(#b)" transform="translate(31.864 51.91)"/><path d="M40.463 61.025c-1.117-1.676-3.259-.745-4.562-.745-1.024-.093-.931-.093-1.583-.093-.652 0-1.303.28-1.676.745-.279.372-.744.651-.744.838 0 1.117.93.93.744 1.49-.186.558-.558.837-.744 1.489-.187.652.465.838.372 1.676-.093.93.093 1.117.559 2.048.465.931 1.862 1.397 1.396 2.235-.465.838 1.583 1.582 1.583 1.582l2.327-.651 1.676-.652 1.77-3.072c-.094-.094 1.117-3.632-1.118-6.89z" fill="#FD919E"/><path fill="#0B40C0" d="M49.68 63.725h8.752v8.38h-6.238V65.12z"/></g></svg>
+              <img src="./assets/images/content/transport_modern.svg" alt="">
             </div>
             <div class="the-advantages__item-content">
               <div class="the-advantages__item-headline">Transport modern</div>
@@ -296,7 +416,7 @@
               <div class="the-popular-destination__rezervation">
                 <div class="the-date__input-wrapper">
                   <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                  <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                  <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
                 </div>
                 <button class="button orange" disabled>Rezerveaza</button>
               </div>
@@ -314,7 +434,7 @@
               <div class="the-popular-destination__rezervation">
                 <div class="the-date__input-wrapper">
                   <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                  <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                  <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
                 </div>
                 <button class="button orange" disabled>Rezerveaza</button>
               </div>
@@ -332,7 +452,7 @@
               <div class="the-popular-destination__rezervation">
                 <div class="the-date__input-wrapper">
                   <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                  <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                  <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
                 </div>
                 <button class="button orange" disabled>Rezerveaza</button>
               </div>
@@ -351,7 +471,7 @@
             <div class="the-popular-destination__rezervation">
               <div class="the-date__input-wrapper">
                 <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
                 <!-- <div class="the-date__date-view">
                   <div class="the-date__date-placeholder">Alege data plecarii</div>
                   <div class="the-date__content">
@@ -377,7 +497,7 @@
             <div class="the-popular-destination__rezervation">
               <div class="the-date__input-wrapper">
                 <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
               </div>
               <button class="button orange" disabled>Rezerveaza</button>
             </div>
@@ -393,7 +513,7 @@
             <div class="the-popular-destination__rezervation">
               <div class="the-date__input-wrapper">
                 <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
               </div>
               <button class="button orange" disabled>Rezerveaza</button>
             </div>
@@ -409,7 +529,7 @@
             <div class="the-popular-destination__rezervation">
               <div class="the-date__input-wrapper">
                 <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
               </div>
               <button class="button orange" disabled>Rezerveaza</button>
             </div>
@@ -425,7 +545,7 @@
             <div class="the-popular-destination__rezervation">
               <div class="the-date__input-wrapper">
                 <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
               </div>
               <button class="button orange" disabled>Rezerveaza</button>
             </div>
@@ -441,7 +561,7 @@
             <div class="the-popular-destination__rezervation">
               <div class="the-date__input-wrapper">
                 <input type="text" readonly class="the-date__input js-date-input" data-available='["24/03/2019", "25/03/2019"]' placeholder="Alege data plecarii" />
-                <svg class="the-date__input-icon" viewBox="0 0 17 18" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
               </div>
               <button class="button orange" disabled>Rezerveaza</button>
             </div>
@@ -1083,6 +1203,7 @@
   </div>
 
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="assets/libs/select2/dist/js/select2.full.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />

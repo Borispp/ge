@@ -56,6 +56,37 @@
     background #4A79FE
     color #fff
 
+.input-wrapper
+  width 100%
+  display block
+  position relative
+
+  &__icon
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translate(0, -50%);
+
+  &__label
+    position absolute
+    top 11px
+    padding-left 21px
+    color #1E2B6F
+    font-size 12px
+    font-weight 500
+
+  .e-input
+    height 100%
+    font-size 15px
+    padding-top 18px
+
+  &.icon
+    .input-wrapper__label
+      padding-left 51px
+
+    .e-input
+      padding-left 50px
+
 .e-input,
 .e-textarea
   width 100%

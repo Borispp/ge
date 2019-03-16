@@ -14,11 +14,14 @@
     font-size 18px
     font-weight 500
     color $white
-    background rgba(83,106,255,0.50)
+    background rgba(83,106,255,.6)
     box-shadow 0 8px 10px 0 rgba(30,43,111,0.20), inset 0 1px 0 0 rgba(140,226,255,0.30)
     margin 0 1px 0 0
     cursor pointer
     transition background $transition
+
+    @media (max-width 992px)
+      margin 0
 
     &:first-child
       border-radius 5px 0 0 0
@@ -31,6 +34,11 @@
 
     svg
       margin-right 18px
+
+      @media (max-width 767px)
+        margin-right 10px
+        margin-left -4px
+
       path
         fill $white
         transition color $transition
@@ -50,9 +58,29 @@
     border-radius 0 0 5px 5px
     box-shadow 0 8px 10px 0 rgba(7,31,115,.2)
 
+    &.hide
+      display none
+
   &__directions
     display flex
     align-items center
+    margin-bottom 10px
+
+    @media (max-width 992px)
+      justify-content center
+
+  &__content-info
+    display flex
+    align-items center
+    height 24px
+    margin-bottom 10px
+    font-size 12px
+    font-weight 500
+    color #FD8E49
+    margin-left 15px
+
+    svg
+      margin-right 12px
 
   &__directions-item
     display flex
@@ -96,3 +124,55 @@
 
       &:active
         transform translate(0, 0)
+
+  &__content-wrapper
+    display flex
+    margin 0 -5px
+    flex-wrap wrap
+
+    &.-hide
+      display none
+
+    @media (max-width 1100px)
+      margin 0 -3px
+
+    @media (max-width 992px)
+      margin 0
+
+  &__item
+    flex 1
+    margin 0 5px
+
+    @media (max-width 1100px)
+      margin 0 3px
+
+    @media (max-width 992px)
+      flex 0 0 100%
+      margin 0 0 6px
+
+    .the-date__input-wrapper
+      height 58px
+
+    .input-wrapper
+      height 60px
+      .e-input
+        height 60px
+
+    &.hide
+      display none
+
+  .button
+    margin 0 5px
+    flex 0 0 156px
+    height 60px
+    text-transform uppercase
+
+    svg
+      margin-right 10px
+
+    @media (max-width 1100px)
+      margin 0 3px
+
+    @media (max-width 992px)
+      flex 0 0 100%
+      margin 0 0 -5px

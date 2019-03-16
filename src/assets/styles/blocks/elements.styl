@@ -70,6 +70,7 @@
   &__label
     position absolute
     top 11px
+    left 0
     padding-left 21px
     color #1E2B6F
     font-size 12px
@@ -78,7 +79,12 @@
   .e-input
     height 100%
     font-size 15px
+    line-height 15px
     padding-top 18px
+
+    @media (max-width: 767px)
+      font-size 13px
+      padding-top 20px
 
   &.icon
     .input-wrapper__label

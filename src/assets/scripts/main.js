@@ -2,10 +2,14 @@ $(document).ready(function() {
   $('.js-select2-location').select2({
     dropdownCssClass: 'select2-container-location'
   })
-  .on('select2:open', function () {
-    setTimeout(function () {
-      $('.select2-search__field').focus();
-    }, 100);
+  .on('select2:open', function (e) {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 768) {
+      setTimeout(function () {
+        $('.select2-search__field').focus();
+      }, 100);
+    } else {
+      $('.select2-search__field').prop('focus', 0);
+    }
   });
 
   $('.js-select2-icon, .js-select2-label').on('click', function () {
@@ -108,7 +112,13 @@ $(document).ready(function() {
   });
 
   $('.the-date__input')
-    .on('show.daterangepicker', function () { $(this).parent().addClass('-open') })
+    .on('show.daterangepicker', function () {
+      $(this).parent().addClass('-open')
+
+      if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 767) {
+        scrollToPage(this);
+      }
+    })
     .on('hide.daterangepicker', function () { $(this).parent().removeClass('-open') });
 
   $('.the-review__slider').slick({

@@ -266,6 +266,7 @@ a:hover {
 .input-wrapper__label {
   position: absolute;
   top: 11px;
+  left: 0;
   padding-left: 21px;
   color: #1e2b6f;
   font-size: 12px;
@@ -274,7 +275,14 @@ a:hover {
 .input-wrapper .e-input {
   height: 100%;
   font-size: 15px;
+  line-height: 15px;
   padding-top: 18px;
+}
+@media (max-width: 767px) {
+  .input-wrapper .e-input {
+    font-size: 13px;
+    padding-top: 20px;
+  }
 }
 .input-wrapper.icon .input-wrapper__label {
   padding-left: 51px;
@@ -2257,6 +2265,11 @@ a:hover {
   box-shadow: 0 1px 3px 0 rgba(73,79,106,0.14);
   border: 1px solid transparent;
 }
+@media (max-width: 767px) {
+  .the-date__input-wrapper {
+    height: 43px;
+  }
+}
 .the-date__input-wrapper.-open {
   border-color: #536aff;
 }
@@ -2282,7 +2295,7 @@ a:hover {
 .the-date__input {
   width: 100%;
   height: 100%;
-  line-height: 100%;
+  line-height: 48px;
   border-radius: 5px;
   background: transparent;
   border: none;
@@ -2316,6 +2329,7 @@ a:hover {
 @media (max-width: 767px) {
   .the-date__input {
     padding-left: 10px;
+    line-height: 43px;
   }
 }
 .the-date__input-icon {

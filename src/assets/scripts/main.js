@@ -3,6 +3,7 @@ $(document).ready(function() {
     dropdownCssClass: 'select2-container-location'
   })
   .on('select2:open', function (e) {
+    $(e.target).closest('.select2-wrapper').addClass('-open');
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 768) {
       setTimeout(function () {
         $('.select2-search__field').focus();
@@ -10,6 +11,9 @@ $(document).ready(function() {
     } else {
       $('.select2-search__field').prop('focus', 0);
     }
+  })
+  .on('select2:close', function (e) {
+    $(e.target).closest('.select2-wrapper').removeClass('-open');
   });
 
   $('.js-select2-icon, .js-select2-label').on('click', function () {
@@ -32,20 +36,29 @@ $(document).ready(function() {
     scrollToPage($(this).attr('href'));
   });
 
+  var openPassangerForm = function () {
+    $('.js-form-parcel').addClass('-hide');
+    $('.js-form-passanger').removeClass('-hide');
+    $('.js-top-search-tabs-item').removeClass('-active');
+    $('.js-top-search-passanger').addClass('-active');
+  }
+
+  var openParcelForm = function () {
+    $('.js-form-passanger').addClass('-hide');
+    $('.js-form-parcel').removeClass('-hide');
+    $('.js-top-search-tabs-item').removeClass('-active');
+    $('.js-top-search-parcel').addClass('-active');
+  }
+
   // Main form switch
   $('.js-top-search-tabs-item').on('click', function () {
     var $this = $(this);
     var search = $this.data('search');
 
-    $this.parent().find('.js-top-search-tabs-item').removeClass('-active');
-    $(this).addClass('-active');
-
     if (search === 'passanger') {
-      $('.js-form-parcel').addClass('-hide');
-      $('.js-form-passanger').removeClass('-hide');
+      openPassangerForm();
     } else if (search === 'parcel') {
-      $('.js-form-passanger').addClass('-hide');
-      $('.js-form-parcel').removeClass('-hide');
+      openParcelForm();
     }
   });
 
@@ -62,6 +75,20 @@ $(document).ready(function() {
     } else if (direction === 'oneWay') {
       $('.js-return-date').addClass('hide');
     }
+  });
+
+  // Scroll to top and open passanger form
+  $('.js-reservation-passanger').on('click', function () {
+    openPassangerForm();
+    scrollToPage('#the-header-first-screen__search');
+    $('#selectFrom').select2('open');
+  });
+
+  // Scroll to top and open parcel form
+  $('.js-reservation-parcel').on('click', function () {
+    openParcelForm();
+    scrollToPage('#the-header-first-screen__search');
+    $('#selectParcelDestination').select2('open');
   });
 
 // Datepicker

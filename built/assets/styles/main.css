@@ -278,6 +278,9 @@ a:hover {
   line-height: 15px;
   padding-top: 18px;
 }
+.input-wrapper .e-input:focus + .input-wrapper__label {
+  color: #536aff;
+}
 @media (max-width: 767px) {
   .input-wrapper .e-input {
     font-size: 13px;
@@ -484,6 +487,17 @@ a:hover {
   -ms-flex-align: stretch;
       align-items: stretch;
   margin-left: 28px;
+}
+@media (min-width: 1440px) {
+  .the-header__menu {
+    position: absolute;
+    margin-left: 0;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
 }
 .the-header__menu-item {
   display: -ms-flexbox;
@@ -2273,16 +2287,7 @@ a:hover {
 .the-date__input-wrapper.-open {
   border-color: #536aff;
 }
-.the-date__input-wrapper.-open .the-date__input::-webkit-input-placeholder {
-  color: #536aff;
-}
-.the-date__input-wrapper.-open .the-date__input:-moz-placeholder {
-  color: #536aff;
-}
-.the-date__input-wrapper.-open .the-date__input::-moz-placeholder {
-  color: #536aff;
-}
-.the-date__input-wrapper.-open .the-date__input:-ms-input-placeholder {
+.the-date__input-wrapper.-open .the-date__label {
   color: #536aff;
 }
 .the-date__input-wrapper.icon-left .the-date__input-icon {
@@ -2290,7 +2295,25 @@ a:hover {
   left: 20px;
 }
 .the-date__input-wrapper.icon-left .the-date__input {
+  padding-top: 20px;
   padding-left: 50px;
+  font-size: 15px;
+}
+.the-date__input-wrapper.icon-left .the-date__input::-webkit-input-placeholder {
+  font-size: 15px;
+}
+.the-date__input-wrapper.icon-left .the-date__input:-moz-placeholder {
+  font-size: 15px;
+}
+.the-date__input-wrapper.icon-left .the-date__input::-moz-placeholder {
+  font-size: 15px;
+}
+.the-date__input-wrapper.icon-left .the-date__input:-ms-input-placeholder {
+  font-size: 15px;
+}
+.the-date__input-wrapper.icon-left .the-date__label {
+  left: 50px;
+  top: 12px;
 }
 .the-date__input {
   width: 100%;
@@ -2299,38 +2322,46 @@ a:hover {
   border-radius: 5px;
   background: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   color: #1e2b6f;
   font-weight: 500;
-  padding: 0 12px;
+  padding: 18px 12px 0;
   position: relative;
   z-index: 1;
 }
 .the-date__input::-webkit-input-placeholder {
-  font-size: 12px;
-  color: #1e2b6f;
-  font-weight: 500;
+  font-size: 14px;
+  color: rgba(166,178,217,0.9);
+  font-weight: 400;
 }
 .the-date__input:-moz-placeholder {
-  font-size: 12px;
-  color: #1e2b6f;
-  font-weight: 500;
+  font-size: 14px;
+  color: rgba(166,178,217,0.9);
+  font-weight: 400;
 }
 .the-date__input::-moz-placeholder {
-  font-size: 12px;
-  color: #1e2b6f;
-  font-weight: 500;
+  font-size: 14px;
+  color: rgba(166,178,217,0.9);
+  font-weight: 400;
 }
 .the-date__input:-ms-input-placeholder {
-  font-size: 12px;
-  color: #1e2b6f;
-  font-weight: 500;
+  font-size: 14px;
+  color: rgba(166,178,217,0.9);
+  font-weight: 400;
 }
 @media (max-width: 767px) {
   .the-date__input {
-    padding-left: 10px;
     line-height: 43px;
   }
+}
+.the-date__label {
+  position: absolute;
+  left: 12px;
+  top: 7px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #1e2b6f;
+  font-weight: 500;
 }
 .the-date__input-icon {
   position: absolute;
@@ -2989,6 +3020,9 @@ a:hover {
   height: 60px;
   border-radius: 5px;
 }
+.select2-wrapper.-open .select2-wrapper__label {
+  color: #536aff;
+}
 .select2-wrapper__icon {
   display: block;
   width: 32px;
@@ -3351,6 +3385,7 @@ a:hover {
   text-decoration: none;
   color: #fff;
   margin-top: 20px;
+  border-radius: 5px;
 }
 .the-footer__phone:hover {
   color: #fff;
@@ -3358,7 +3393,6 @@ a:hover {
 @media (max-width: 992px) {
   .the-footer__phone {
     margin: 8px auto 0;
-    border-radius: 5px;
     height: 60px;
   }
 }

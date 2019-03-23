@@ -22,12 +22,12 @@ $(document).ready(function() {
 
   // scrollToPage
   var $page = $('html,body');
-  var scrollToPage = function scrollToPage(target) {
+  var scrollToPage = function scrollToPage(target, translateY = 0) {
     var y = 0;
     if (target && $(target).length) {
       y = $(target).offset().top;
     }
-    $page.animate({ scrollTop: y }, 300, 'swing');
+    $page.animate({ scrollTop: y + translateY }, 300, 'swing');
     return;
   };
 
@@ -141,10 +141,7 @@ $(document).ready(function() {
   $('.the-date__input')
     .on('show.daterangepicker', function () {
       $(this).parent().addClass('-open')
-
-      if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 767) {
-        scrollToPage(this);
-      }
+      scrollToPage(this, -100);
     })
     .on('hide.daterangepicker', function () { $(this).parent().removeClass('-open') });
 

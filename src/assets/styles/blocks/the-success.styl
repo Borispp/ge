@@ -1,0 +1,461 @@
+.the-success
+  padding 100px 0
+  background #1639BB
+  color #fff
+  position relative
+  overflow hidden
+
+  .base_col
+    @media (max-width: 1100px)
+      padding 0 10px
+
+  @media (max-width: 767px)
+    padding 60px 0 100px
+
+  &:after
+    content ''
+    position absolute
+    bottom -2px
+    display block
+    width 200%
+    min-width 1440px
+    height 170px
+    background url('../images/content/contacts.svg')
+    background-repeat repeat
+    animation: sectionSuccessLoop 30s infinite linear
+
+  h2.headline
+    color #fff
+    font-size 50px
+
+    @media (max-width: 767px)
+      font-size: 32px;
+      line-height: 32px;
+
+  &__wrapper
+    position relative
+    z-index 1
+    display flex
+    flex-direction column
+    align-items center
+
+  &__top-icon
+    width 147px
+    height 129px
+    margin-bottom 30px
+
+    svg
+      width 100%
+      height 100%
+
+  &__description
+    font-size 16px
+    font-weight 500
+    text-transform uppercase
+    padding-top 10px
+    text-align center
+
+    @media (max-width: 767px)
+      font-size 14px
+
+  &__description-small,
+  &__description-bottom
+    opacity: 0.5;
+    font-size: 15px;
+    font-weight 400
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+    padding-top 10px
+    max-width 500px
+
+    @media (max-width: 992px)
+      max-width: 400px
+
+    @media (max-width: 767px)
+      font-size 13px
+      line-height 18px
+
+  &__description-bottom
+    margin 30px 0
+
+  &__buttons
+    display flex
+    margin 0 -10px
+
+    .button
+      display flex
+      margin 0 10px
+      box-sizing border-box
+      svg
+        margin-left 12px
+
+    @media (max-width: 992px)
+      width 100%
+      max-width: 400px
+      flex-direction column
+      margin 0 10px !important
+
+      .button
+        width 100%
+        margin 0 0 10px
+
+.the-ticket
+  width 100%
+  max-width 975px
+  height 192px
+  background #FFFFFF
+  border-radius 3px
+  margin-top 32px
+  display flex
+  position relative
+  overflow hidden
+
+  &::before,
+  &::after
+    content ''
+    display block
+    width 22px
+    height 22px
+    position absolute
+    top calc(50% - 11px)
+    background #1639BB
+    border-radius 50%
+
+  &::before
+    left -11px
+
+  &:after
+    right -11px
+
+  @media (max-width: 992px)
+    max-width: 400px
+    height auto
+    flex-direction column
+
+    &:before,
+    &:after
+      left calc(50% - 11px)
+      right auto
+      top auto
+
+    &:before
+      top -11px
+
+    &:after
+      bottom -11px
+
+
+  &__label
+    margin-left 11px
+    background url('../images/content/ticket.jpg')
+    background-size cover
+    background-position center center
+    flex 0 0 173px
+    position relative
+
+    &::before,
+    &::after
+      content ''
+      display block
+      width 10px
+      height 10px
+      position absolute
+      right -5px
+      background #1639BB
+      border-radius 50%
+
+    &::before
+      top -5px
+
+    &:after
+      bottom -5px
+
+    @media (max-width: 992px)
+      flex 0 0 140px
+      margin-left 0
+      margin-top 11px
+      background-image url('../images/content/ticket-mobile.jpg')
+
+      &::before
+        top auto
+        right auto
+        bottom -5px
+        left -5px
+
+  &__label-wrapper
+    position absolute
+    left 20px
+    width calc(100% - 20px)
+    height 100%
+    overflow hidden
+
+  &__label-text
+    font-size 12px
+    color #fff
+    position absolute
+    bottom 36px
+    left 4px
+
+  &__label-price
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #fff;
+    position absolute
+    bottom 13px
+    left 65px
+
+    sup
+      font-size: 13px;
+      position: relative;
+      top: -9px;
+
+    @media (max-width: 992px)
+      left auto
+      right 20px
+      bottom 10px
+
+      &:before
+        content '......................................................'
+        font-size 11px
+        letter-spacing 3px
+        color #A6B2D9
+        position absolute
+        left -5px
+        bottom 1px
+        transform translate(-100%, 0)
+
+  &__label-logo
+    display none
+
+    @media (max-width: 992px)
+      display block
+      position absolute
+      top 20px
+      left 0
+
+  &__content
+    display flex
+    flex-direction column
+    justify-content space-between
+    flex 1
+    color #1E2B6F
+
+    @media (max-width: 992px)
+      flex auto
+
+  &__content-data
+    position relative
+    display flex
+    justify-content space-between
+    padding 20px 0 0
+
+    @media (max-width: 992px)
+      flex-direction column
+      padding-bottom 40px
+
+  &__content-data-left
+    flex 0 0 calc(70% - 118px)
+    margin-left 18px
+    margin-right 100px
+    position relative
+
+    @media (max-width: 992px)
+      flex auto
+      width 100%
+      margin 0
+      padding 0 15px 10px
+      box-sizing border-box
+
+      &::before,
+      &::after
+        content ''
+        display block
+        width 10px
+        height 10px
+        position absolute
+        bottom 41px
+        background #1639BB
+        border-radius 50%
+
+      &::before
+        left -5px
+
+      &:after
+        right -5px
+
+  &__content-separation
+    position absolute
+    top: -12px;
+    right -76px
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img
+      margin-bottom 8px
+
+    @media (max-width: 992px)
+      position relative
+      top 0
+      left 0
+      flex-direction row
+      overflow hidden
+      margin 10px -10px 0 -13px
+
+      &:after
+        content '...................................................'
+        position absolute
+        left 60px
+        top 40%
+        font-size 15px
+        letter-spacing 4px
+        line-height 0
+        z-index 1
+
+      img
+        transform scale(0.8)
+
+      .the-ticket__content-separation-lines
+        display none
+
+  &__content-data-right
+    flex 1
+    margin-right 40px
+
+    @media (max-width: 992px)
+      flex auto
+      width 100%
+      margin 0
+      padding 0 15px
+      box-sizing border-box
+
+  &__content-section
+    display flex
+
+    &.bordered
+      padding-bottom 15px
+      margin-bottom 20px
+      border-bottom 1px solid rgba(#1639BB, .1)
+
+    @media (max-width: 992px)
+      flex-wrap wrap
+
+  &__info-item
+    display flex
+    flex-wrap wrap
+    flex 1 1 50%
+    align-items center
+    margin-right 15px
+
+    &.small
+      flex 0 0 46%
+
+    &.full
+      flex 0 0 100%
+
+    &:last-child
+      margin-right 0
+
+    @media (max-width: 992px)
+      flex 0 0 100%
+      margin 0 0 15px
+
+      &.small
+        flex 0 0 100%
+
+      &.mobile-half
+        flex 0 0 50%
+        margin-bottom 0
+
+      &:last-child
+        margin-bottom 0
+
+  &__info-item-label
+    width 32px
+    height 32px
+    border-radius 50%
+    margin-right 11px
+    display flex
+    align-items center
+    justify-content center
+    color #fff
+    font-size 15px
+    font-weight 500
+    text-transform uppercase
+
+    &.blue
+      background #536aff
+
+    &.red
+      background #EE6A6A
+
+  &__info-item-content-label
+    font-size 12px
+    font-weight 500
+    line-height 12px
+
+    @media (max-width: 992px)
+      font-size 11px
+
+  &__info-item-content-main
+    font-size 15px
+    line-height 18px
+    padding-top 2px
+    font-weight 500
+    color #1E2B6F
+
+    span
+      color #A6B2D9
+
+    @media (max-width: 992px)
+      font-size 13px
+
+  &__info-item-icon
+    width 32px
+    height 32px
+    margin-right 6px
+    display flex
+    align-items center
+    justify-content center
+
+    @media (max-width: 992px)
+      margin-right 11px
+
+  &__content-info
+    background #f0f5fb
+    height 50px
+    display flex
+    align-items center
+    padding 0 18px
+    font-size 12px
+    line-height 15px
+    color #8690B5
+
+    @media (max-width: 992px)
+      font-size 11px
+      line-height 14px
+
+    span
+      color #536AFF
+      font-weight 500
+
+    svg
+      margin-right 10px
+
+    .break
+      display none
+
+      @media (max-width: 992px)
+        display block
+
+@keyframes sectionSuccessLoop {
+  0% {
+    transform translate(0, 0)
+  }
+  100% {
+    transform translate(-50%, 0)
+  }
+}

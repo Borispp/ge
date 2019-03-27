@@ -13,8 +13,20 @@
 .section
   padding 70px 0
 
+  &.-medium
+    padding 50px 0
+
+  &.-small
+    padding 40px 0
+
   @media (max-width: 767px)
     padding 60px 0
+
+    &.-medium
+      padding 50px 0
+
+    &.-small
+      padding 40px 0
 
   &.-gray
     background #F0F5FB
@@ -22,6 +34,10 @@
 
   &.-blue
     background #1639BB
+    color #fff
+
+  &.-blue-gradient
+    background linear-gradient(to bottom, #1639bb 0%,#0e257a 100%)
     color #fff
 
   &__wrapper
@@ -184,6 +200,10 @@
         .the-phones__item-country
           flex 0 0 50%
 
+  &__icon
+    margin 0 0 15px
+    min-height 71px
+
   &__item-country
     padding-bottom 22px
 
@@ -205,9 +225,14 @@
       opacity .4
       font-size 17px
       padding-bottom 10px
+      text-decoration none
 
       @media (max-width: 767px)
         font-size 14px
+
+    a
+      color #fff
+      display block
 
 .map-contacts
   position relative

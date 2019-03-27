@@ -1,0 +1,340 @@
+.the-result
+  &__top
+    padding 60px 0
+    background #1639BB
+    position relative
+    overflow hidden
+
+    &:after
+      content ''
+      position absolute
+      bottom -2px
+      display block
+      width 200%
+      min-width 1440px
+      height 170px
+      background url('../images/content/contacts.svg')
+      background-repeat repeat
+      animation: sectionBgLoop 30s infinite linear
+
+  &__top-wrapper
+    position relative
+    z-index 1
+    display flex
+    justify-content space-between
+
+  &__top-direction
+    flex 0 0 580px
+
+  &__top-direction-header
+    display flex
+    align-items flex-end
+    justify-content space-between
+    border-bottom 1px solid rgba(#fff, .2)
+    padding 0 0 24px
+    margin 0 0 25px
+
+  &__top-direction-price
+    text-align left
+    margin-right 30px
+
+  &__top-direction-price-value
+    font-size 24px
+    line-height 16px
+    font-weight 500
+    color #FD8E49
+
+    sup
+      font-size 12px
+      position relative
+      top -8px
+
+  &__top-direction-price-label
+    font-size 12px
+    color #fff
+    font-size 12px
+    line-height 12px
+    font-weight 500
+    padding-top 3px
+
+  &__top-direction-route
+    display flex
+    align-items center
+
+  &__top-direction-route-item
+    display flex
+    align-items center
+
+  &__top-direction-route-separator
+    margin 0 30px
+
+  &__top-direction-route-label
+    width 32px
+    height 32px
+    border-radius 50%
+    margin-right 11px
+    display flex
+    align-items center
+    justify-content center
+    color #fff
+    font-size 15px
+    font-weight 500
+    text-transform uppercase
+    margin-right 18px
+
+    &.blue
+      background #536aff
+
+    &.red
+      background #EE6A6A
+
+  &__top-direction-route-location-country
+    opacity: 0.4;
+    font-weight 400
+    font-size: 12px;
+    color: #FFFFFF;
+    text-transform uppercase
+    line-height 12px
+    padding-top 2px
+
+  &__top-direction-route-location-city
+    font-weight 500
+    font-size: 32px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 32px;
+
+  &__top-description
+    font-size: 15px;
+    color: #89B3FF;
+    letter-spacing: 0;
+    line-height: 22px;
+    padding-left 50px
+
+  &__top-list
+    margin-top 42px
+    margin-left 50px
+
+  &__top-list-item
+    display flex
+    align-items center
+    height 42px
+    border-bottom 1px solid rgba(#fff, .2)
+
+    &:last-child
+      border none
+
+  &__top-list-label
+    display flex
+    align-items center
+    flex 0 0 265px
+    color rgba(#fff, .4)
+    padding-left 15px
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 22px;
+
+  &__top-list-label-icon
+    flex 0 0 36px
+
+  &__top-list-value
+    font-size 15px
+    color #ffffff
+
+  &__rezervation
+    width 100%
+    max-width: 590px
+    font-size: 15px;
+    color: #1E2B6F;
+    letter-spacing: 0;
+    line-height: 22px;
+
+    .the-list-default
+      margin-left 38px
+
+    .the-note
+      width 100%
+      max-width 570px
+      margin-top 30px
+      margin-left 7px
+
+  &__rezervation-item
+    margin-bottom 25px
+
+  &__rezervation-text
+    margin 6px 0 6px 56px
+
+    b
+      font-weight 500
+
+    .the-label
+      position relative
+      top -1px
+
+  &__rezervation-headline
+    font-weight 600
+    font-size: 20px;
+    color: #1E2B6F;
+    display flex
+    align-items center
+    margin-bottom 5px
+
+  &__rezervation-headline-icon
+    flex 0 0 56px
+
+  &__advantages
+    display flex
+    flex-wrap wrap
+    margin 25px -10px -10px
+
+  &__advantages-item
+    margin 10px
+    flex 0 0 calc(100%/3 - 20px)
+    display flex
+    align-items center
+    padding 30px
+    box-sizing border-box
+    font-weight 500
+    font-size: 15px;
+    line-height 20px
+    color: #1E2B6F;
+    background: #F0F5FB;
+    border-radius: 5px
+
+  &__advantages-item-icon
+    flex 0 0 70px
+    margin-right 20px
+    display flex
+    align-items center
+    justify-content center
+
+  &__information
+    h2.headline
+      text-align center
+      color #fff
+
+    .the-socials.-destination
+      flex: 0 0 33.33%;
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+
+      .the-socials__item
+        background: rgba(83,106,255,0.5);
+
+        &:hover
+          background rgba(#536AFF, .8)
+
+      @media (max-width 1000px)
+        flex-basis 0
+        margin 50px 0 0
+
+    .the-services__destination-info
+      padding-top 40px
+      padding-bottom 80px
+
+  &__information-list
+    display flex
+    flex-wrap wrap
+    margin 24px -7px 0
+
+  &__information-list-item
+    margin 5px 7px
+    flex 0 0 calc(50% - 14px)
+    position relative
+
+    &.-open
+      .the-result__information-list-name
+        z-index 4
+
+      .the-result__information-list-body
+        z-index 3
+        opacity 1
+        left 0
+        transform translate(0, 6px)
+
+  &__information-list-name
+    display flex
+    align-items center
+    box-sizing border-box
+    padding 0 60px 0 28px
+    background #536AFF
+    border-radius: 5px
+    height 50px
+    position relative
+    z-index 2
+    font-weight 500
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor pointer
+
+    &::after
+      content ''
+      display block
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #FD8E49;
+      position absolute
+      top calc(50% - 3px)
+      right 32px
+
+  &__information-list-body
+    background #ffffff
+    border-radius 5px
+    padding 20px 28px
+    color $blue-deep
+    font-size 15px
+    line-height 24px
+    margin-top -12px
+    position absolute
+    z-index 1
+    left -9999px
+    opacity 0
+    transition: opacity .15s ease-in-out, transform .15s ease-in-out
+
+  &__headline-line
+    text-align center
+    position relative
+    margin-bottom -20px
+
+    span
+      padding 0 16px
+      background #112a7e
+      position relative
+      z-index 1
+
+    &:before
+      content ''
+      display block
+      width 100%
+      height 1px
+      background-image: linear-gradient(90deg, rgba(252,240,233,0.05) 0%, rgba(253,149,84,0.95) 29%, #FD8E49 70%, rgba(252,240,233,0.05) 100%);
+      position absolute
+      top 50%
+
+  &__map
+    width 100%
+    height 500px
+    background url('../images/content/map.jpg')
+    background-size cover
+    background-position center
+
+  &__company-description
+    margin 0 auto
+    max-width 910px
+    font-size: 15px;
+    color: #89B3FF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+
+@keyframes sectionBgLoop {
+  0% {
+    transform translate(0, 0)
+  }
+  100% {
+    transform translate(-50%, 0)
+  }
+}

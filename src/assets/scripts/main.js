@@ -91,6 +91,20 @@ $(document).ready(function() {
     $('#selectParcelDestination').select2('open');
   });
 
+  // Useful information block
+  $('.js-information-list-name').on('click', function (e) {
+    e.stopPropagation();
+    $('.js-information-list-item').removeClass('-open')
+    $(this).closest('.js-information-list-item').addClass('-open');
+  });
+
+  $('body').on('click', function (e) {
+    var container = $('.js-information-list-item');
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $('.js-information-list-item').removeClass('-open');
+    }
+  });
+
 // Datepicker
   var currentYear = new Date().getYear() + 1900;
 

@@ -1,3 +1,11 @@
+.link
+  color $blue
+  text-decoration none
+  transition color .15s ease-in-out
+
+  &:hover
+    color $blue-deep
+
 .button
   padding 0 20px
   display inline-flex
@@ -160,3 +168,52 @@
       display none
       content ''
       sprite($s-checkbox)
+
+.the-note
+  background $blue
+  padding 18px 50px 32px
+  box-sizing border-box
+  border-radius 5px
+  font-size: 15px;
+  color: rgba(#FFFFFF, .6);
+  letter-spacing: 0;
+  line-height: 22px;
+  position relative
+
+  &::before
+    content ''
+    display block
+    width 28px
+    height 28px
+    border 5px solid $blue
+    border-radius: 50%
+    background #fff url('../images/content/note.svg') no-repeat
+    background-position center
+    background-size 4px 16px
+    position absolute
+    top -15px
+    left -14px
+
+  &__text
+    margin -5px 0
+    p
+      padding 5px 0
+
+  &__headline
+    font-weight 500
+    font-size: 16px;
+    color: #FFFFFF;
+    border-bottom 1px solid rgba(#1E2B6F, .2)
+    padding-bottom 8px
+    margin-bottom 16px
+
+.the-label
+  background $blue;
+  display inline-block
+  padding 1px 8px 0
+  border-radius: 15px
+  font-weight 500
+  font-size: 9px;
+  line-height 18px
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(48,55,91,0.20);

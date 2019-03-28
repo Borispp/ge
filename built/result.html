@@ -11,8 +11,9 @@
   <link rel="icon" type="image/png" sizes="64x64" href="assets/images/content/fav.png" />
   <link rel="apple-touch-icon" href="assets/images/content/favicon/assets/images/content/fav.png" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
 </head>
-<body>
+<body class="the-result__body">
   <div class="wrapper">
     <header class="the-header">
       <div class="the-header__wrapper">
@@ -100,6 +101,33 @@
       <div class="mobile-menu__lang">
         <a href="#"><svg viewBox="0 0 18 12" width="18" height="12" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero" fill="none"><path fill="#1165F3" d="M0 0h6v12H0z"/><path fill="#FFD05D" d="M6 0h6v12H6z"/><path fill="#FF4B33" d="M12 0h6v12h-6z"/></g></svg></a>
         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" width="18" height="12" class="mdl-js"><script/><path fill="#fff" d="M0 0h9v3H0z"/><path fill="#e03a3e" d="M0 3h9v3H0z"/><path fill="#00539f" d="M0 2h9v2H0z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="the-result__mobile-sticky js-result-mobile-sticky">
+      <span class="the-label -orange">Pasul 1 din 2</span>
+
+      <div class="the-result__mobile-sticky-wrapper">
+        <div class="the-result__top-direction-price">
+          <div class="the-result__top-direction-price-value">€28,<sup>99</sup></div>
+          <div class="the-result__top-direction-price-label">O directie</div>
+        </div>
+
+        <div class="the-result__mobile-sticky-dates">
+          <div class="the-result__mobile-sticky-dates-item">
+            <div class="the-result__mobile-sticky-dates-value">12 Martie</div>
+            <div class="the-result__mobile-sticky-dates-label">Data plecarii</div>
+          </div>
+          <div class="the-result__mobile-sticky-dates-item">
+            <div class="the-result__mobile-sticky-dates-value -no-data"></div>
+            <div class="the-result__mobile-sticky-dates-label -no-data">Data plecarii</div>
+          </div>
+        </div>
+
+        <button class="button orange small the-result__mobile-sticky-show-dates-button js-show-mobile-calendar">
+          Date disponibile
+        </button>
+
       </div>
     </div>
 
@@ -194,7 +222,89 @@
             </ul>
           </div>
 
-          <div class="the-result__top-calendar"></div>
+          <div class="the-result__top-calendar js-result-calendar">
+
+            <div class="the-result__date-header">
+              <span class="icon close-button -rounded -white-dark js-close-result-calendar">
+                <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M8.64 1.987L6.14 4.5l2.467 2.475A1.173 1.173 0 0 1 6.95 8.637L4.486 6.162 2.02 8.637a1.167 1.167 0 0 1-1.656 0 1.18 1.18 0 0 1 0-1.662L2.83 4.5.33 1.986A1.173 1.173 0 0 1 1.984.325l2.5 2.512 2.5-2.512A1.173 1.173 0 0 1 8.64 1.987z"></path></svg>
+              </span>
+              <span class="the-label -orange">Pasul 1 din 2</span>
+              <div class="the-result__date-header-title">Date disponibile</div>
+            </div>
+            <div class="the-result__date-wrapper">
+              <input type="text" readonly class="the-result__date js-result-date" data-available='["24/03/2019", "25/03/2019"]' ``/>
+            </div>
+
+            <div class="the-result__date-daterangepicker-wrapper"></div>
+
+            <button class="the-result__date-next js-result-date-next" disabled>
+              Urmatorul Pas
+            </button>
+
+            <script type="text/javascript">
+              $(document).ready(function() {
+                var currentYear = new Date().getYear() + 1900;
+
+                var monthNames = [
+                  "Ianuarie",
+                  "Februarie",
+                  "Martie",
+                  "Aprilie",
+                  "Mai",
+                  "Iunie",
+                  "Iulie",
+                  "August",
+                  "Septembrie",
+                  "Octombrie",
+                  "Noiembrie",
+                  "Decembrie"
+                ];
+
+                // init daterangepicker
+                var picker = $('.js-result-date').daterangepicker({
+                  singleDatePicker: true,
+                  autoUpdateInput: false,
+                  alwaysShowCalendars: true,
+                  minYear: currentYear,
+                  maxYear: currentYear + 1,
+                  "opens": "right",
+                  locale: {
+                    firstDay: 1,
+                    format: 'DD MMMM, YYYY',
+                    "daysOfWeek": [
+                      "LU",
+                      "MA",
+                      "MI",
+                      "JO",
+                      "VI",
+                      "SI",
+                      "DU",
+                    ],
+                    "monthNames": monthNames,
+                  },
+                  isInvalidDate: function(date) {
+                    return !$(this.element[0]).data('available').some(function (dateItem) {
+                      return date.isSame(moment(dateItem, 'DD/MM/YYYY'));
+                    });
+                  },
+                  "parentEl": ".the-result__date-daterangepicker-wrapper",
+                  "autoApply": true,
+                });
+
+                // range update listener
+                picker.on('apply.daterangepicker', function(ev, picker) {
+                  const chosen_date = picker.startDate;
+
+                  $(picker.element[0]).val(`${chosen_date.get('date')} ${monthNames[chosen_date.get('month')]}, ${chosen_date.get('year')}`);
+                  $('.js-result-date-next').removeAttr('disabled');
+                });
+                // prevent hide after range selection
+                picker.data('daterangepicker').hide = function () {};
+                // show picker on load
+                picker.data('daterangepicker').show();
+              });
+            </script>
+          </div>
         </div>
       </div>
     </section>
@@ -269,7 +379,52 @@
 
     <section class="section -medium">
       <div class="base_col">
-        <h2 class="headline -small">Beneficiile unei călătorii cu Global Express</h2>
+        <h2 class="headline -small the-result__advantages-headline">Beneficiile unei călătorii cu Global Express</h2>
+
+        <div class="the-result__advantages -mobile simple-slider simple-slider-2-col">
+          <div>
+            <div class="the-result__advantages-item">
+              <div class="the-result__advantages-item-icon">
+                <img src="./assets/images/content/time.svg" alt="">
+              </div>
+              Timp minim în care ajungeți la destinație în baza curselor optimizat
+            </div>
+            <div class="the-result__advantages-item">
+              <div class="the-result__advantages-item-icon">
+                <img src="./assets/images/content/luggage.svg" alt="">
+              </div>
+              Spațiu suficient pentru bagaje
+            </div>
+          </div>
+          <div>
+            <div class="the-result__advantages-item">
+              <div class="the-result__advantages-item-icon">
+                <img src="./assets/images/content/destination.svg" alt="">
+              </div>
+              Transportarea exact la adresă
+            </div>
+            <div class="the-result__advantages-item">
+              <div class="the-result__advantages-item-icon">
+                <img src="./assets/images/content/prices.svg" alt="">
+              </div>
+              Prețuri accesibile pentru călătorie
+            </div>
+          </div>
+          <div>
+            <div class="the-result__advantages-item">
+              <div class="the-result__advantages-item-icon">
+                <img src="./assets/images/content/dinner.svg" alt="">
+              </div>
+              Mese calde la restaurant la plecare/întoarcere
+            </div>
+            <div class="the-result__advantages-item">
+              <div class="the-result__advantages-item-icon">
+                <img src="./assets/images/content/wifi.svg" alt="">
+              </div>
+              WI-FI, prize, audio-video, aer condiționat, scaune rabatabile
+            </div>
+          </div>
+        </div>
 
         <ul class="the-result__advantages">
           <li class="the-result__advantages-item">
@@ -508,12 +663,11 @@
     </footer>
   </div>
 
-  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/select2/dist/js/select2.full.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="assets/libs/slick-carousel/slick/slick.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-  <script src="assets/libs/slick-carousel/slick/slick.min.js"></script>
 
   <script src="assets/scripts/main.js"></script>
 </body>

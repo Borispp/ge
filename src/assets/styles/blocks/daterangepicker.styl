@@ -6,6 +6,9 @@
   box-shadow 0 6px 12px 0 rgba(24,34,85,0.20)
   min-width 388px
 
+  @media (max-width 520px)
+    min-width 300px
+
   &:before,
   &:after
     display none !important
@@ -13,6 +16,9 @@
   .table-condensed
     border-spacing 10px !important
     border-collapse separate !important
+
+    @media (max-width 520px)
+      border-spacing 4px !important
 
     thead
       tr:nth-child(2) th
@@ -28,6 +34,11 @@
         font-size 13px
         font-weight 400
         transition all $transition
+
+        @media (max-width 520px)
+          min-width 30px
+          width 30px
+          height 34px
 
         &.available
           border 1px solid #fb8e51

@@ -94,8 +94,13 @@ $(document).ready(function() {
   // Useful information block
   $('.js-information-list-name').on('click', function (e) {
     e.stopPropagation();
-    $('.js-information-list-item').removeClass('-open')
-    $(this).closest('.js-information-list-item').addClass('-open');
+    var isOpen = $(this).closest('.js-information-list-item').hasClass('-open');
+
+    $('.js-information-list-item').removeClass('-open');
+
+    if (!isOpen) {
+      $(this).closest('.js-information-list-item').addClass('-open');
+    }
   });
 
   $('body').on('click', function (e) {
@@ -105,7 +110,19 @@ $(document).ready(function() {
     }
   });
 
-// Datepicker
+  // Mobile calendar, result page
+
+  $('.js-show-mobile-calendar').on('click', function () {
+    $('.js-result-calendar').addClass('-open');
+    $('.js-result-mobile-sticky').hide();
+  });
+
+  $('.js-close-result-calendar').on('click', function () {
+    $('.js-result-calendar').removeClass('-open');
+    $('.js-result-mobile-sticky').show();
+  });
+
+  // Datepicker
   var currentYear = new Date().getYear() + 1900;
 
   var monthNames = [
@@ -123,21 +140,23 @@ $(document).ready(function() {
     "Decembrie"
   ];
 
-  $('.the-date__input').daterangepicker({
+  $('.js-date-input').daterangepicker({
     singleDatePicker: true,
     autoUpdateInput: false,
+    alwaysShowCalendars: true,
     minYear: currentYear,
     maxYear: currentYear + 1,
     locale: {
+      firstDay: 1,
       format: 'DD MMMM, YYYY',
       "daysOfWeek": [
-        "DU",
         "LU",
         "MA",
         "MI",
         "JO",
         "VI",
-        "SI"
+        "SI",
+        "DU",
       ],
       "monthNames": monthNames,
     },
@@ -152,13 +171,14 @@ $(document).ready(function() {
     $el.parent().next().removeAttr('disabled');
   });
 
-  $('.the-date__input')
+  $('.js-date-input')
     .on('show.daterangepicker', function () {
       $(this).parent().addClass('-open')
       scrollToPage(this, -100);
     })
     .on('hide.daterangepicker', function () { $(this).parent().removeClass('-open') });
 
+  // Slider
   $('.the-review__slider').slick({
     infinite: true,
     slidesToShow: 3,

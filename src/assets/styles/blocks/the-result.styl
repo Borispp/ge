@@ -527,7 +527,6 @@
     @media (max-width 992px)
       width calc(100% + 12px)
       max-width 780px
-      margin-left -6px
       position relative
       top 20px
       justify-content center
@@ -560,26 +559,266 @@
       height 0
       visibility: hidden;
 
+  &__body-form
+    width 100%
+    background #fff
+    display flex
+    flex 1
+    position relative
+
+    @media (max-width 992px)
+      max-width 780px
+      justify-content center
+      background-color transparent
+
+    &.step2
+      background #F0F5FB
+
+      @media (max-width 992px)
+        background #1639ba
+
+  &__body-form-step-1,
+  &__body-form-step-2
+    width 100%
+    position relative
+    margin-top -60px
+    flex 0 0 388px
+
+    @media (max-width 992px)
+      margin-top 0
+      flex 1
+      width 100%
+
+  &__body-form-step-1
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    transition transform .25s ease-in-out, opacity .25s ease-in-out, visibility 0s linear .25s
+
+    &.hide
+      transform translate(-30%, 0)
+      opacity 0
+      visibility hidden
+
+  &__body-form-step-2
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    padding 0 26px
+    box-sizing border-box
+    background #F0F5FB
+    position absolute
+    height calc(100% + 60px)
+    visibility hidden
+    opacity 1
+    transition transform .25s ease-in-out, opacity .25s ease-in-out, background-color .25s ease-in-out
+
+    &.show
+      visibility visible
+      background-color transparent
+      left 0
+      opacity 1
+
+    .the-date__input-wrapper
+      width 100%
+
+    .the-date__input-wrapper.icon-left .the-date__input-icon
+      left 18px
+
+    .input-wrapper
+      margin-top 14px
+
+      @media (max-width 992px)
+        margin-top 5px
+
+    .the-result__top-direction-header
+      display none
+
+    @media (max-width 992px)
+      height 100%
+      padding 0 16px
+
+      .the-date__input-wrapper
+        display none
+
+      .the-result__top-direction-header
+        display block
+        margin-top 24px
+        padding-bottom 15px
+        margin-bottom 5px
+        width 100%
+
+        .the-result__top-direction-route-label
+          width 25px
+          height 25px
+          font-size 14px
+          margin-right 12px
+
+        .the-result__top-direction-route-location-city
+          font-size 16px
+          line-height 18px
+
+        .the-result__top-direction-route-location-country
+          font-size 10px
+
+  &__person-num
+    width 100%
+    position relative
+    display flex
+    justify-content space-between
+    align-items center
+    margin-top 45px
+    height: 40px;
+
+    @media (max-width 992px)
+      margin-top 0
+
+  &__person-num-label
+    display flex
+    align-items center
+    color #1E2B6F
+    font-size 12px
+    font-weight 500
+
+    svg
+      margin-left 18px
+      margin-right 15px
+
+    @media (max-width 992px)
+      color #fff
+
+  &__person-num-counter
+    display flex
+    align-items stretch
+    width 154px
+    height 40px
+    background #fff
+    box-shadow: 0 1px 3px 0 rgba(73,79,106,0.14);
+    border-radius: 5px
+
+    @media (max-width 992px)
+      width 126px
+
+  &__person-num-result
+    min-width: 0
+    flex 1
+    border 0
+    text-align center
+    font-size 16px
+    color #1E2B6F
+    font-weight 500
+    user-select: none;
+
+  &__person-num-counter-control
+    flex 0 0 38px
+    display flex
+    align-items center
+    justify-content center
+    cursor pointer
+    position relative
+
+    &.-increase
+      &:before
+        content ''
+        position absolute
+        width 1px
+        height calc(100% - 20px)
+        left 0
+        top 10px
+        background #A6B2D9
+
+    &.-descrease
+      &:before
+        content ''
+        position absolute
+        width 1px
+        height calc(100% - 20px)
+        right 0
+        top 10px
+        background #A6B2D9
+
+  &__total-price
+    width 100%
+    display flex
+    justify-content space-between
+    align-items flex-end
+    box-sizing border-box
+    padding-left 50px
+    color #1E2B6F
+    line-height 24px
+    padding-top 22px
+    margin-bottom 22px
+    position relative
+    overflow hidden
+
+    @media (max-width 992px)
+      color #fff
+
+    &:before
+      content '......................................................................................................................'
+      position absolute
+      left 50px
+      bottom 0
+      font-size 12px
+      letter-spacing 2px
+      color #A6B2D9
+
+      @media (max-width 992px)
+        color rgba(#fff, .3)
+
+  &__total-price-label
+    font-size 12px
+    background #F0F5FB
+    padding 0 8px 0 0
+    position relative
+    z-index 1
+
+    @media (max-width 992px)
+      background #1639ba
+
+  &__total-price-count
+    font-size 24px
+    font-weight 500
+    background #F0F5FB
+    padding 0 36px 0 8px
+    position relative
+    top 3px
+    z-index 1
+
+    @media (max-width 992px)
+      color #FD8E49
+
+    sup
+      position relative
+      top -10px
+      left -5px
+      font-size 12px
+
+    @media (max-width 992px)
+      background #1639ba
+
   &__date-daterangepicker-wrapper
     position relative
     width 388px
     height 398px
-    margin-top -60px
 
     @media (max-width 992px)
-      margin-top 0
+      margin-top auto
 
     @media (max-width 520px)
       width 300px
       height 316px
       position relative
-      margin-top 0
+      margin-top auto
 
     .daterangepicker
       left 0 !important
       top 0 !important
 
-  &__date-next
+  &__date-next,
+  &__date-reservation
     z-index 3002
     top 485px
     width 100%
@@ -587,6 +826,7 @@
     height 60px
     line-height 60px
     border-radius 0 0 3px 3px
+    font-family Roboto
     font-weight 500
     font-size: 15px;
     color: #FFFFFF;
@@ -610,7 +850,14 @@
     @media (max-width 992px)
       position relative
       top -20px
-      max-width 768px
+      max-width 780px
+      margin-top auto
+
+  &__date-reservation
+    margin-top auto
+    width calc(100% + 52px)
+    margin-left 0
+    transform translate(0, 1px)
 
   &__mobile-sticky
     width 100%

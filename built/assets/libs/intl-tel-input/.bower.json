@@ -1,0 +1,19 @@
+{
+  "name": "intl-tel-input",
+  "main": [
+    "./build/js/intlTelInput.js",
+    "./build/css/intlTelInput.css"
+  ],
+  "homepage": "https://github.com/jackocnr/intl-tel-input",
+  "version": "15.0.1",
+  "_release": "15.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v15.0.1",
+    "commit": "0940b0812c2afff9447807f641465c7fb9e148f4"
+  },
+  "_source": "https://github.com/jackocnr/intl-tel-input.git",
+  "_target": "^15.0.1",
+  "_originalSource": "jackocnr/intl-tel-input",
+  "_direct": true
+}

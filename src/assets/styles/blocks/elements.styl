@@ -73,6 +73,22 @@
   display block
   position relative
 
+  &.-small
+    height 50px
+
+    .input-wrapper__label
+      top 6px
+
+    .e-input
+      font-size 14px
+
+  &.-phone
+    .input-wrapper__label
+      padding-left 50px
+
+    .intl-tel-input
+      width 100%
+
   &__icon
     position: absolute;
     top: 50%;
@@ -250,3 +266,21 @@
 
   svg
     fill #1639bb
+
+
+.intl-tel-input .selected-flag
+  padding-left 16px
+
+.intl-tel-input.allow-dropdown .flag-container
+  &:hover
+    .selected-flag
+      background-color transparent
+
+.iti-arrow
+  display none
+
+.iti-flag {background-image: url("../libs/intl-tel-input/build/img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti-flag {background-image: url("../libs/intl-tel-input/build/img/flags@2x.png");}
+}

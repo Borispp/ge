@@ -238,6 +238,10 @@ $(document).ready(function () {
   }();
 });
 
+// Phone
+var input = document.querySelector(".js-input-phone");
+intlTelInput(input);
+
 // B0D6FD
 
 var mapStyles = [{

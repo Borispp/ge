@@ -346,9 +346,9 @@
   &__info-item
     display flex
     flex-wrap wrap
-    flex 1 1 50%
+    flex 1 1 calc(50% - 8px)
     align-items center
-    margin-right 15px
+    margin-right 16px
 
     &.small
       flex 0 0 46%
@@ -392,6 +392,9 @@
     &.red
       background #EE6A6A
 
+    &.rose
+      background #FB929F
+
   &__info-item-content-label
     font-size 12px
     font-weight 500
@@ -413,10 +416,13 @@
     @media (max-width: 992px)
       font-size 13px
 
+  &__info-item-content-main-pale
+    color #A6B2D9
+
   &__info-item-icon
     width 32px
     height 32px
-    margin-right 6px
+    margin-right 11px
     display flex
     align-items center
     justify-content center

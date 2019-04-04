@@ -2877,6 +2877,53 @@ a:hover {
 .the-header-page-first-screen .base_col {
   height: 100%;
 }
+.the-parcel {
+  position: relative;
+  color: #1e2b6f;
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  margin: 36px 0 0;
+  padding: 12px 0 0 0;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+}
+.the-parcel:before {
+  content: '●●●●●●●●●●●●●●●●●●●●●●●●●●●';
+  font-size: 24px;
+  line-height: 0;
+  letter-spacing: 5px;
+  color: #1639bb;
+  position: absolute;
+  top: 0;
+  left: calc(50% + 2px);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.the-parcel__item-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 16px 0;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e9f6;
+}
+.the-parcel__item-wrapper.-no-border {
+  border-bottom: none;
+}
+.the-parcel__logo {
+  width: 100%;
+  height: 37px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  background: #f0f5fb;
+  border-radius: 0 0 5px 5px;
+}
 .the-review {
   background: #1639bb;
   padding: 60px 0;
@@ -4771,11 +4818,11 @@ a:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex: 1 1 50%;
-      flex: 1 1 50%;
+  -ms-flex: 1 1 calc(50% - 8px);
+      flex: 1 1 calc(50% - 8px);
   -ms-flex-align: center;
       align-items: center;
-  margin-right: 15px;
+  margin-right: 16px;
 }
 .the-ticket__info-item.small {
   -ms-flex: 0 0 46%;
@@ -4829,6 +4876,9 @@ a:hover {
 .the-ticket__info-item-label.red {
   background: #ee6a6a;
 }
+.the-ticket__info-item-label.rose {
+  background: #fb929f;
+}
 .the-ticket__info-item-content-label {
   font-size: 12px;
   font-weight: 500;
@@ -4854,10 +4904,13 @@ a:hover {
     font-size: 13px;
   }
 }
+.the-ticket__info-item-content-main-pale {
+  color: #a6b2d9;
+}
 .the-ticket__info-item-icon {
   width: 32px;
   height: 32px;
-  margin-right: 6px;
+  margin-right: 11px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;

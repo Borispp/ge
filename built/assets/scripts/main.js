@@ -240,7 +240,11 @@ $(document).ready(function () {
 
 // Phone
 var input = document.querySelector(".js-input-phone");
-intlTelInput(input);
+try {
+  intlTelInput(input);
+} catch (e) {
+  console.log(e.message);
+}
 
 // B0D6FD
 

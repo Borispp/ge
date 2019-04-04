@@ -16,6 +16,7 @@
   "dependencies": {
     "jquery": "~2.2.4",
     "slick-carousel": "https://github.com/kenwheeler/slick.git#^1.6.0",
-    "select2": "~4.0"
+    "select2": "~4.0",
+    "flag-icon-css": "^3.3.0"
   }
 }

@@ -41,6 +41,9 @@ $(document).ready(function() {
     $('.js-form-passanger').removeClass('-hide');
     $('.js-top-search-tabs-item').removeClass('-active');
     $('.js-top-search-passanger').addClass('-active');
+
+    scrollToPage('#the-header-first-screen__search');
+    $('#selectFrom').select2('open');
   }
 
   var openParcelForm = function () {
@@ -48,7 +51,23 @@ $(document).ready(function() {
     $('.js-form-parcel').removeClass('-hide');
     $('.js-top-search-tabs-item').removeClass('-active');
     $('.js-top-search-parcel').addClass('-active');
+
+    scrollToPage('#the-header-first-screen__search');
+    $('#selectParcelDestination').select2('open');
   }
+
+  var hash = $(location).attr('hash');
+  if (hash === '#passenger') {
+    setTimeout(function () {
+      openPassangerForm();
+    }, 100);
+  }
+  if (hash === '#parcel') {
+    setTimeout(function () {
+      openParcelForm();
+    }, 100);
+  }
+
 
   // Main form switch
   $('.js-top-search-tabs-item').on('click', function () {
@@ -80,15 +99,11 @@ $(document).ready(function() {
   // Scroll to top and open passanger form
   $('.js-reservation-passanger').on('click', function () {
     openPassangerForm();
-    scrollToPage('#the-header-first-screen__search');
-    $('#selectFrom').select2('open');
   });
 
   // Scroll to top and open parcel form
   $('.js-reservation-parcel').on('click', function () {
     openParcelForm();
-    scrollToPage('#the-header-first-screen__search');
-    $('#selectParcelDestination').select2('open');
   });
 
   // Useful information block
@@ -168,6 +183,9 @@ $(document).ready(function() {
   }, function(chosen_date) {
     var $el = $(this.element[0]);
     $el.val(`${chosen_date.get('date')} ${monthNames[chosen_date.get('month')]}, ${chosen_date.get('year')}`);
+    $el.next().val(`${chosen_date.get('date')}.${chosen_date.get('month')}.${chosen_date.get('year')}`);
+    // В стрке выше можете указывать какой удобно формат
+    console.log($el.next().val());
     $el.parent().next().removeAttr('disabled');
   });
 

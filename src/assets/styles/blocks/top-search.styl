@@ -143,12 +143,25 @@
     flex 1
     margin 0 5px
 
+    .the-date__input-wrapper
+      overflow hidden
+
+    .the-date__label
+      white-space nowrap
+      overflow hidden
+
+    &.top-search__item-passanger
+      flex 0 0 120px
+
     @media (max-width 1100px)
       margin 0 3px
 
     @media (max-width 992px)
       flex 0 0 100%
       margin 0 0 6px
+
+      &.top-search__item-passanger
+        flex 0 0 100%
 
     .the-date__input-wrapper
       height 58px

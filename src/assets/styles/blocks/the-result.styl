@@ -40,6 +40,80 @@
     @media (max-width 992px)
       flex 0 0 100%
 
+  &__details-order-list
+    position absolute
+    top 82px
+    width 100%
+    height calc(100% - 100px)
+    padding 20px
+    box-sizing border-box
+    background #f0f5fb
+    opacity 0
+    transform translate(0, 150px)
+    visibility hidden
+    transition all .25s ease-in-out
+
+    &.top-0
+      top 0
+
+    &.show
+      opacity 1
+      transform translate(0, 0)
+      visibility visible
+
+  &__details-order-list-item
+    display flex
+    align-items center
+    overflow hidden
+    color $blue-deep
+    font-size 12px
+    font-weight 500
+    width 100%
+    max-width 290px
+    margin-bottom 6px
+    position relative
+
+    &:before
+      content: '......................................................................................................................';
+      position: absolute;
+      z-index 0
+      left: 50px;
+      bottom: 1px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #a6b2d9;
+
+  &__details-order-count
+    flex 0 0 30px
+    padding-left 5px
+    position relative
+    z-index 1
+    background #f0f5fb
+
+  &__details-order-descriprion
+    position relative
+    z-index 1
+    background #f0f5fb
+    padding-right 3px
+
+    span
+      color #A6B2D9
+      font-weight 400
+
+  &__details-order-price
+    position relative
+    z-index 1
+    background #f0f5fb
+    font-size 14px
+    font-weight 600
+    margin-left auto
+    padding-left 4px
+
+    sup
+      font-size 9px
+      position relative
+      top -4px
+
   &__top-direction-header
     display flex
     align-items flex-end
@@ -82,6 +156,29 @@
   &__top-direction-route
     display flex
     align-items center
+
+    &.small
+      .the-result__top-direction-route
+        height 81px
+
+      .the-result__top-direction-route-location-city
+        font-size 20px
+        line-height 20px
+
+      .the-result__top-direction-route-location-country
+        font-size 9px
+        line-height 11px
+
+      .the-result__top-direction-route-label
+        width 26px
+        height 26px
+
+      .the-result__top-direction-route-separator
+        transform scale(0.8)
+        margin 0 15px
+
+    &.blue
+      background #0A2DB1
 
   &__top-direction-route-item
     display flex
@@ -134,6 +231,9 @@
     color: #FFFFFF;
     letter-spacing: 0;
     line-height: 32px;
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
 
     @media (max-width 1100px)
       font-size 26px
@@ -156,15 +256,19 @@
       font-size 13px
       line-height 18px
 
+  &__top-switcher
+    padding-left 50px
+    margin 12px 0 0
+
+    @media (max-width 1100px)
+      padding-left 0
+
   &__top-list
-    margin-top 42px
+    margin-top 10px
     margin-left 50px
 
     @media (max-width 1100px)
       margin-left 0
-
-    @media (max-width 992px)
-      margin-top 12px
 
   &__top-list-item
     display flex
@@ -500,7 +604,7 @@
       justify-content space-between
       background #fff
       margin-bottom 0
-      transform translate(calc(-100% - 20px), 0)
+      transform translate(0, calc(100% + 20px))
       transition: transform .5s ease-in-out
 
       &.-open
@@ -518,7 +622,7 @@
     background-size cover
     background-position center
     box-sizing border-box
-    padding 22px 0 0
+    padding 30px 0 0
     position relative
 
     .close-button
@@ -530,6 +634,7 @@
       position relative
       top 20px
       justify-content center
+      padding-top 0px
 
       .close-button
         display flex
@@ -561,10 +666,24 @@
 
   &__body-form
     width 100%
+    min-height 360px
     background #fff
     display flex
     flex 1
     position relative
+
+    .the-switch-tour
+      width 175px
+      margin-top -10px
+
+      .the-switch-tour__button
+        text-transform none
+
+    .the-result__top-direction-route
+      width 100%
+      box-sizing border-box
+      padding 24px 20px
+      margin-top -9px
 
     @media (max-width 992px)
       max-width 780px
@@ -581,7 +700,7 @@
   &__body-form-step-2
     width 100%
     position relative
-    margin-top -60px
+    margin-top -35px
     flex 0 0 388px
 
     @media (max-width 992px)
@@ -592,7 +711,7 @@
   &__body-form-step-1
     display flex
     flex-direction column
-    justify-content center
+    // justify-content center
     align-items center
     transition transform .25s ease-in-out, opacity .25s ease-in-out, visibility 0s linear .25s
 
@@ -606,18 +725,19 @@
     flex-direction column
     justify-content center
     align-items center
-    padding 0 26px
+    padding 10px 20px 0
     box-sizing border-box
     background #F0F5FB
     position absolute
-    height calc(100% + 60px)
+    margin-top -30px
+    height calc(100% + 30px)
     visibility hidden
     opacity 1
     transition transform .25s ease-in-out, opacity .25s ease-in-out, background-color .25s ease-in-out
 
     &.show
       visibility visible
-      background-color transparent
+      // background-color transparent
       left 0
       opacity 1
 
@@ -630,6 +750,10 @@
     .input-wrapper
       margin-top 14px
 
+      &.-phone
+        position relative
+        z-index 3010
+
       @media (max-width 992px)
         margin-top 5px
 
@@ -637,31 +761,12 @@
       display none
 
     @media (max-width 992px)
+      padding 10px 16px 0
+      margin-top 0
       height 100%
-      padding 0 16px
 
       .the-date__input-wrapper
         display none
-
-      .the-result__top-direction-header
-        display block
-        margin-top 24px
-        padding-bottom 15px
-        margin-bottom 5px
-        width 100%
-
-        .the-result__top-direction-route-label
-          width 25px
-          height 25px
-          font-size 14px
-          margin-right 12px
-
-        .the-result__top-direction-route-location-city
-          font-size 16px
-          line-height 18px
-
-        .the-result__top-direction-route-location-country
-          font-size 10px
 
   &__person-num
     width 100%
@@ -669,11 +774,8 @@
     display flex
     justify-content space-between
     align-items center
-    margin-top 45px
+    margin-top 10px
     height: 40px;
-
-    @media (max-width 992px)
-      margin-top 0
 
   &__person-num-label
     display flex
@@ -749,12 +851,10 @@
     color #1E2B6F
     line-height 24px
     padding-top 22px
+    margin-top auto
     margin-bottom 22px
     position relative
     overflow hidden
-
-    @media (max-width 992px)
-      color #fff
 
     &:before
       content '......................................................................................................................'
@@ -765,18 +865,13 @@
       letter-spacing 2px
       color #A6B2D9
 
-      @media (max-width 992px)
-        color rgba(#fff, .3)
-
   &__total-price-label
     font-size 12px
+    font-weight 500
     background #F0F5FB
     padding 0 8px 0 0
     position relative
     z-index 1
-
-    @media (max-width 992px)
-      background #1639ba
 
   &__total-price-count
     font-size 24px
@@ -786,18 +881,16 @@
     position relative
     top 3px
     z-index 1
+    color $blue
 
     @media (max-width 992px)
-      color #FD8E49
+      color $blue
 
     sup
       position relative
       top -10px
       left -5px
       font-size 12px
-
-    @media (max-width 992px)
-      background #1639ba
 
   &__date-daterangepicker-wrapper
     position relative
@@ -851,10 +944,9 @@
       position relative
       top -20px
       max-width 780px
-      margin-top auto
+      margin-top 20px
 
   &__date-reservation
-    margin-top auto
     width calc(100% + 52px)
     margin-left 0
     transform translate(0, 1px)
@@ -870,6 +962,9 @@
     background #fff
     padding 0 10px
     box-sizing border-box
+
+    @media (min-width 992px)
+      display none !important
 
     @media (max-width 992px)
       display block
@@ -936,6 +1031,115 @@
   &__mobile-sticky-show-dates-button
     margin-left auto
 
+  &__details-list
+    position relative
+    width 100%
+    padding 15px 20px
+    box-sizing border-box
+
+  &__details-list-item
+    display flex
+    align-items center
+    justify-content space-between
+    height 42px
+    font-size 13px
+    font-weight 500
+    color $blue-deep
+    border-bottom 1px solid rgba($blue-deep, .2)
+
+    &:last-child
+      border-bottom 0
+
+  &__details-list-item-label
+    display flex
+    align-items center
+    flex 1
+
+    svg
+      margin-right 8px
+
+  &__details-list-item-icon
+    flex 0 0 38px
+    padding-left 6px
+    box-sizing border-box
+
+  &__details-list-item-value
+    flex 0 0 115px
+
+  &__details-summary
+    position relative
+    z-index 2
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    width 100%
+    min-height 115px
+    margin-top auto
+    background #F0F5FB
+    padding 0 20px 15px
+    box-sizing border-box
+
+    .the-result__total-price-count
+      color $blue
+
+    .the-result__total-price
+      padding-top 15px
+      padding-left 38px
+      margin-bottom 15px
+
+      &:before
+        left 38px
+
+    .the-result__total-price-count
+      padding-right 38px
+
+  &__details-summary-price
+    width 100%
+    border-bottom 1px solid rgba($blue-deep, .2)
+    margin-bottom 15px
+
+  &__show-details-button-text-hide
+    display none
+
+  &__show-details-button-icon-hide
+    display none
+
+  &__show-details-button
+    cursor pointer
+    display flex
+    align-items center
+    font-weight 500
+    font-size: 12px;
+    color: #FD8E49;
+    border 0
+    background none
+
+    svg
+      margin-right 10px
+
+    &.show
+      .the-result__show-details-button-text-show
+        display none
+
+      .the-result__show-details-button-text-hide
+        display block
+
+      .the-result__show-details-button-icon-show
+        display none
+
+      .the-result__show-details-button-icon-hide
+        display block
+
+  &__show-details-button-text
+    width 60px
+    text-align left
+
+  &__top-switcher
+    display flex
+
+    .the-switch-tour
+      width 125px
 
 @keyframes sectionBgLoop {
   0% {

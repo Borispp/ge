@@ -172,6 +172,15 @@
               Transportul internaţional de persoane este principala activitate a companiei noastre. Ne străduim permanent să ne îmbunătăţim serviciile.
             </div>
 
+            <div class="the-result__top-switcher">
+              <div class="the-switch-tour__single" style="margin-right: 10px">Tur</div>
+
+              <div class="the-switch-tour">
+                <button type="button" class="the-switch-tour__button js-the-switch-tour-button active">Tur</button>
+                <button type="button" class="the-switch-tour__button js-the-switch-tour-button">Retur</button>
+              </div>
+            </div>
+
             <ul class="the-result__top-list">
               <li class="the-result__top-list-item">
                 <span class="the-result__top-list-label">
@@ -238,10 +247,116 @@
             </div>
 
             <div class="the-result__body-form js-body-form">
-              <div class="the-result__body-form-step-1 js-result-step-1">
-                <div class="the-result__date-daterangepicker-wrapper"></div>
+              <div class="the-result__body-form-step-1 js-result-step-1 js-result-body-form-steps">
+                <div class="the-switch-tour">
+                  <button type="button" class="the-switch-tour__button active js-the-switch-tour-button">O directie</button>
+                  <button type="button" class="the-switch-tour__button js-the-switch-tour-button">Tur- retur</button>
+                </div>
 
-                <button class="the-result__date-next js-result-date-next" disabled>
+                <div class="the-result__top-direction-route small blue">
+                  <div class="the-result__top-direction-route-item">
+                    <div class="the-result__top-direction-route-label blue">A</div>
+                    <div class="the-result__top-direction-route-location">
+                      <div class="the-result__top-direction-route-location-city">Chisinau</div>
+                      <div class="the-result__top-direction-route-location-country">Moldova</div>
+                    </div>
+                  </div>
+
+                  <div class="the-result__top-direction-route-separator">
+                    <svg width="23" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M0 10.503V6.299c0-.394.306-.7.7-.7h11.778V.695c0-.285.153-.526.416-.635a.748.748 0 0 1 .766.11l8.407 7.662a.713.713 0 0 1 .219.503.764.764 0 0 1-.22.526l-8.406 7.75a.709.709 0 0 1-.766.131.701.701 0 0 1-.416-.635v-4.904H.7a.692.692 0 0 1-.701-.7z" fill="#FFF" fill-rule="nonzero" opacity=".4"></path></svg>
+
+                    <!-- Retur svg -->
+                    <!-- <svg width="15" height="20" width="23" height="30" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="nonzero" opacity=".4"><path d="M2 5.79V3.473c0-.218.169-.387.386-.387H8.88V.383c0-.157.084-.29.23-.35a.412.412 0 0 1 .421.06l4.635 4.224c.072.073.12.17.12.278a.421.421 0 0 1-.12.29L9.53 9.157a.387.387 0 1 1-.652-.278V6.177H2.387A.381.381 0 0 1 2 5.79zM12.286 15.79v-2.317a.381.381 0 0 0-.386-.387H5.407v-2.703a.368.368 0 0 0-.23-.35.412.412 0 0 0-.422.06L.121 14.317a.393.393 0 0 0-.121.278c0 .109.048.217.12.29l4.635 4.272a.387.387 0 1 0 .652-.278v-2.703H11.9a.381.381 0 0 0 .386-.386z"/></g></svg> -->
+                  </div>
+
+                  <div class="the-result__top-direction-route-item">
+                    <div class="the-result__top-direction-route-label red">B</div>
+                    <div class="the-result__top-direction-route-location">
+                      <div class="the-result__top-direction-route-location-city">Berlin</div>
+                      <div class="the-result__top-direction-route-location-country">Germania</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="the-result__details-list">
+                  <div class="the-result__details-list-item">
+                    <div class="the-result__details-list-item-label">
+                      <span class="the-result__details-list-item-icon">
+                        <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="#A6B2D9" fill-rule="nonzero"><path d="M1.275 16.571h2.868v-2.868H1.275v2.868zm3.505 0h3.187v-2.868H4.78v2.868zm-3.505-3.505h2.868V9.879H1.275v3.187zm3.505 0h3.187V9.879H4.78v3.187zM1.275 9.242h2.868V6.374H1.275v2.868zm7.33 7.33h3.186v-2.869H8.604v2.868zM4.78 9.241h3.187V6.374H4.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879H8.604v3.187zM5.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zM8.604 9.242h3.187V6.374H8.604v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H1.275A1.284 1.284 0 0 1 0 16.571V3.824C0 3.127.578 2.55 1.275 2.55h1.274v-.956C2.55.717 3.266 0 4.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C10.198.717 10.915 0 11.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z"/><path d="M17.14 13.582v-1.324c0-.306.176-.578.462-.697a.79.79 0 0 1 .814.132l3.142 2.865a.762.762 0 0 1-.015 1.104l-3.13 2.885a.769.769 0 0 1-.826.133.76.76 0 0 1-.448-.691v-1.324H13.26a.757.757 0 0 1-.76-.76v-1.563c0-.423.338-.76.76-.76h3.88z" stroke="#FFF"/></g></svg>
+                      </span>
+                      Data plecarii:
+                    </div>
+                    <div class="the-result__details-list-item-value">25 Feb, 2019</div>
+                  </div>
+                  <div class="the-result__details-list-item">
+                    <div class="the-result__details-list-item-label">
+                      <span class="the-result__details-list-item-icon">
+                        <svg style="margin-left: -6px" width="23" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="#A6B2D9" fill-rule="nonzero"><path d="M7.275 16.571h2.868v-2.868H7.275v2.868zm3.505 0h3.187v-2.868H10.78v2.868zm-3.505-3.505h2.868V9.879H7.275v3.187zm3.505 0h3.187V9.879H10.78v3.187zM7.275 9.242h2.868V6.374H7.275v2.868zm7.33 7.33h3.186v-2.869h-3.187v2.868zm-3.825-7.33h3.187V6.374H10.78v2.868zm7.649 7.33h2.868v-2.869h-2.868v2.868zm-3.825-3.506h3.187V9.879h-3.187v3.187zM11.1 4.462V1.593c0-.169-.15-.318-.319-.318h-.637c-.17 0-.319.15-.319.318v2.869c0 .169.15.318.319.318h.637c.17 0 .319-.15.319-.318zm7.33 8.604h2.868V9.879h-2.868v3.187zm-3.825-3.824h3.187V6.374h-3.187v2.868zm3.825 0h2.868V6.374h-2.868v2.868zm.318-4.78V1.593c0-.169-.15-.318-.318-.318h-.638c-.17 0-.318.15-.318.318v2.869c0 .169.149.318.318.318h.638c.169 0 .318-.15.318-.318zm3.824-.638v12.747c0 .698-.577 1.275-1.274 1.275H7.275A1.284 1.284 0 0 1 6 16.571V3.824c0-.697.578-1.275 1.275-1.275h1.274v-.956C8.55.717 9.266 0 10.143 0h.637c.877 0 1.594.717 1.594 1.593v.956h3.824v-.956C16.198.717 16.915 0 17.79 0h.638c.876 0 1.593.717 1.593 1.593v.956h1.275c.697 0 1.274.578 1.274 1.275z"/><path d="M5.14 13.582v-1.324c0-.306.176-.578.462-.697a.79.79 0 0 1 .814.132l3.142 2.865a.762.762 0 0 1-.015 1.104l-3.13 2.885a.769.769 0 0 1-.826.133.76.76 0 0 1-.448-.691v-1.324H1.26a.757.757 0 0 1-.76-.76v-1.563c0-.423.338-.76.76-.76h3.88z" stroke="#FFF"/></g></svg>
+                      </span>
+                      Data sosirei:
+                    </div>
+                    <div class="the-result__details-list-item-value">24 Mar, 2019</div>
+                  </div>
+                  <div class="the-result__details-list-item">
+                    <div class="the-result__details-list-item-label">
+                      <span class="the-result__details-list-item-icon">
+                        <svg width="18" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M5.56 8.4a3.318 3.318 0 0 0-2.485 1.2H1.819C.88 9.6 0 9.15 0 8.11 0 7.35-.028 4.8 1.163 4.8c.196 0 1.171.797 2.437.797a3.75 3.75 0 0 0 1.247-.216A4.582 4.582 0 0 0 4.8 6c0 .853.272 1.697.76 2.4zm10.04 5.972c0 1.519-1.003 2.428-2.503 2.428H4.903c-1.5 0-2.503-.91-2.503-2.428C2.4 12.253 2.897 9 5.644 9 5.963 9 7.125 10.303 9 10.303c1.875 0 3.037-1.303 3.356-1.303 2.747 0 3.244 3.253 3.244 5.372zM6 2.4c0 1.322-1.078 2.4-2.4 2.4a2.405 2.405 0 0 1-2.4-2.4C1.2 1.078 2.278 0 3.6 0 4.922 0 6 1.078 6 2.4zM12.6 6a3.6 3.6 0 0 1-7.2 0 3.6 3.6 0 0 1 7.2 0zM18 8.11c0 1.04-.881 1.49-1.819 1.49h-1.256a3.318 3.318 0 0 0-2.484-1.2c.487-.703.759-1.547.759-2.4 0-.206-.019-.413-.047-.619.403.14.816.216 1.247.216 1.266 0 2.24-.797 2.437-.797C18.028 4.8 18 7.35 18 8.11zM16.8 2.4c0 1.322-1.078 2.4-2.4 2.4A2.405 2.405 0 0 1 12 2.4C12 1.078 13.078 0 14.4 0c1.322 0 2.4 1.078 2.4 2.4z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                      </span>
+                      Pasageri:
+                    </div>
+                    <div class="the-result__details-list-item-value">3</div>
+                  </div>
+                </div>
+
+                <div class="the-result__details-summary">
+                  <div class="the-result__details-summary-price">
+                    <div class="the-result__total-price">
+                      <div class="the-result__total-price-label">Total</div>
+                      <div class="the-result__total-price-count">€280, <sup>99</sup></div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="the-result__show-details-button js-show-details-button">
+                    <svg class="the-result__show-details-button-icon-show" width="24" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="12" cy="12" r="9"/><filter x="-27.8%" y="-22.2%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.603600543 0 0 0 0 0.263220091 0 0 0 0 0.0518259156 0 0 0 0.299032998 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><circle fill="#FD8E49" cx="12" cy="12" r="12"/><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FFF" xlink:href="#b"/><g transform="translate(11 7)" fill="#FD8E49"><rect width="2" height="6.667" rx="1"/><ellipse cx="1" cy="8.889" rx="1" ry="1.111"/></g></g></svg>
+
+                    <svg class="the-result__show-details-button-icon-hide" width="24" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="12" cy="12" r="9"/><filter x="-27.8%" y="-22.2%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.603600543 0 0 0 0 0.263220091 0 0 0 0 0.0518259156 0 0 0 0.299032998 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><circle fill="#FD8E49" cx="12" cy="12" r="12"/><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FFF" xlink:href="#b"/><g fill="#FD8E49"><path d="M13.414 12.5l2.475 2.475a1 1 0 0 1-1.414 1.414L12 13.914 9.525 16.39a1 1 0 0 1-1.414-1.414l2.475-2.475-2.475-2.475a1 1 0 1 1 1.414-1.414L12 11.086l2.475-2.475a1 1 0 1 1 1.414 1.414L13.414 12.5z"/></g></g></svg>
+
+                    <span class="the-result__show-details-button-text the-result__show-details-button-text-show">Detalii</span>
+                    <span class="the-result__show-details-button-text the-result__show-details-button-text-hide">Inchide</span>
+                  </button>
+                </div>
+
+                <div class="the-result__details-order-list js-details-order-list">
+                  <div class="the-result__details-order-list-item">
+                    <span class="the-result__details-order-count">x1</span>
+                    <span class="the-result__details-order-descriprion">
+                      Maturi <span>(de la 12 ani)</span>
+                    </span>
+                    <span class="the-result__details-order-price">
+                      €50,<sup>99</sup>
+                    </span>
+                  </div>
+                  <div class="the-result__details-order-list-item">
+                    <span class="the-result__details-order-count">x1</span>
+                    <span class="the-result__details-order-descriprion">
+                      Copii <span>(de la 2 pina la 12 ani)</span>
+                    </span>
+                    <span class="the-result__details-order-price">
+                      €50,<sup>99</sup>
+                    </span>
+                  </div>
+                  <div class="the-result__details-order-list-item">
+                    <span class="the-result__details-order-count">x1</span>
+                    <span class="the-result__details-order-descriprion">
+                      Bebelusi <span>(pina la 2 ani)</span>
+                    </span>
+                    <span class="the-result__details-order-price">
+                      €0,<sup>00</sup>
+                    </span>
+                  </div>
+                </div>
+
+                <button type="button" class="the-result__date-next js-result-date-next">
                   Urmatorul Pas
                 </button>
               </div>
@@ -254,77 +369,17 @@
                     $('.js-result-step-2').addClass('show');
                     $('.js-body-form').addClass('step2');
                   });
-
-
-                  var currentYear = new Date().getYear() + 1900;
-
-                  var monthNames = [
-                    "Ianuarie",
-                    "Februarie",
-                    "Martie",
-                    "Aprilie",
-                    "Mai",
-                    "Iunie",
-                    "Iulie",
-                    "August",
-                    "Septembrie",
-                    "Octombrie",
-                    "Noiembrie",
-                    "Decembrie"
-                  ];
-
-                  // init daterangepicker
-                  var picker = $('.js-result-date').daterangepicker({
-                    singleDatePicker: true,
-                    autoUpdateInput: false,
-                    alwaysShowCalendars: true,
-                    minYear: currentYear,
-                    maxYear: currentYear + 1,
-                    "opens": "right",
-                    locale: {
-                      firstDay: 1,
-                      format: 'DD MMMM, YYYY',
-                      "daysOfWeek": [
-                        "LU",
-                        "MA",
-                        "MI",
-                        "JO",
-                        "VI",
-                        "SI",
-                        "DU",
-                      ],
-                      "monthNames": monthNames,
-                    },
-                    isInvalidDate: function(date) {
-                      return !$(this.element[0]).data('available').some(function (dateItem) {
-                        return date.isSame(moment(dateItem, 'DD/MM/YYYY'));
-                      });
-                    },
-                    "parentEl": ".the-result__date-daterangepicker-wrapper",
-                    "autoApply": true,
-                  });
-
-                  // range update listener
-                  picker.on('apply.daterangepicker', function(ev, picker) {
-                    const chosen_date = picker.startDate;
-
-                    $(picker.element[0]).val(`${chosen_date.get('date')} ${monthNames[chosen_date.get('month')]}, ${chosen_date.get('year')}`);
-                    $('.js-result-date-next').removeAttr('disabled');
-                  });
-                  // prevent hide after range selection
-                  picker.data('daterangepicker').hide = function () {};
-                  // show picker on load
-                  picker.data('daterangepicker').show();
                 });
               </script>
 
-              <form class="the-result__body-form-step-2 js-result-step-2">
-                <div class="the-date__input-wrapper icon-left -small">
+              <form class="the-result__body-form-step-2 js-result-step-2 js-result-body-form-steps">
+                <!-- <div class="the-date__input-wrapper icon-left -small">
                   <img src="./assets/images/content/calendar.svg" alt="" class="the-date__input-icon">
                   <input type="text" readonly="" class="the-date__input -small js-date-input" data-available='["24/03/2019", "25/03/2019"]' value="24 Aprilie, 2019" placeholder="Ziua, data, anul">
-                </div>
+                  <input type="text" readonly style="display:none" name="date-with-nice-format">
+                </div> -->
 
-                <div class="the-result__top-direction-header">
+                <!-- <div class="the-result__top-direction-header">
                   <div class="the-result__top-direction-route">
                     <div class="the-result__top-direction-route-item">
                       <div class="the-result__top-direction-route-label blue">A</div>
@@ -337,7 +392,7 @@
                     <div class="the-result__top-direction-route-separator">
                       <svg width="23" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M0 10.503V6.299c0-.394.306-.7.7-.7h11.778V.695c0-.285.153-.526.416-.635a.748.748 0 0 1 .766.11l8.407 7.662a.713.713 0 0 1 .219.503.764.764 0 0 1-.22.526l-8.406 7.75a.709.709 0 0 1-.766.131.701.701 0 0 1-.416-.635v-4.904H.7a.692.692 0 0 1-.701-.7z" fill="#FFF" fill-rule="nonzero" opacity=".4"></path></svg>
 
-                      <!-- <svg width="15" height="20" width="23" height="30" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="nonzero" opacity=".4"><path d="M2 5.79V3.473c0-.218.169-.387.386-.387H8.88V.383c0-.157.084-.29.23-.35a.412.412 0 0 1 .421.06l4.635 4.224c.072.073.12.17.12.278a.421.421 0 0 1-.12.29L9.53 9.157a.387.387 0 1 1-.652-.278V6.177H2.387A.381.381 0 0 1 2 5.79zM12.286 15.79v-2.317a.381.381 0 0 0-.386-.387H5.407v-2.703a.368.368 0 0 0-.23-.35.412.412 0 0 0-.422.06L.121 14.317a.393.393 0 0 0-.121.278c0 .109.048.217.12.29l4.635 4.272a.387.387 0 1 0 .652-.278v-2.703H11.9a.381.381 0 0 0 .386-.386z"/></g></svg> -->
+                      <svg width="15" height="20" width="23" height="30" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="nonzero" opacity=".4"><path d="M2 5.79V3.473c0-.218.169-.387.386-.387H8.88V.383c0-.157.084-.29.23-.35a.412.412 0 0 1 .421.06l4.635 4.224c.072.073.12.17.12.278a.421.421 0 0 1-.12.29L9.53 9.157a.387.387 0 1 1-.652-.278V6.177H2.387A.381.381 0 0 1 2 5.79zM12.286 15.79v-2.317a.381.381 0 0 0-.386-.387H5.407v-2.703a.368.368 0 0 0-.23-.35.412.412 0 0 0-.422.06L.121 14.317a.393.393 0 0 0-.121.278c0 .109.048.217.12.29l4.635 4.272a.387.387 0 1 0 .652-.278v-2.703H11.9a.381.381 0 0 0 .386-.386z"/></g></svg>
                     </div>
 
                     <div class="the-result__top-direction-route-item">
@@ -353,9 +408,9 @@
                     <div class="the-result__top-direction-price-value">€28,<sup>99</sup></div>
                     <div class="the-result__top-direction-price-label">O directie</div>
                   </div>
-                </div>
+                </div> -->
 
-                <div class="the-result__person-num">
+                <!-- <div class="the-result__person-num">
                   <span class="the-result__person-num-label">
                     <svg width="18" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M5.56 8.4a3.318 3.318 0 0 0-2.485 1.2H1.819C.88 9.6 0 9.15 0 8.11 0 7.35-.028 4.8 1.163 4.8c.196 0 1.171.797 2.437.797a3.75 3.75 0 0 0 1.247-.216A4.582 4.582 0 0 0 4.8 6c0 .853.272 1.697.76 2.4zm10.04 5.972c0 1.519-1.003 2.428-2.503 2.428H4.903c-1.5 0-2.503-.91-2.503-2.428C2.4 12.253 2.897 9 5.644 9 5.963 9 7.125 10.303 9 10.303c1.875 0 3.037-1.303 3.356-1.303 2.747 0 3.244 3.253 3.244 5.372zM6 2.4c0 1.322-1.078 2.4-2.4 2.4a2.405 2.405 0 0 1-2.4-2.4C1.2 1.078 2.278 0 3.6 0 4.922 0 6 1.078 6 2.4zM12.6 6a3.6 3.6 0 0 1-7.2 0 3.6 3.6 0 0 1 7.2 0zM18 8.11c0 1.04-.881 1.49-1.819 1.49h-1.256a3.318 3.318 0 0 0-2.484-1.2c.487-.703.759-1.547.759-2.4 0-.206-.019-.413-.047-.619.403.14.816.216 1.247.216 1.266 0 2.24-.797 2.437-.797C18.028 4.8 18 7.35 18 8.11zM16.8 2.4c0 1.322-1.078 2.4-2.4 2.4A2.405 2.405 0 0 1 12 2.4C12 1.078 13.078 0 14.4 0c1.322 0 2.4 1.078 2.4 2.4z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
                     Nr. de persoane:
@@ -386,7 +441,7 @@
                       });
                     });
                   </script>
-                </div>
+                </div> -->
 
                 <label class="input-wrapper -small icon">
                   <svg width="18" height="15" class="input-wrapper__icon" xmlns="http://www.w3.org/2000/svg"><path d="M3.857 10.607v.643a.33.33 0 0 1-.321.321h-.643a.33.33 0 0 1-.322-.321v-.643c0-.17.151-.321.322-.321h.643c.17 0 .321.15.321.321zm0-2.571v.643A.33.33 0 0 1 3.536 9h-.643a.33.33 0 0 1-.322-.321v-.643c0-.171.151-.322.322-.322h.643c.17 0 .321.151.321.322zm0-2.572v.643a.33.33 0 0 1-.321.322h-.643a.33.33 0 0 1-.322-.322v-.643c0-.17.151-.321.322-.321h.643c.17 0 .321.15.321.321zm11.572 5.143v.643a.33.33 0 0 1-.322.321H5.464a.33.33 0 0 1-.321-.321v-.643c0-.17.15-.321.321-.321h9.643c.17 0 .322.15.322.321zm0-2.571v.643a.33.33 0 0 1-.322.321H5.464a.33.33 0 0 1-.321-.321v-.643c0-.171.15-.322.321-.322h9.643c.17 0 .322.151.322.322zm0-2.572v.643a.33.33 0 0 1-.322.322H5.464a.33.33 0 0 1-.321-.322v-.643c0-.17.15-.321.321-.321h9.643c.17 0 .322.15.322.321zm1.285 7.072V4.179a.33.33 0 0 0-.321-.322H1.607a.33.33 0 0 0-.321.322v8.357c0 .17.15.321.321.321h14.786a.33.33 0 0 0 .321-.321zM18 1.607v10.929c0 .884-.723 1.607-1.607 1.607H1.607A1.612 1.612 0 0 1 0 12.536V1.607C0 .723.723 0 1.607 0h14.786C17.277 0 18 .723 18 1.607z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
@@ -405,9 +460,52 @@
                   <span class="input-wrapper__label">Telefon:</span>
                 </label>
 
-                <div class="the-result__total-price">
-                  <div class="the-result__total-price-label">Total</div>
-                  <div class="the-result__total-price-count">€280, <sup>99</sup></div>
+                <div class="the-result__details-summary" style="padding-left: 0; padding-right: 0;">
+                  <div class="the-result__details-summary-price">
+                    <div class="the-result__total-price">
+                      <div class="the-result__total-price-label">Total</div>
+                      <div class="the-result__total-price-count">€280, <sup>99</sup></div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="the-result__show-details-button js-show-details-button">
+                    <svg class="the-result__show-details-button-icon-show" width="24" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="12" cy="12" r="9"/><filter x="-27.8%" y="-22.2%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.603600543 0 0 0 0 0.263220091 0 0 0 0 0.0518259156 0 0 0 0.299032998 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><circle fill="#FD8E49" cx="12" cy="12" r="12"/><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FFF" xlink:href="#b"/><g transform="translate(11 7)" fill="#FD8E49"><rect width="2" height="6.667" rx="1"/><ellipse cx="1" cy="8.889" rx="1" ry="1.111"/></g></g></svg>
+
+                    <svg class="the-result__show-details-button-icon-hide" width="24" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="12" cy="12" r="9"/><filter x="-27.8%" y="-22.2%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.603600543 0 0 0 0 0.263220091 0 0 0 0 0.0518259156 0 0 0 0.299032998 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><circle fill="#FD8E49" cx="12" cy="12" r="12"/><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FFF" xlink:href="#b"/><g fill="#FD8E49"><path d="M13.414 12.5l2.475 2.475a1 1 0 0 1-1.414 1.414L12 13.914 9.525 16.39a1 1 0 0 1-1.414-1.414l2.475-2.475-2.475-2.475a1 1 0 1 1 1.414-1.414L12 11.086l2.475-2.475a1 1 0 1 1 1.414 1.414L13.414 12.5z"/></g></g></svg>
+
+                    <span class="the-result__show-details-button-text the-result__show-details-button-text-show">Detalii</span>
+                    <span class="the-result__show-details-button-text the-result__show-details-button-text-hide">Inchide</span>
+                  </button>
+                </div>
+
+                <div class="the-result__details-order-list top-0 js-details-order-list">
+                  <div class="the-result__details-order-list-item">
+                    <span class="the-result__details-order-count">x1</span>
+                    <span class="the-result__details-order-descriprion">
+                      Maturi <span>(de la 12 ani)</span>
+                    </span>
+                    <span class="the-result__details-order-price">
+                      €50,<sup>99</sup>
+                    </span>
+                  </div>
+                  <div class="the-result__details-order-list-item">
+                    <span class="the-result__details-order-count">x1</span>
+                    <span class="the-result__details-order-descriprion">
+                      Copii <span>(de la 2 pina la 12 ani)</span>
+                    </span>
+                    <span class="the-result__details-order-price">
+                      €50,<sup>99</sup>
+                    </span>
+                  </div>
+                  <div class="the-result__details-order-list-item">
+                    <span class="the-result__details-order-count">x1</span>
+                    <span class="the-result__details-order-descriprion">
+                      Bebelusi <span>(pina la 2 ani)</span>
+                    </span>
+                    <span class="the-result__details-order-price">
+                      €0,<sup>00</sup>
+                    </span>
+                  </div>
                 </div>
 
                 <button class="the-result__date-reservation js-result-date-reservation" disabled>

@@ -204,6 +204,85 @@
                 </div>
               </div>
 
+              <div class="top-search__item top-search__item-passanger js-item-passanger">
+                <div class="the-passanger-count js-passanger-count">
+                  <div class="the-passanger-count__data-wrapper js-passanger-count-data-wrapper">
+                    <div class="the-passanger-count__icon">
+                      <svg width="18" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M5.56 8.4a3.318 3.318 0 0 0-2.485 1.2H1.819C.88 9.6 0 9.15 0 8.11 0 7.35-.028 4.8 1.163 4.8c.196 0 1.171.797 2.437.797a3.75 3.75 0 0 0 1.247-.216A4.582 4.582 0 0 0 4.8 6c0 .853.272 1.697.76 2.4zm10.04 5.972c0 1.519-1.003 2.428-2.503 2.428H4.903c-1.5 0-2.503-.91-2.503-2.428C2.4 12.253 2.897 9 5.644 9 5.963 9 7.125 10.303 9 10.303c1.875 0 3.037-1.303 3.356-1.303 2.747 0 3.244 3.253 3.244 5.372zM6 2.4c0 1.322-1.078 2.4-2.4 2.4a2.405 2.405 0 0 1-2.4-2.4C1.2 1.078 2.278 0 3.6 0 4.922 0 6 1.078 6 2.4zM12.6 6a3.6 3.6 0 0 1-7.2 0 3.6 3.6 0 0 1 7.2 0zM18 8.11c0 1.04-.881 1.49-1.819 1.49h-1.256a3.318 3.318 0 0 0-2.484-1.2c.487-.703.759-1.547.759-2.4 0-.206-.019-.413-.047-.619.403.14.816.216 1.247.216 1.266 0 2.24-.797 2.437-.797C18.028 4.8 18 7.35 18 8.11zM16.8 2.4c0 1.322-1.078 2.4-2.4 2.4A2.405 2.405 0 0 1 12 2.4C12 1.078 13.078 0 14.4 0c1.322 0 2.4 1.078 2.4 2.4z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                    </div>
+
+                    <div class="the-passanger-count__data">
+                      <label class="the-passanger-count__label">
+                        Pasageri:
+                      </label>
+                      <input class="the-passanger-count__count js-passanger-count-total" value="1" disabled />
+                    </div>
+                  </div>
+
+                  <div class="the-passanger-count__count-select js-passanger-count-select">
+                    <div class="the-passanger-count__count-select-item">
+                      <div class="the-passanger-count__count-select-name">
+                        <div class="the-passanger-count__count-select-title">Maturi</div>
+                        <div class="the-passanger-count__count-select-description">mai mari de 12 ani</div>
+                      </div>
+                      <div class="the-passanger-count__count-select-counter js-passanger-count-counter">
+                        <button type="button" class="the-passanger-count__count-select-counter-button js-passanger-descrease js-passanger-adult-descrease disabled">
+                          <svg width="8" height="3" xmlns="http://www.w3.org/2000/svg"><path d="M8 .545v1.091a.546.546 0 0 1-.545.546H.545A.546.546 0 0 1 0 1.636V.546C0 .243.244 0 .545 0H7.455c.3 0 .545.244.545.545z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                        </button>
+
+                        <input name="adult" class="the-passanger-count__count-select-counter-value js-passanger-count" value="1" disabled />
+
+                        <button type="button" class="the-passanger-count__count-select-counter-button js-passanger-increase">
+                          <svg width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M8 3.455v1.09a.546.546 0 0 1-.545.546H5.09v2.364A.546.546 0 0 1 4.545 8h-1.09a.546.546 0 0 1-.546-.545V5.09H.545A.546.546 0 0 1 0 4.545v-1.09c0-.302.244-.546.545-.546H2.91V.545c0-.3.244-.545.546-.545h1.09c.302 0 .546.244.546.545V2.91h2.364c.3 0 .545.244.545.546z" fill="#FFF" fill-rule="nonzero"/></svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="the-passanger-count__count-select-item">
+                      <div class="the-passanger-count__count-select-name">
+                        <div class="the-passanger-count__count-select-title">
+                          Copii
+                          <span class="the-passanger-count__count-select-title-label">-50%</span>
+                        </div>
+                        <div class="the-passanger-count__count-select-description">de la 2 la 12 ani</div>
+                      </div>
+                      <div class="the-passanger-count__count-select-counter js-passanger-count-counter">
+                        <button type="button" class="the-passanger-count__count-select-counter-button disabled js-passanger-descrease">
+                          <svg width="8" height="3" xmlns="http://www.w3.org/2000/svg"><path d="M8 .545v1.091a.546.546 0 0 1-.545.546H.545A.546.546 0 0 1 0 1.636V.546C0 .243.244 0 .545 0H7.455c.3 0 .545.244.545.545z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                        </button>
+
+                        <input name="children" class="the-passanger-count__count-select-counter-value js-passanger-count" value="0" disabled />
+
+                        <button type="button" class="the-passanger-count__count-select-counter-button js-passanger-increase">
+                          <svg width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M8 3.455v1.09a.546.546 0 0 1-.545.546H5.09v2.364A.546.546 0 0 1 4.545 8h-1.09a.546.546 0 0 1-.546-.545V5.09H.545A.546.546 0 0 1 0 4.545v-1.09c0-.302.244-.546.545-.546H2.91V.545c0-.3.244-.545.546-.545h1.09c.302 0 .546.244.546.545V2.91h2.364c.3 0 .545.244.545.546z" fill="#FFF" fill-rule="nonzero"/></svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="the-passanger-count__count-select-item">
+                      <div class="the-passanger-count__count-select-name">
+                        <div class="the-passanger-count__count-select-title">
+                          Bebelusi
+                          <span class="the-passanger-count__count-select-title-label">Gratis</span>
+                        </div>
+                        <div class="the-passanger-count__count-select-description">pina la 2 ani</div>
+                      </div>
+                      <div class="the-passanger-count__count-select-counter js-passanger-count-counter">
+                        <button type="button" class="the-passanger-count__count-select-counter-button disabled js-passanger-descrease">
+                          <svg width="8" height="3" xmlns="http://www.w3.org/2000/svg"><path d="M8 .545v1.091a.546.546 0 0 1-.545.546H.545A.546.546 0 0 1 0 1.636V.546C0 .243.244 0 .545 0H7.455c.3 0 .545.244.545.545z" fill="#A6B2D9" fill-rule="nonzero"/></svg>
+                        </button>
+
+                        <input name="children" class="the-passanger-count__count-select-counter-value js-passanger-count" value="0" disabled />
+
+                        <button type="button" class="the-passanger-count__count-select-counter-button js-passanger-increase">
+                          <svg width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M8 3.455v1.09a.546.546 0 0 1-.545.546H5.09v2.364A.546.546 0 0 1 4.545 8h-1.09a.546.546 0 0 1-.546-.545V5.09H.545A.546.546 0 0 1 0 4.545v-1.09c0-.302.244-.546.545-.546H2.91V.545c0-.3.244-.545.546-.545h1.09c.302 0 .546.244.546.545V2.91h2.364c.3 0 .545.244.545.546z" fill="#FFF" fill-rule="nonzero"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <button class="button orange">
                 <svg width="14" height="14" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M9.692 5.923a3.774 3.774 0 0 0-3.769-3.77 3.774 3.774 0 0 0-3.77 3.77 3.774 3.774 0 0 0 3.77 3.77 3.774 3.774 0 0 0 3.77-3.77zm4.308 7c0 .589-.488 1.077-1.077 1.077-.286 0-.564-.118-.757-.32L9.28 10.803A5.921 5.921 0 0 1 0 5.923 5.921 5.921 0 0 1 5.923 0a5.921 5.921 0 0 1 4.88 9.28l2.886 2.886c.193.193.311.471.311.757z" fill="#FFF" fill-rule="nonzero"/></svg>
                 Caută

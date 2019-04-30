@@ -414,3 +414,59 @@ function initMap() {
     map: map
   });
 }
+
+// New 30.04.2019
+
+$('.js-passanger-count-data-wrapper').on('click', function () {
+  $('.js-passanger-count-select').toggleClass('show');
+  $('.js-passanger-count').toggleClass('active');
+});
+
+$('.js-item-passanger').on('click', function (e) {
+  e.stopPropagation();
+});
+
+$(window).click(function () {
+  $('.js-passanger-count-select').removeClass('show');
+  $('.js-passanger-count').removeClass('active');
+});
+
+$('.js-passanger-descrease').on('click', function () {
+  var $input = $(this).closest('.js-passanger-count-counter').find('.js-passanger-count');
+
+  if ($input.val() > 0 && !$(this).hasClass('js-passanger-adult-descrease')) {
+    $input.val(+$input.val() - 1);
+    $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() - 1);
+
+    if (+$input.val() === 0) {
+      $(this).addClass('disabled');
+    }
+  }
+
+  if ($input.val() > 1 && $(this).hasClass('js-passanger-adult-descrease')) {
+    $input.val(+$input.val() - 1);
+    $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() - 1);
+
+    if (+$input.val() === 1) {
+      $(this).addClass('disabled');
+    }
+  }
+});
+
+$('.js-passanger-increase').on('click', function () {
+  var $input = $(this).closest('.js-passanger-count-counter').find('.js-passanger-count');
+
+  $input.val(+$input.val() + 1);
+  $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() + 1);
+  $(this).closest('.js-passanger-count-counter').find('.js-passanger-descrease').removeClass('disabled');
+});
+
+$('.js-the-switch-tour-button').on('click', function () {
+  $(this).parent().find('.js-the-switch-tour-button').removeClass('active');
+  $(this).addClass('active');
+});
+
+$('.js-show-details-button').on('click', function () {
+  $(this).toggleClass('show');
+  $(this).closest('.js-result-body-form-steps').find('.js-details-order-list').toggleClass('show');
+});

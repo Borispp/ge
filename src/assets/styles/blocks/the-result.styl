@@ -42,7 +42,7 @@
 
   &__details-order-list
     position absolute
-    top 82px
+    top 68px
     width 100%
     height calc(100% - 100px)
     padding 20px
@@ -52,9 +52,6 @@
     transform translate(0, 150px)
     visibility hidden
     transition all .25s ease-in-out
-
-    &.top-0
-      top 0
 
     &.show
       opacity 1
@@ -153,9 +150,49 @@
     font-weight 500
     padding-top 3px
 
+  &__top-direction-details-button
+    display none
+    opacity 0
+    transition: opacity $transition
+
   &__top-direction-route
     display flex
     align-items center
+
+    &.-stickit
+      @media (max-width 992px)
+        width 100%
+        background #1639BB
+        position fixed
+        z-index 9990
+        top 0
+        left 0
+        padding 10px 50px
+        box-sizing border-box
+
+        .the-result__top-direction-details-button
+          padding 0 15px
+          margin-left auto
+          display block
+          opacity 1
+
+      @media (max-width: 767px)
+        padding 10px
+
+        .the-result__top-direction-route-label
+          width 22px
+          height 22px
+          font-size 12px
+          margin-right 8px
+          padding-top 1px
+          box-sizing border-box
+
+        .the-result__top-direction-route-location-city
+          font-size 14px
+          line-height 18px
+
+        .the-result__top-direction-route-location-country
+          font-size 10px
 
     &.small
       .the-result__top-direction-route
@@ -266,6 +303,19 @@
   &__top-list
     margin-top 10px
     margin-left 50px
+
+    .the-result__top-list-value.-one-way
+      display inline
+
+    .the-result__top-list-value.-return
+      display none
+
+    &.-return
+      .the-result__top-list-value.-one-way
+        display none
+
+      .the-result__top-list-value.-return
+        display inline
 
     @media (max-width 1100px)
       margin-left 0
@@ -644,6 +694,12 @@
         width 40px
         height 40px
 
+    @media (max-width 767px)
+      height 110px
+
+      .the-label
+        margin-top -16px
+
   &__date-header-title
     font-weight 500
     font-size: 20px;
@@ -682,8 +738,7 @@
     .the-result__top-direction-route
       width 100%
       box-sizing border-box
-      padding 24px 20px
-      margin-top -9px
+      padding 18px 20px
 
     @media (max-width 992px)
       max-width 780px
@@ -725,12 +780,9 @@
     flex-direction column
     justify-content center
     align-items center
-    padding 10px 20px 0
     box-sizing border-box
     background #F0F5FB
     position absolute
-    margin-top -30px
-    height calc(100% + 30px)
     visibility hidden
     opacity 1
     transition transform .25s ease-in-out, opacity .25s ease-in-out, background-color .25s ease-in-out
@@ -761,12 +813,20 @@
       display none
 
     @media (max-width 992px)
-      padding 10px 16px 0
       margin-top 0
       height 100%
 
       .the-date__input-wrapper
         display none
+
+  &__contacts
+    width 100%
+    padding 10px 20px
+    box-sizing border-box
+
+    @media (max-height 600px)
+      .input-wrapper.-default
+        height 50px
 
   &__person-num
     width 100%
@@ -945,6 +1005,7 @@
       top -20px
       max-width 780px
       margin-top 20px
+      border-radius 0
 
   &__date-reservation
     width calc(100% + 52px)
@@ -953,83 +1014,25 @@
 
   &__mobile-sticky
     width 100%
-    height 65px
     display none
     position fixed
     z-index 3002
     bottom 0
     left 0
     background #fff
-    padding 0 10px
     box-sizing border-box
+
+    .button
+      width 100%
+      border-radius: 0
+      text-transform uppercase
+      font-size 13px
 
     @media (min-width 992px)
       display none !important
 
     @media (max-width 992px)
       display block
-
-    .the-label
-      position absolute
-      top 0
-      left 50%
-      transform translate(-50%, -50%)
-
-    .the-result__top-direction-price
-      margin-right 16px
-
-    .the-result__top-direction-price-label
-      font-size 10px
-      color #1E2B6F
-      padding-top 2px
-
-    .the-result__top-direction-price-value
-      font-size 16px
-
-      sup
-        font-size 10px
-        top -5px
-
-  &__mobile-sticky-wrapper
-    display flex
-    align-items center
-    width 100%
-    height 65px
-
-  &__mobile-sticky-dates
-    display flex
-    margin 0 -8px
-
-  &__mobile-sticky-dates-item
-    margin 0 8px
-
-  &__mobile-sticky-dates-label
-    font-weight 500
-    font-size: 10px;
-    line-height 10px
-    color: #1E2B6F;
-    padding-top 5px
-
-    &.-no-data
-      color #A6B2D9
-
-  &__mobile-sticky-dates-value
-    font-weight 500
-    font-size: 11px;
-    line-height 11px
-    height 15px
-    color: #1E2B6F;
-
-    &.-no-data
-      background: #F0F5FB;
-      width 50px
-      height 15px
-      border-radius 20px
-      position relative
-      top -3px
-
-  &__mobile-sticky-show-dates-button
-    margin-left auto
 
   &__details-list
     position relative
@@ -1077,7 +1080,7 @@
     min-height 115px
     margin-top auto
     background #F0F5FB
-    padding 0 20px 15px
+    padding 0 20px 10px
     box-sizing border-box
 
     .the-result__total-price-count

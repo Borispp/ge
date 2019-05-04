@@ -43,7 +43,7 @@ $(document).ready(function() {
     $('.js-top-search-passanger').addClass('-active');
 
     scrollToPage('#the-header-first-screen__search');
-    $('#selectFrom').select2('open');
+    // $('#selectFrom').select2('open');
   }
 
   var openParcelForm = function () {
@@ -53,7 +53,7 @@ $(document).ready(function() {
     $('.js-top-search-parcel').addClass('-active');
 
     scrollToPage('#the-header-first-screen__search');
-    $('#selectParcelDestination').select2('open');
+    // $('#selectParcelDestination').select2('open');
   }
 
   var hash = $(location).attr('hash');
@@ -90,9 +90,11 @@ $(document).ready(function() {
     $(this).addClass('-active');
 
     if (direction === 'return') {
-      $('.js-return-date').removeClass('hide');
+      $('.js-return-date').removeClass('hide').addClass('mobile-half');
+      $('.js-departure-date').addClass('mobile-half');
     } else if (direction === 'oneWay') {
-      $('.js-return-date').addClass('hide');
+      $('.js-return-date').addClass('hide').removeClass('mobile-half');
+      $('.js-departure-date').removeClass('mobile-half');
     }
   });
 
@@ -126,10 +128,20 @@ $(document).ready(function() {
   });
 
   // Mobile calendar, result page
-
   $('.js-show-mobile-calendar').on('click', function () {
     $('.js-result-calendar').addClass('-open');
+    $('.js-body-form').addClass('step1').removeClass('step2');
+    $('.js-result-step-1').addClass('show').removeClass('hide');
+    $('.js-result-step-2').removeClass('show').addClass('hide');
     $('.js-result-mobile-sticky').hide();
+  });
+
+  $('.js-result-sticky-next').on('click', function (e) {
+    $('.js-result-mobile-sticky').hide();
+    $('.js-result-calendar').addClass('-open');
+    $('.js-result-step-1').addClass('hide');
+    $('.js-result-step-2').addClass('show');
+    $('.js-body-form').addClass('step2');
   });
 
   $('.js-close-result-calendar').on('click', function () {
@@ -279,6 +291,84 @@ $(document).ready(function() {
   	return methods.bindUIActions();
   })();
 
+  // New 30.04.2019
+
+  $('.js-passanger-count-data-wrapper').on('click', function () {
+    $('.js-passanger-count-select').toggleClass('show');
+    $('.js-passanger-count').toggleClass('active');
+  });
+
+  $('.js-item-passanger').on('click', function (e) {
+    e.stopPropagation();
+  });
+
+  $(window).click(function() {
+    $('.js-passanger-count-select').removeClass('show');
+    $('.js-passanger-count').removeClass('active');
+  });
+
+  $('.js-passanger-descrease').on('click', function () {
+    var $input = $(this).closest('.js-passanger-count-counter').find('.js-passanger-count');
+
+    if ($input.val() > 0 && !$(this).hasClass('js-passanger-adult-descrease')) {
+      $input.val(+$input.val() - 1);
+      $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() - 1);
+
+      if (+$input.val() === 0) {
+        $(this).addClass('disabled');
+      }
+    }
+
+    if ($input.val() > 1 && $(this).hasClass('js-passanger-adult-descrease')) {
+      $input.val(+$input.val() - 1);
+      $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() - 1);
+
+      if (+$input.val() === 1) {
+        $(this).addClass('disabled');
+      }
+    }
+  });
+
+  $('.js-passanger-increase').on('click', function () {
+    var $input = $(this).closest('.js-passanger-count-counter').find('.js-passanger-count');
+
+    $input.val(+$input.val() + 1);
+    $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() + 1);
+    $(this).closest('.js-passanger-count-counter').find('.js-passanger-descrease').removeClass('disabled');
+  });
+
+
+  $('.js-the-switch-tour-button').on('click', function () {
+    $(this).parent().find('.js-the-switch-tour-button').removeClass('active');
+    $(this).addClass('active');
+
+    if ($(this).data('tour') === 'one-way') {
+      $('.js-tour-top-list').removeClass('-return');
+    }
+
+    if ($(this).data('tour') === 'return') {
+      $('.js-tour-top-list').addClass('-return');
+    }
+  });
+
+  $('.js-show-details-button').on('click', function () {
+    $(this).toggleClass('show');
+    $(this).closest('.js-result-body-form-steps').find('.js-details-order-list').toggleClass('show');
+  });
+
+  var routeTop = $('.js-route-top').offset().top;
+
+  $(window).scroll(function (e) {
+  	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+
+    console.log(routeTop, scrolled);
+
+  	if (scrolled > routeTop) {
+  		$('.js-route-top').addClass('-stickit');
+  	} else {
+  		$('.js-route-top').removeClass('-stickit');
+  	}
+  });
 });
 
 // Phone
@@ -505,62 +595,3 @@ function initMap() {
     map: map
   });
 }
-
-
-
-// New 30.04.2019
-
-$('.js-passanger-count-data-wrapper').on('click', function () {
-  $('.js-passanger-count-select').toggleClass('show');
-  $('.js-passanger-count').toggleClass('active');
-});
-
-$('.js-item-passanger').on('click', function (e) {
-  e.stopPropagation();
-});
-
-$(window).click(function() {
-  $('.js-passanger-count-select').removeClass('show');
-  $('.js-passanger-count').removeClass('active');
-});
-
-$('.js-passanger-descrease').on('click', function () {
-  var $input = $(this).closest('.js-passanger-count-counter').find('.js-passanger-count');
-
-  if ($input.val() > 0 && !$(this).hasClass('js-passanger-adult-descrease')) {
-    $input.val(+$input.val() - 1);
-    $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() - 1);
-
-    if (+$input.val() === 0) {
-      $(this).addClass('disabled');
-    }
-  }
-
-  if ($input.val() > 1 && $(this).hasClass('js-passanger-adult-descrease')) {
-    $input.val(+$input.val() - 1);
-    $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() - 1);
-
-    if (+$input.val() === 1) {
-      $(this).addClass('disabled');
-    }
-  }
-});
-
-$('.js-passanger-increase').on('click', function () {
-  var $input = $(this).closest('.js-passanger-count-counter').find('.js-passanger-count');
-
-  $input.val(+$input.val() + 1);
-  $('.js-passanger-count-total').val(+$('.js-passanger-count-total').val() + 1);
-  $(this).closest('.js-passanger-count-counter').find('.js-passanger-descrease').removeClass('disabled');
-});
-
-
-$('.js-the-switch-tour-button').on('click', function () {
-  $(this).parent().find('.js-the-switch-tour-button').removeClass('active');
-  $(this).addClass('active');
-});
-
-$('.js-show-details-button').on('click', function () {
-  $(this).toggleClass('show');
-  $(this).closest('.js-result-body-form-steps').find('.js-details-order-list').toggleClass('show');
-});

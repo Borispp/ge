@@ -23,17 +23,13 @@
     }
 
     .bus-animation {
-      visibility: hidden;
-      animation: transportTranslate 10s linear infinite;
-      animation-delay: 1s;
-      transform: translate(60%, 56%);
+      animation: transportTranslate 3.5s ease-in-out;
+      transform: translate(52%, 56%);
     }
 
     .route-animation {
-      visibility: hidden;
-      animation: routeTranslate 10s linear infinite;
-      animation-delay: 6s;
-      transform: translate(60%, 0);
+      animation: routeTranslate 5s ease-in-out;
+      transform: translate(-2%, 3%);
     }
 
     @keyframes cloud1Translate {
@@ -57,24 +53,25 @@
         transform: translate(120%, 56%);
         visibility: visible;
       }
-      60% {
-        transform: translate(-50%, 56%);
+      20% {
+        transform: translate(120%, 56%);
+        visibility: visible;
       }
       100% {
-        transform: translate(-50%, 56%);
+        transform: translate(52%, 56%);
       }
     }
 
     @keyframes routeTranslate {
       0% {
-        transform: translate(120%, 0);
+        transform: translate(100%, 3%);
         visibility: visible;
       }
-      60% {
-        transform: translate(-50%, 0);
+      20% {
+        transform: translate(100%, 3%);
       }
       100% {
-        transform: translate(-150%, 0);
+        transform: translate(-2%, 3%);
       }
     }
   </style>
@@ -627,7 +624,7 @@
     <path fill="url(#am)" fill-rule="nonzero" d="M834.3 284.3h-23v-16.6l11.5-9.7 11.5 9.7z"/>
     <path fill="url(#an)" fill-rule="nonzero" d="M842.7 197.4l389.9 7.4 208.4-7.3z"/>
     <g fill-rule="nonzero" class="bus-animation">
-      <path d="M569 149H2c-.9 0-1.7.2-1.7-.7 0-.9.8-1.7 1.7-1.7h567c.9 0 1.7.8 1.7 1.7.1.9-.7.7-1.7.7z" fill="url(#ao)" transform="translate(742 268)"/>
+      <path d="M569 149H2c-.9 0-1.7.2-1.7-.7 0-.9.8-1.7 1.7-1.7h567c.9 0 1.7.8 1.7 1.7.1.9-.7.7-1.7.7z" fill="url(#ao)" transform="translate(0 0)"/>
       <g>
         <path d="M284.6 9.4c-.3-.3-10.3-7.7-39-8.1-29.1-.4-148-.4-148-.4S81.9 2 65.2 9.4h219.4z" fill="url(#ap)"/>
         <path fill="#041B76" d="M94.7 87.8h387.2v46.4H94.7z"/>
